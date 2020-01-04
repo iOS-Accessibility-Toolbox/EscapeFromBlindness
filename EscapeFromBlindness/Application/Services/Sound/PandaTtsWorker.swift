@@ -6,7 +6,7 @@
 import AVFoundation
 import UIKit
 
-final class PandaTTSWorker: NSObject, MessagesSoundPlayer {
+final class TTSWorker: NSObject, MessagesSoundPlayer {
     var delegate: NavigationSoundPlayerDelegate?
     
     private var lastMessage: String = ""
@@ -80,7 +80,7 @@ final class PandaTTSWorker: NSObject, MessagesSoundPlayer {
     
 }
 
-extension PandaTTSWorker: AVSpeechSynthesizerDelegate {
+extension TTSWorker: AVSpeechSynthesizerDelegate {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
         self.remainingString = utterance.speechString[characterRange.lowerBound..<utterance.speechString.count]
         print("willSpeakRangeOfSpeechString \(self.remainingString)")
