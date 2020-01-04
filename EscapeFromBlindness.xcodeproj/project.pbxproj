@@ -28,6 +28,28 @@
 		D88B1A9823B43E1D008BB85D /* RotorLevelViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9723B43E1D008BB85D /* RotorLevelViewControllerTests.swift */; };
 		D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */; };
 		D88B1A9C23B43E58008BB85D /* MazeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */; };
+		D8C2C0EB23C0CD7700F8BE78 /* IntroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */; };
+		D8C2C0ED23C0CD8500F8BE78 /* ChapterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */; };
+		D8C2C0F023C0CDF400F8BE78 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EE23C0CDF400F8BE78 /* IntroViewController.swift */; };
+		D8C2C0F123C0CDF400F8BE78 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C0EF23C0CDF400F8BE78 /* IntroViewController.xib */; };
+		D8C2C0F323C0CE3F00F8BE78 /* XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0F223C0CE3F00F8BE78 /* XibLoadable.swift */; };
+		D8C2C0F623C0CE6C00F8BE78 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0F523C0CE6C00F8BE78 /* StoryboardLoadable.swift */; };
+		D8C2C0F823C0CE9800F8BE78 /* Coordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0F723C0CE9800F8BE78 /* Coordinated.swift */; };
+		D8C2C10023C0D2FD00F8BE78 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0FF23C0D2FD00F8BE78 /* UserDefaultsMock.swift */; };
+		D8C2C10623C0D52C00F8BE78 /* VoiceOverAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C10423C0D52C00F8BE78 /* VoiceOverAlertViewController.xib */; };
+		D8C2C10823C0DEBD00F8BE78 /* AppCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C10723C0DEBD00F8BE78 /* AppCoordinatorSpy.swift */; };
+		D8C2C10A23C0E00500F8BE78 /* AccessibilityNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C10923C0E00500F8BE78 /* AccessibilityNotificationCenter.swift */; };
+		D8C2C10C23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C10B23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift */; };
+		D8C2C10E23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C10D23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift */; };
+		D8C2C11023C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C10F23C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift */; };
+		D8C2C11223C0EB8A00F8BE78 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */; };
+		D8C2C11423C0EDBA00F8BE78 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */; };
+		D8C2C11623C104C300F8BE78 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */; };
+		D8DA6AFD23B5112F0054EF0E /* PandaTtsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6AFC23B5112F0054EF0E /* PandaTtsWorker.swift */; };
+		D8DA6AFF23B511740054EF0E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */; };
+		D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */; };
+		D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1809623BFE4A2003291D4 /* String+Extensions.swift */; };
+		D8F1809923BFE4D3003291D4 /* NSArray+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +74,6 @@
 		D88B19EA23B42552008BB85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D88B19EC23B42552008BB85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D88B19F123B42553008BB85D /* EscapeFromBlindnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EscapeFromBlindnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D88B19F723B42553008BB85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Level Types/Info.plist"; sourceTree = "<group>"; };
 		D88B1A4323B4291D008BB85D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D88B1A4423B4291D008BB85D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D88B1A4823B42DBD008BB85D /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
@@ -70,6 +91,29 @@
 		D88B1A9723B43E1D008BB85D /* RotorLevelViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorLevelViewControllerTests.swift; sourceTree = "<group>"; };
 		D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLevelViewControllerTests.swift; sourceTree = "<group>"; };
 		D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewControllerTests.swift; sourceTree = "<group>"; };
+		D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewControllerTests.swift; sourceTree = "<group>"; };
+		D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewControllerTests.swift; sourceTree = "<group>"; };
+		D8C2C0EE23C0CDF400F8BE78 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		D8C2C0EF23C0CDF400F8BE78 /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
+		D8C2C0F223C0CE3F00F8BE78 /* XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibLoadable.swift; sourceTree = "<group>"; };
+		D8C2C0F523C0CE6C00F8BE78 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		D8C2C0F723C0CE9800F8BE78 /* Coordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinated.swift; sourceTree = "<group>"; };
+		D8C2C0FF23C0D2FD00F8BE78 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
+		D8C2C10423C0D52C00F8BE78 /* VoiceOverAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverAlertViewController.xib; sourceTree = "<group>"; };
+		D8C2C10723C0DEBD00F8BE78 /* AppCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpy.swift; sourceTree = "<group>"; };
+		D8C2C10923C0E00500F8BE78 /* AccessibilityNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityNotificationCenter.swift; sourceTree = "<group>"; };
+		D8C2C10B23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityNotificationCenterSpy.swift; sourceTree = "<group>"; };
+		D8C2C10D23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceOverAlertViewController.swift; sourceTree = "<group>"; };
+		D8C2C10F23C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceOverAlertViewControllerTests.swift; sourceTree = "<group>"; };
+		D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
+		D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		D8DA6AFC23B5112F0054EF0E /* PandaTtsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PandaTtsWorker.swift; sourceTree = "<group>"; };
+		D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSoundModels.swift; sourceTree = "<group>"; };
+		D8F1809623BFE4A2003291D4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+Extensions.swift"; sourceTree = "<group>"; };
+		D8F1809A23BFE85E003291D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDA440EB54F6260A6C2B8221 /* Pods_EscapeFromBlindnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscapeFromBlindnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +180,9 @@
 		D88B19DD23B4254A008BB85D /* EscapeFromBlindness */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2C0F423C0CE5500F8BE78 /* Protocols */,
+				D8F1809523BFE495003291D4 /* Extensions */,
+				D8DA6AF923B510EA0054EF0E /* Scenes */,
 				D88B1A4123B42911008BB85D /* Application */,
 				D88B1A0023B42680008BB85D /* Resources */,
 				D88B19E923B42552008BB85D /* LaunchScreen.storyboard */,
@@ -146,9 +193,12 @@
 		D88B19F423B42553008BB85D /* EscapeFromBlindnessTests */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2C0FE23C0D2E800F8BE78 /* Test Doubles */,
+				D8C2C10F23C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift */,
+				D8F1809A23BFE85E003291D4 /* Info.plist */,
 				D88B1A6C23B4332A008BB85D /* GameFlowTests.swift */,
 				D88B1A9D23B43E64008BB85D /* Level Types */,
-				D88B19F723B42553008BB85D /* Info.plist */,
+				D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */,
 			);
 			path = EscapeFromBlindnessTests;
 			sourceTree = "<group>";
@@ -156,6 +206,7 @@
 		D88B1A0023B42680008BB85D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8F1809423BFE364003291D4 /* Generated */,
 				D88B1A7623B436BE008BB85D /* Fonts */,
 				D88B1A0123B426C8008BB85D /* Sounds */,
 				D88B19E723B42552008BB85D /* Assets.xcassets */,
@@ -179,6 +230,7 @@
 				D88B1A4723B42BF8008BB85D /* Services */,
 				D88B1A4223B4291D008BB85D /* Coordinators */,
 				D88B1A4823B42DBD008BB85D /* UserDefaultKeys.swift */,
+				D8C2C10923C0E00500F8BE78 /* AccessibilityNotificationCenter.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -195,6 +247,7 @@
 		D88B1A4723B42BF8008BB85D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D8DA6AFB23B5110E0054EF0E /* Sound */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,12 +269,73 @@
 			isa = PBXGroup;
 			children = (
 				D88B1A7223B4337A008BB85D /* ClosedQuestionLevelViewControllerTests.swift */,
-				D88B1A7423B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift */,
 				D88B1A9723B43E1D008BB85D /* RotorLevelViewControllerTests.swift */,
+				D88B1A7423B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift */,
 				D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */,
 				D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */,
+				D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */,
+				D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */,
 			);
 			path = "Level Types";
+			sourceTree = "<group>";
+		};
+		D8C2C0F423C0CE5500F8BE78 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2C0F223C0CE3F00F8BE78 /* XibLoadable.swift */,
+				D8C2C0F523C0CE6C00F8BE78 /* StoryboardLoadable.swift */,
+				D8C2C0F723C0CE9800F8BE78 /* Coordinated.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D8C2C0FE23C0D2E800F8BE78 /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2C0FF23C0D2FD00F8BE78 /* UserDefaultsMock.swift */,
+				D8C2C10723C0DEBD00F8BE78 /* AppCoordinatorSpy.swift */,
+				D8C2C10B23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift */,
+			);
+			path = "Test Doubles";
+			sourceTree = "<group>";
+		};
+		D8DA6AF923B510EA0054EF0E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2C0EE23C0CDF400F8BE78 /* IntroViewController.swift */,
+				D8C2C0EF23C0CDF400F8BE78 /* IntroViewController.xib */,
+				D8C2C10D23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift */,
+				D8C2C10423C0D52C00F8BE78 /* VoiceOverAlertViewController.xib */,
+				D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D8DA6AFB23B5110E0054EF0E /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */,
+				D8DA6AFC23B5112F0054EF0E /* PandaTtsWorker.swift */,
+				D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		D8F1809423BFE364003291D4 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		D8F1809523BFE495003291D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8F1809623BFE4A2003291D4 /* String+Extensions.swift */,
+				D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */,
+				D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,11 +426,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D88B1A7E23B436FB008BB85D /* Montserrat-Black.ttf in Resources */,
+				D8C2C0F123C0CDF400F8BE78 /* IntroViewController.xib in Resources */,
 				D88B1A8223B436FB008BB85D /* Montserrat-SemiBold.ttf in Resources */,
 				D88B19EB23B42552008BB85D /* LaunchScreen.storyboard in Resources */,
 				D88B1A7D23B436FB008BB85D /* Montserrat-ExtraBold.ttf in Resources */,
 				D88B1A9323B43D9A008BB85D /* Localizable.strings in Resources */,
 				D88B1A8123B436FB008BB85D /* Luciole-Regular.ttf in Resources */,
+				D8C2C10623C0D52C00F8BE78 /* VoiceOverAlertViewController.xib in Resources */,
 				D88B19E823B42552008BB85D /* Assets.xcassets in Resources */,
 				D88B1A7F23B436FB008BB85D /* Montserrat-Medium.ttf in Resources */,
 				D88B1A8023B436FB008BB85D /* Montserrat-Bold.ttf in Resources */,
@@ -422,8 +538,21 @@
 			files = (
 				D88B1A4923B42DBD008BB85D /* UserDefaultKeys.swift in Sources */,
 				D88B1A4523B4291D008BB85D /* AppCoordinator.swift in Sources */,
+				D8C2C10A23C0E00500F8BE78 /* AccessibilityNotificationCenter.swift in Sources */,
 				D88B19DF23B4254A008BB85D /* AppDelegate.swift in Sources */,
+				D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */,
+				D8C2C0F623C0CE6C00F8BE78 /* StoryboardLoadable.swift in Sources */,
+				D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */,
+				D8C2C0F023C0CDF400F8BE78 /* IntroViewController.swift in Sources */,
 				D88B1A4623B4291D008BB85D /* Coordinator.swift in Sources */,
+				D8F1809923BFE4D3003291D4 /* NSArray+Extensions.swift in Sources */,
+				D8C2C0F323C0CE3F00F8BE78 /* XibLoadable.swift in Sources */,
+				D8DA6AFF23B511740054EF0E /* SoundPlayer.swift in Sources */,
+				D8C2C11223C0EB8A00F8BE78 /* ChapterViewController.swift in Sources */,
+				D8C2C10E23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift in Sources */,
+				D8C2C11423C0EDBA00F8BE78 /* UIFont+Extensions.swift in Sources */,
+				D8C2C0F823C0CE9800F8BE78 /* Coordinated.swift in Sources */,
+				D8DA6AFD23B5112F0054EF0E /* PandaTtsWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,12 +560,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C2C0ED23C0CD8500F8BE78 /* ChapterViewControllerTests.swift in Sources */,
+				D8C2C0EB23C0CD7700F8BE78 /* IntroViewControllerTests.swift in Sources */,
+				D8C2C10023C0D2FD00F8BE78 /* UserDefaultsMock.swift in Sources */,
 				D88B1A6D23B4332A008BB85D /* GameFlowTests.swift in Sources */,
+				D8C2C11623C104C300F8BE78 /* AppCoordinatorTests.swift in Sources */,
 				D88B1A9C23B43E58008BB85D /* MazeViewControllerTests.swift in Sources */,
+				D8C2C10C23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift in Sources */,
+				D8C2C11023C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift in Sources */,
 				D88B1A7523B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift in Sources */,
 				D88B1A9823B43E1D008BB85D /* RotorLevelViewControllerTests.swift in Sources */,
 				D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */,
 				D88B1A7323B4337A008BB85D /* ClosedQuestionLevelViewControllerTests.swift in Sources */,
+				D8C2C10823C0DEBD00F8BE78 /* AppCoordinatorSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

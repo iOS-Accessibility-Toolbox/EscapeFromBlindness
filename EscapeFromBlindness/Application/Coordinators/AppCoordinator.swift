@@ -8,6 +8,11 @@ import CoreLocation
 
 protocol AppCoordinatorProtocol: class {
     func start(window: UIWindow)
+    func showActivateVoiceOverAlert()
+    func dismissActivateVoiceOverAlert()
+    
+    func presentIntroController()
+    func presentGameController()
 }
 
 extension AppCoordinator: AppCoordinatorProtocol {}
@@ -19,7 +24,9 @@ class AppCoordinator: NSObject, Coordinator {
     private var window: UIWindow?
     private let navigationController: UINavigationController = UINavigationController()
     
-    private var controllers: [UIViewController] = []
+    var lastNavigationControllerViewController: UIViewController? {
+        return self.navigationController.viewControllers.last
+    }
     
     var children: [Coordinator] = []
     
@@ -47,21 +54,58 @@ class AppCoordinator: NSObject, Coordinator {
         checkIfUserFirstStart()
     }
     
-    // MARK: - Onboarding
-    func checkIfUserFirstStart() {
-        let isFirstStart = self.userDefaults.value(forKey: UserDefaultsKeys.firstStart.rawValue) as? Bool ?? true
-
-        if isFirstStart {
-            presentOnboardingController()
+    private func checkIfUserFirstStart() {
+        let currentLevelIndex = self.userDefaults.value(forKey: UserDefaultsKeys.currentLevelIndex.rawValue) as? Int ?? 0
+        let currentChapter = getCurrentChapter(for: currentLevelIndex)
+        
+        if currentChapter == 0 {
+            presentIntroController()
         } else {
-            presentGameController()
+            presentChapterController(currentChapter)
         }
     }
     
-    func presentOnboardingController() {
-        let viewController = UIViewController()
-        viewController.view.frame = UIScreen.main.bounds
-        viewController.view.backgroundColor = .orange
+    private func getCurrentChapter(for currentLevelIndex: Int) -> Int {
+        guard currentLevelIndex != 0 else { return 0 }
+        let levelsPerChapter = 5
+        return ((currentLevelIndex - 1) / levelsPerChapter) + 1
+    }
+    
+    // MARK: - Intro
+    internal var isPresentIntroControllerCalled = false
+    
+    func presentIntroController() {
+        isPresentIntroControllerCalled = true
+        let viewController = IntroViewController.fromXib()
+        self.navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    // MARK: - Activate VoiceOver Alert
+    internal var isVoiceOverAlertActive = false
+    
+    func showActivateVoiceOverAlert() {
+        self.isVoiceOverAlertActive = true
+        let activateVoiceAlertViewController = VoiceOverAlertViewController.fromXib()
+        self.lastNavigationControllerViewController?.present(
+            activateVoiceAlertViewController,
+            animated: false,
+            completion: nil
+        )
+    }
+    
+    func dismissActivateVoiceOverAlert() {
+        self.isVoiceOverAlertActive = false
+        self.lastNavigationControllerViewController?.dismiss(
+            animated: true, completion: nil
+        )
+    }
+    
+    // MARK: - Chapter
+    internal var isPresentChapterControllerCalled = false
+    
+    func presentChapterController(_ chapter: Int) {
+        isPresentChapterControllerCalled = true
+        let viewController = ChapterViewController(chapter: chapter)
         self.navigationController.pushViewController(viewController, animated: true)
     }
     
@@ -74,7 +118,12 @@ class AppCoordinator: NSObject, Coordinator {
     }
     
     // MARK: - Actions
-    @objc private func voiceOverStatusChanged() {
-        print("VoiceOver status changed \(UIAccessibility.isVoiceOverRunning)")
+    @objc internal func voiceOverStatusChanged() {
+        let isNonIntroViewController = !(self.lastNavigationControllerViewController is IntroViewController)
+        let isVoiceOverRunning = EscapeFromBlindnessAccessibility.shared.isVoiceOverRunning
+        
+        if isNonIntroViewController && !isVoiceOverRunning {
+            self.showActivateVoiceOverAlert()
+        }
     }
 }

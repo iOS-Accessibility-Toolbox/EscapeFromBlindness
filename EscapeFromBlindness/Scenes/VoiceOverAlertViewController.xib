@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VoiceOverAlertViewController" customModule="EscapeFromBlindness" customModuleProvider="target">
+            <connections>
+                <outlet property="continueButton" destination="yIW-DS-1GJ" id="vqe-FX-lKe"/>
+                <outlet property="userCanContinueInstructionsView" destination="fgd-LH-hhS" id="bEk-zD-S76"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voiceOverActivationInstructionsView" destination="lNs-p4-DEv" id="iey-KJ-muh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="lNs-p4-DEv">
+                    <rect key="frame" x="30" y="134.5" width="354" height="637"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko0-fc-vYK">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="510"/>
+                            <string key="text">You are exploring an old tomb, as you are in the dark and have no torch left you do not see anything !
+
+Please turn on VoiceOver to continue the game !
+
+First configure the accessibility shortcut in to allow you to turn on/off VoiceOver easily.
+
+Then go back to the app and turn on VoiceOver.
+Depending on your device, it will either be by pressing three times the lateral button or the home button.</string>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voice-over-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Uox-Qy-Xhy">
+                            <rect key="frame" x="117" y="517" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Uox-Qy-Xhy" secondAttribute="height" multiplier="1:1" id="F2t-gS-qlZ"/>
+                                <constraint firstAttribute="width" constant="120" id="amL-MJ-eeG"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <stackView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="fgd-LH-hhS">
+                    <rect key="frame" x="30" y="394.5" width="354" height="117.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prV-rU-45B">
+                            <rect key="frame" x="34.5" y="0.0" width="285.5" height="80.5"/>
+                            <string key="text">Let's continue exploring !
+
+Enjoy your play !</string>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIW-DS-1GJ">
+                            <rect key="frame" x="162" y="87.5" width="30" height="30"/>
+                            <state key="normal" title="Go !">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onContinueButtonTouched" destination="-1" eventType="touchUpInside" id="fDQ-Mz-mOg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fgd-LH-hhS" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="48G-hG-FdJ"/>
+                <constraint firstItem="fgd-LH-hhS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Amk-cG-4zm"/>
+                <constraint firstItem="lNs-p4-DEv" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="BZS-8s-p6D"/>
+                <constraint firstItem="fgd-LH-hhS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Rzj-26-mZK"/>
+                <constraint firstItem="lNs-p4-DEv" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="avs-z5-vQh"/>
+                <constraint firstItem="lNs-p4-DEv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="ye6-lH-0i7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="voice-over-icon" width="256" height="256"/>
+    </resources>
+</document>

@@ -9,5 +9,5 @@
 import Foundation
 
 enum UserDefaultsKeys: String {
-    case firstStart = "com.michael-martinez.userdefaults.first-start"
+    case currentLevelIndex = "com.accessibility-toolbox.userdefaults.current-level-index"
 }
