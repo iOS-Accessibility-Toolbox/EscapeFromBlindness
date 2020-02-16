@@ -36,10 +36,15 @@ extension AppCoordinator: UINavigationControllerDelegate {}
 extension AppCoordinator: Router {
     
     func routeToChapter(_ chapter: Chapter) {
+        userDefaults.set(chapter.index, forKey: UserDefaultsKeys.currentChapterIndex.rawValue)
+        userDefaults.set(0, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
         presentChapterController(chapter)
     }
     
     func routeToLevel(_ level: Level) {
+        let currentLevel = gameFlow.getCurrentLevelIndex()
+        userDefaults.set(currentLevel, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+        
         switch level {
         case is ClosedQuestionLevel:
             presentClosedQuestionController(level)
@@ -100,18 +105,16 @@ class AppCoordinator: NSObject, Coordinator {
         self.window = window
         navigationController.delegate = self
         
-//        gameFlow.start()
         checkIfUserFirstStart()
     }
     
     private func checkIfUserFirstStart() {
-        let currentLevelIndex = self.userDefaults.value(forKey: UserDefaultsKeys.currentLevelIndex.rawValue) as? Int ?? 0
-        let currentChapter = getCurrentChapter(for: currentLevelIndex)
+        let currentChapter = gameFlow.getCurrentChapterIndex()
 
         if currentChapter == 0 {
             presentIntroController()
         } else {
-            presentChapterController(currentChapter)
+            gameFlow.start()
         }
     }
     

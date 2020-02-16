@@ -5,6 +5,7 @@ protocol Router {
 }
 
 protocol GameFlowProtocol {
+    func getCurrentChapterIndex() -> Int
     func getCurrentLevelIndex() -> Int
     func start()
     func validate(_ answer: Level.Answer)
@@ -29,6 +30,10 @@ class GameFlow: GameFlowProtocol {
         self.chapters = chapters
         self.currentChapterIndex = currentChapterIndex
         self.currentLevelIndex = currentLevelIndex
+    }
+    
+    func getCurrentChapterIndex() -> Int {
+        return self.currentChapterIndex
     }
     
     func getCurrentLevelIndex() -> Int {

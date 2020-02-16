@@ -10,6 +10,7 @@ import XCTest
 class AppCoordinatorTests: XCTestCase {
     
     var sut: AppCoordinator!
+    var gameFlowMock: GameFlowMock!
     var userDefaultsMock: UserDefaults!
     var accessibilityNotificationCenterSpy: AccessibilityNotificationCenterSpy!
     
@@ -19,11 +20,28 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     private func setupSUT() {
+        gameFlowMock = GameFlowMock()
         userDefaultsMock = UserDefaultsMock()
         accessibilityNotificationCenterSpy = AccessibilityNotificationCenterSpy()
         
-        sut = AppCoordinator(userDefaults: userDefaultsMock, gameFlow: GameFlow(chapters: [], currentChapterIndex: 1, currentLevelIndex: 0))
+        sut = AppCoordinator(userDefaults: userDefaultsMock, gameFlow: gameFlowMock)//GameFlow(chapters: [], currentChapterIndex: 1, currentLevelIndex: 0))
         EscapeFromBlindnessAccessibility.shared = accessibilityNotificationCenterSpy
+    }
+    
+    // MARK: Test Doubles
+    class GameFlowMock: GameFlowProtocol {
+        var expectedChapter: Int = 0
+        var expectedLevel: Int = 0
+        
+        func getCurrentChapterIndex() -> Int {
+            return self.expectedChapter
+        }
+        func getCurrentLevelIndex() -> Int {
+            return self.expectedLevel
+        }
+        func start() {}
+        func validate(_ answer: Level.Answer) {}
+        func validateChapter() {}
     }
     
     // MARK: Loading
@@ -49,6 +67,29 @@ class AppCoordinatorTests: XCTestCase {
         sut.start(window: UIWindow())
 
         XCTAssertTrue(sut.isPresentChapterControllerCalled)
+    }
+    
+    // MARK: Saving
+    func test_routingToChapterTriggered_shouldSaveChapterIndexToPreferences() {
+        sut.start(window: UIWindow())
+        
+        let chapterIndex = 2
+        sut.routeToChapter(Chapter(index: chapterIndex, levels: []))
+        
+        let foundChapter = userDefaultsMock.value(forKey: UserDefaultsKeys.currentChapterIndex.rawValue) as! Int
+        let foundLevel = userDefaultsMock.value(forKey: UserDefaultsKeys.currentLevelIndex.rawValue) as! Int
+        XCTAssertEqual(foundChapter, chapterIndex)
+        XCTAssertEqual(foundLevel, 0)
+    }
+    
+    func test_routingToLevelTriggered_shouldSaveLevelIndexToPreferences() {
+        sut.start(window: UIWindow())
+        
+        gameFlowMock.expectedLevel = 4
+        sut.routeToLevel(Level(answers: [], validAnswers: []))
+        
+        let foundLevel = userDefaultsMock.value(forKey: UserDefaultsKeys.currentLevelIndex.rawValue) as! Int
+        XCTAssertEqual(foundLevel, 4)
     }
     
     // MARK: Voice Over Activation Tests
