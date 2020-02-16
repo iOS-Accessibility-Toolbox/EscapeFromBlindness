@@ -35,9 +35,11 @@ extension AppCoordinator: UINavigationControllerDelegate {}
 
 extension AppCoordinator: Router {
     
-    func routeToChapter(_ chapter: Chapter) {
-        userDefaults.set(chapter.index, forKey: UserDefaultsKeys.currentChapterIndex.rawValue)
-        userDefaults.set(0, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+    func routeToChapter(_ chapter: Chapter, isNewChapter: Bool) {
+        if isNewChapter {
+            userDefaults.set(chapter.index, forKey: UserDefaultsKeys.currentChapterIndex.rawValue)
+            userDefaults.set(0, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+        }
         presentChapterController(chapter)
     }
     

@@ -70,11 +70,11 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     // MARK: Saving
-    func test_routingToChapterTriggered_shouldSaveChapterIndexToPreferences() {
+    func test_routingToChapterTriggered_shouldSaveChapterIndexToPreferences_IfNewChapter() {
         sut.start(window: UIWindow())
         
         let chapterIndex = 2
-        sut.routeToChapter(Chapter(index: chapterIndex, levels: []))
+        sut.routeToChapter(Chapter(index: chapterIndex, levels: []), isNewChapter: true)
         
         let foundChapter = userDefaultsMock.value(forKey: UserDefaultsKeys.currentChapterIndex.rawValue) as! Int
         let foundLevel = userDefaultsMock.value(forKey: UserDefaultsKeys.currentLevelIndex.rawValue) as! Int

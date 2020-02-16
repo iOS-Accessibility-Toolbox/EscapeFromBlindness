@@ -1,5 +1,5 @@
 protocol Router {
-    func routeToChapter(_ chapter: Chapter)
+    func routeToChapter(_ chapter: Chapter, isNewChapter: Bool)
     func routeToLevel(_ level: Level)
     func routeToResults()
 }
@@ -41,7 +41,7 @@ class GameFlow: GameFlowProtocol {
     }
     
     func start() {
-        router?.routeToChapter(self.chapters[self.currentChapterIndex])
+        router?.routeToChapter(self.chapters[self.currentChapterIndex], isNewChapter: false)
     }
     
     func validate(_ answer: Level.Answer) {
@@ -53,7 +53,7 @@ class GameFlow: GameFlowProtocol {
                 self.currentLevelIndex = 0
                 
                 if let chapter = self.currentChapter {
-                    router?.routeToChapter(chapter)
+                    router?.routeToChapter(chapter, isNewChapter: true)
                 } else {
                     router?.routeToResults()
                 }
