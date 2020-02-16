@@ -14,7 +14,9 @@ class ChapterViewController: UIViewController, Coordinated {
     // MARK: Outlets
     var chapterLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 2
         label.accessibilityTraits = .header
+        label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.custom(style: .montserratSemiBold, size: 16)
         return label
@@ -27,9 +29,9 @@ class ChapterViewController: UIViewController, Coordinated {
     }()
     
     // MARK: Initialization
-    private var chapter = 0
+    private var chapter: Chapter? = nil
     
-    convenience init(chapter: Int) {
+    convenience init(chapter: Chapter) {
         self.init()
         self.chapter = chapter
     }
@@ -39,11 +41,12 @@ class ChapterViewController: UIViewController, Coordinated {
         super.viewDidLoad()
         setupView()
         self.chapterLabel.text = presentChapterText(for: self.chapter)
+        showVoiceOvertAlertIfNeeded()
     }
     
     // MARK: Actions
     @objc private func onContinueButtonTouched() {
-        self.coordinator?.presentGameController()
+        self.coordinator?.validateChapter()
     }
     
     // MARK: Private Methods
@@ -63,19 +66,27 @@ class ChapterViewController: UIViewController, Coordinated {
         let continueButtonWidth: CGFloat = 50.0
         self.continueButton.widthAnchor.constraint(equalToConstant: continueButtonWidth).isActive = true
         self.continueButton.widthAnchor.constraint(equalToConstant: continueButtonWidth).isActive = true
+        self.continueButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         self.continueButton.addTarget(self, action: #selector(onContinueButtonTouched), for: .touchUpInside)
     }
     
-    private func presentChapterText(for chapter: Int) -> String {
-        var chapterText = "Chapter \(chapter): "
-        switch chapter {
-        case 1:
-            chapterText += "A new world"
-        default:
-            break
+    private func presentChapterText(for chapter: Chapter?) -> String {
+        guard let chapter = chapter else { return "New Chapter: " }
+        
+        var chapterText = "Chapter \(chapter.index): "
+        if let title = chapter.title {
+            chapterText += "\n" + title
         }
         return chapterText
+    }
+    
+    private func showVoiceOvertAlertIfNeeded() {
+        let isVoiceOverRunning = EscapeFromBlindnessAccessibility.shared.isVoiceOverRunning
+        
+        if !isVoiceOverRunning {
+            coordinator?.showActivateVoiceOverAlert()
+        }
     }
     
 }

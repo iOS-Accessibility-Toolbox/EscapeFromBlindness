@@ -15,7 +15,7 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
     var dismissActivateVoiceOverAlertCalled = false
     
     var presentIntroControllerCalled = false
-    var presentGameControllerCalled = false
+    var presentChapterControllerCalled = false
     
     func start(window: UIWindow) {
         startCalled = true
@@ -33,7 +33,46 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
         presentIntroControllerCalled = true
     }
     
-    func presentGameController() {
-        presentGameControllerCalled = true
+    func presentChapterController(_ chapter: Chapter) {
+        presentChapterControllerCalled = true
+    }
+    
+    // Game
+    var presentClosedQuestionControllerCalled = false
+    var presentOpenQuestionControllerCalled = false
+    var presentRotorQuestionControllerCalled = false
+    var presentSearchQuestionControllerCalled = false
+    var presentMazeQuestionControllerCalled = false
+    
+    func presentClosedQuestionController(_ level: Level) {
+        presentClosedQuestionControllerCalled = true
+    }
+    
+    func presentOpenQuestionController(_ level: Level) {
+        presentOpenQuestionControllerCalled = true
+    }
+    
+    func presentRotorQuestionController(_ level: Level) {
+        presentRotorQuestionControllerCalled = true
+    }
+    
+    func presentSearchQuestionController(_ level: Level) {
+        presentSearchQuestionControllerCalled = true
+    }
+    
+    func presentMazeQuestionController(_ level: Level) {
+        presentMazeQuestionControllerCalled = true
+    }
+    
+    // Validation
+    var validateChapterCalled = false
+    var validateAnswer: Level.Answer?
+    
+    func validateChapter() {
+        validateChapterCalled = true
+    }
+    
+    func validate(_ answer: Level.Answer) {
+        validateAnswer = answer
     }
 }

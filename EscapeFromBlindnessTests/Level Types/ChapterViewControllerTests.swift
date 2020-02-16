@@ -15,8 +15,9 @@ class ChapterViewControllerTests: XCTestCase {
     // MARK: Test Variables
     var sut: ChapterViewController!
     var coordinator: AppCoordinatorSpy!
+    var accessibilityNotificationCenterSpy: AccessibilityNotificationCenterSpy!
     var window: UIWindow!
-    private let chapter = 2
+    private let chapter = Chapter(index: 2, levels: [])
     
     // MARK: Test Lifecycle
     override func setUp() {
@@ -30,6 +31,20 @@ class ChapterViewControllerTests: XCTestCase {
     }
     
     // MARK: Tests
+    func test_viewDidLoadAndVoiceOverDisabled_shouldPresentVoiceOverAlert() {
+        accessibilityNotificationCenterSpy.isVoiceOverRunning = false
+        loadView()
+        
+        XCTAssertTrue(coordinator.showActivateVoiceOverAlertCalled)
+    }
+    
+    func test_viewDidLoadAndVoiceOverEnabled_shouldNotPresentVoiceOverAlert() {
+        accessibilityNotificationCenterSpy.isVoiceOverRunning = true
+        loadView()
+        
+        XCTAssertFalse(coordinator.showActivateVoiceOverAlertCalled)
+    }
+    
     func test_viewDidLoad_shouldDisplayChapter() {
         loadView()
         
@@ -41,16 +56,18 @@ class ChapterViewControllerTests: XCTestCase {
         
         sut.continueButton.sendActions(for: .touchUpInside)
         
-        XCTAssertTrue(coordinator.presentGameControllerCalled)
+        XCTAssertTrue(coordinator.validateChapterCalled)
     }
     
     // MARK: Private Methods
     private func setupSUT() {
         window = UIWindow()
         coordinator = AppCoordinatorSpy()
+        accessibilityNotificationCenterSpy = AccessibilityNotificationCenterSpy()
         
         sut = ChapterViewController(chapter: chapter)
         sut.coordinator = coordinator
+        EscapeFromBlindnessAccessibility.shared = accessibilityNotificationCenterSpy
     }
     
     private func loadView() {

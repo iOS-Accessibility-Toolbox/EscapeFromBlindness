@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		8424CC6D683711A2DDC1F283 /* Pods_EscapeFromBlindnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA440EB54F6260A6C2B8221 /* Pods_EscapeFromBlindnessTests.framework */; };
 		98F9DDF292CB35ABD9C4E6A9 /* Pods_EscapeFromBlindness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DB6B2A5FD677D379F2D6B6 /* Pods_EscapeFromBlindness.framework */; };
+		D83B70E623C4916D00516628 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70E523C4916D00516628 /* Chapter.swift */; };
+		D83B70E923C4933B00516628 /* ClosedQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70E823C4933B00516628 /* ClosedQuestionViewController.swift */; };
+		D83B70EB23C4935200516628 /* OpenQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */; };
+		D83B70ED23C4936900516628 /* RotorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70EC23C4936900516628 /* RotorViewController.swift */; };
+		D83B70EF23C4938600516628 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70EE23C4938600516628 /* SearchViewController.swift */; };
+		D83B70F123C4938E00516628 /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70F023C4938E00516628 /* MazeViewController.swift */; };
+		D8458EDA23F9FAFF006FA087 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8458ED923F9FAFE006FA087 /* NavigationController.swift */; };
+		D847609723C146E800DF4825 /* GameFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609623C146E800DF4825 /* GameFlow.swift */; };
+		D847609A23C1490400DF4825 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609923C1490400DF4825 /* Level.swift */; };
+		D847609C23C1491B00DF4825 /* ClosedQuestionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609B23C1491B00DF4825 /* ClosedQuestionLevel.swift */; };
+		D847609E23C1494700DF4825 /* OpenQuestionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609D23C1494700DF4825 /* OpenQuestionLevel.swift */; };
+		D84760A023C1499E00DF4825 /* RotorLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609F23C1499E00DF4825 /* RotorLevel.swift */; };
+		D84760A223C149F300DF4825 /* SearchLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A123C149F300DF4825 /* SearchLevel.swift */; };
+		D84760A423C14A0900DF4825 /* MazeLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A323C14A0900DF4825 /* MazeLevel.swift */; };
+		D84760A723C14AB200DF4825 /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A623C14AB200DF4825 /* LevelFactory.swift */; };
+		D84760A923C14AC500DF4825 /* LocalLevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A823C14AC500DF4825 /* LocalLevelFactory.swift */; };
+		D84760AB23C14B5A00DF4825 /* LocalLevelFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760AA23C14B5A00DF4825 /* LocalLevelFactoryTests.swift */; };
 		D88B19DF23B4254A008BB85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B19DE23B4254A008BB85D /* AppDelegate.swift */; };
 		D88B19E823B42552008BB85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D88B19E723B42552008BB85D /* Assets.xcassets */; };
 		D88B19EB23B42552008BB85D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88B19E923B42552008BB85D /* LaunchScreen.storyboard */; };
@@ -45,7 +62,8 @@
 		D8C2C11223C0EB8A00F8BE78 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */; };
 		D8C2C11423C0EDBA00F8BE78 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */; };
 		D8C2C11623C104C300F8BE78 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */; };
-		D8DA6AFD23B5112F0054EF0E /* PandaTtsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6AFC23B5112F0054EF0E /* PandaTtsWorker.swift */; };
+		D8C2C11923C10CF800F8BE78 /* IntroInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11823C10CF800F8BE78 /* IntroInteractor.swift */; };
+		D8DA6AFD23B5112F0054EF0E /* TtsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6AFC23B5112F0054EF0E /* TtsWorker.swift */; };
 		D8DA6AFF23B511740054EF0E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */; };
 		D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */; };
 		D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1809623BFE4A2003291D4 /* String+Extensions.swift */; };
@@ -68,6 +86,23 @@
 		9E71855914F0F04FF5B7B179 /* Pods-EscapeFromBlindnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscapeFromBlindnessTests.release.xcconfig"; path = "Target Support Files/Pods-EscapeFromBlindnessTests/Pods-EscapeFromBlindnessTests.release.xcconfig"; sourceTree = "<group>"; };
 		A94EA5CAC843321CF23D4471 /* Pods-EscapeFromBlindness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscapeFromBlindness.release.xcconfig"; path = "Target Support Files/Pods-EscapeFromBlindness/Pods-EscapeFromBlindness.release.xcconfig"; sourceTree = "<group>"; };
 		CC6B9E3AF32499B14C7AF4DC /* Pods-EscapeFromBlindnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscapeFromBlindnessTests.debug.xcconfig"; path = "Target Support Files/Pods-EscapeFromBlindnessTests/Pods-EscapeFromBlindnessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D83B70E523C4916D00516628 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		D83B70E823C4933B00516628 /* ClosedQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedQuestionViewController.swift; sourceTree = "<group>"; };
+		D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuestionViewController.swift; sourceTree = "<group>"; };
+		D83B70EC23C4936900516628 /* RotorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorViewController.swift; sourceTree = "<group>"; };
+		D83B70EE23C4938600516628 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D83B70F023C4938E00516628 /* MazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewController.swift; sourceTree = "<group>"; };
+		D8458ED923F9FAFE006FA087 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D847609623C146E800DF4825 /* GameFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlow.swift; sourceTree = "<group>"; };
+		D847609923C1490400DF4825 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		D847609B23C1491B00DF4825 /* ClosedQuestionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedQuestionLevel.swift; sourceTree = "<group>"; };
+		D847609D23C1494700DF4825 /* OpenQuestionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuestionLevel.swift; sourceTree = "<group>"; };
+		D847609F23C1499E00DF4825 /* RotorLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorLevel.swift; sourceTree = "<group>"; };
+		D84760A123C149F300DF4825 /* SearchLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLevel.swift; sourceTree = "<group>"; };
+		D84760A323C14A0900DF4825 /* MazeLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeLevel.swift; sourceTree = "<group>"; };
+		D84760A623C14AB200DF4825 /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
+		D84760A823C14AC500DF4825 /* LocalLevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLevelFactory.swift; sourceTree = "<group>"; };
+		D84760AA23C14B5A00DF4825 /* LocalLevelFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLevelFactoryTests.swift; sourceTree = "<group>"; };
 		D88B19DB23B4254A008BB85D /* EscapeFromBlindness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscapeFromBlindness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88B19DE23B4254A008BB85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D88B19E723B42552008BB85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +143,8 @@
 		D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
-		D8DA6AFC23B5112F0054EF0E /* PandaTtsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PandaTtsWorker.swift; sourceTree = "<group>"; };
+		D8C2C11823C10CF800F8BE78 /* IntroInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroInteractor.swift; sourceTree = "<group>"; };
+		D8DA6AFC23B5112F0054EF0E /* TtsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TtsWorker.swift; sourceTree = "<group>"; };
 		D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSoundModels.swift; sourceTree = "<group>"; };
 		D8F1809623BFE4A2003291D4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -157,6 +193,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D83B70E723C4930C00516628 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				D83B70E823C4933B00516628 /* ClosedQuestionViewController.swift */,
+				D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */,
+				D83B70EC23C4936900516628 /* RotorViewController.swift */,
+				D83B70EE23C4938600516628 /* SearchViewController.swift */,
+				D83B70F023C4938E00516628 /* MazeViewController.swift */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		D847609823C147F300DF4825 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D83B70E523C4916D00516628 /* Chapter.swift */,
+				D847609923C1490400DF4825 /* Level.swift */,
+				D847609B23C1491B00DF4825 /* ClosedQuestionLevel.swift */,
+				D847609F23C1499E00DF4825 /* RotorLevel.swift */,
+				D847609D23C1494700DF4825 /* OpenQuestionLevel.swift */,
+				D84760A123C149F300DF4825 /* SearchLevel.swift */,
+				D84760A323C14A0900DF4825 /* MazeLevel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D84760A523C14AA100DF4825 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				D84760A623C14AB200DF4825 /* LevelFactory.swift */,
+				D84760A823C14AC500DF4825 /* LocalLevelFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		D88B19D223B4254A008BB85D = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +251,7 @@
 		D88B19DD23B4254A008BB85D /* EscapeFromBlindness */ = {
 			isa = PBXGroup;
 			children = (
+				D847609823C147F300DF4825 /* Models */,
 				D8C2C0F423C0CE5500F8BE78 /* Protocols */,
 				D8F1809523BFE495003291D4 /* Extensions */,
 				D8DA6AF923B510EA0054EF0E /* Scenes */,
@@ -199,6 +271,7 @@
 				D88B1A6C23B4332A008BB85D /* GameFlowTests.swift */,
 				D88B1A9D23B43E64008BB85D /* Level Types */,
 				D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */,
+				D84760AA23C14B5A00DF4825 /* LocalLevelFactoryTests.swift */,
 			);
 			path = EscapeFromBlindnessTests;
 			sourceTree = "<group>";
@@ -226,11 +299,15 @@
 		D88B1A4123B42911008BB85D /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				D84760A523C14AA100DF4825 /* Factories */,
 				D88B19DE23B4254A008BB85D /* AppDelegate.swift */,
 				D88B1A4723B42BF8008BB85D /* Services */,
 				D88B1A4223B4291D008BB85D /* Coordinators */,
 				D88B1A4823B42DBD008BB85D /* UserDefaultKeys.swift */,
 				D8C2C10923C0E00500F8BE78 /* AccessibilityNotificationCenter.swift */,
+				D8C2C11823C10CF800F8BE78 /* IntroInteractor.swift */,
+				D847609623C146E800DF4825 /* GameFlow.swift */,
+				D8458ED923F9FAFE006FA087 /* NavigationController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -302,6 +379,7 @@
 		D8DA6AF923B510EA0054EF0E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D83B70E723C4930C00516628 /* Levels */,
 				D8C2C0EE23C0CDF400F8BE78 /* IntroViewController.swift */,
 				D8C2C0EF23C0CDF400F8BE78 /* IntroViewController.xib */,
 				D8C2C10D23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift */,
@@ -315,7 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */,
-				D8DA6AFC23B5112F0054EF0E /* PandaTtsWorker.swift */,
+				D8DA6AFC23B5112F0054EF0E /* TtsWorker.swift */,
 				D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */,
 			);
 			path = Sound;
@@ -537,22 +615,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				D88B1A4923B42DBD008BB85D /* UserDefaultKeys.swift in Sources */,
+				D83B70E923C4933B00516628 /* ClosedQuestionViewController.swift in Sources */,
+				D83B70F123C4938E00516628 /* MazeViewController.swift in Sources */,
 				D88B1A4523B4291D008BB85D /* AppCoordinator.swift in Sources */,
+				D847609723C146E800DF4825 /* GameFlow.swift in Sources */,
+				D8458EDA23F9FAFF006FA087 /* NavigationController.swift in Sources */,
 				D8C2C10A23C0E00500F8BE78 /* AccessibilityNotificationCenter.swift in Sources */,
 				D88B19DF23B4254A008BB85D /* AppDelegate.swift in Sources */,
+				D84760A023C1499E00DF4825 /* RotorLevel.swift in Sources */,
 				D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */,
+				D8C2C11923C10CF800F8BE78 /* IntroInteractor.swift in Sources */,
 				D8C2C0F623C0CE6C00F8BE78 /* StoryboardLoadable.swift in Sources */,
+				D83B70EF23C4938600516628 /* SearchViewController.swift in Sources */,
 				D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */,
 				D8C2C0F023C0CDF400F8BE78 /* IntroViewController.swift in Sources */,
+				D83B70EB23C4935200516628 /* OpenQuestionViewController.swift in Sources */,
+				D84760A923C14AC500DF4825 /* LocalLevelFactory.swift in Sources */,
+				D83B70ED23C4936900516628 /* RotorViewController.swift in Sources */,
+				D84760A723C14AB200DF4825 /* LevelFactory.swift in Sources */,
 				D88B1A4623B4291D008BB85D /* Coordinator.swift in Sources */,
 				D8F1809923BFE4D3003291D4 /* NSArray+Extensions.swift in Sources */,
 				D8C2C0F323C0CE3F00F8BE78 /* XibLoadable.swift in Sources */,
 				D8DA6AFF23B511740054EF0E /* SoundPlayer.swift in Sources */,
+				D847609C23C1491B00DF4825 /* ClosedQuestionLevel.swift in Sources */,
 				D8C2C11223C0EB8A00F8BE78 /* ChapterViewController.swift in Sources */,
 				D8C2C10E23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift in Sources */,
+				D84760A423C14A0900DF4825 /* MazeLevel.swift in Sources */,
+				D84760A223C149F300DF4825 /* SearchLevel.swift in Sources */,
 				D8C2C11423C0EDBA00F8BE78 /* UIFont+Extensions.swift in Sources */,
 				D8C2C0F823C0CE9800F8BE78 /* Coordinated.swift in Sources */,
-				D8DA6AFD23B5112F0054EF0E /* PandaTtsWorker.swift in Sources */,
+				D847609A23C1490400DF4825 /* Level.swift in Sources */,
+				D8DA6AFD23B5112F0054EF0E /* TtsWorker.swift in Sources */,
+				D847609E23C1494700DF4825 /* OpenQuestionLevel.swift in Sources */,
+				D83B70E623C4916D00516628 /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +666,7 @@
 				D88B1A7523B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift in Sources */,
 				D88B1A9823B43E1D008BB85D /* RotorLevelViewControllerTests.swift in Sources */,
 				D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */,
+				D84760AB23C14B5A00DF4825 /* LocalLevelFactoryTests.swift in Sources */,
 				D88B1A7323B4337A008BB85D /* ClosedQuestionLevelViewControllerTests.swift in Sources */,
 				D8C2C10823C0DEBD00F8BE78 /* AppCoordinatorSpy.swift in Sources */,
 			);

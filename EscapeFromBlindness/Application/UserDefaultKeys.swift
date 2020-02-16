@@ -9,5 +9,6 @@
 import Foundation
 
 enum UserDefaultsKeys: String {
+    case currentChapterIndex = "com.accessibility-toolbox.userdefaults.current-chapter-index"
     case currentLevelIndex = "com.accessibility-toolbox.userdefaults.current-level-index"
 }

@@ -12,17 +12,61 @@ protocol AppCoordinatorProtocol: class {
     func dismissActivateVoiceOverAlert()
     
     func presentIntroController()
-    func presentGameController()
+    func validateChapter()
+    func validate(_ answer: Level.Answer)
+    
+    func presentClosedQuestionController(_ level: Level)
+    func presentOpenQuestionController(_ level: Level)
+    func presentRotorQuestionController(_ level: Level)
+    func presentSearchQuestionController(_ level: Level)
+    func presentMazeQuestionController(_ level: Level)
 }
 
-extension AppCoordinator: AppCoordinatorProtocol {}
+extension AppCoordinator: AppCoordinatorProtocol {
+    func validateChapter() {
+        gameFlow.validateChapter()
+    }
+    
+    func validate(_ answer: String) {
+        gameFlow.validate(answer)
+    }
+}
 extension AppCoordinator: UINavigationControllerDelegate {}
+
+extension AppCoordinator: Router {
+    
+    func routeToChapter(_ chapter: Chapter) {
+        presentChapterController(chapter)
+    }
+    
+    func routeToLevel(_ level: Level) {
+        switch level {
+        case is ClosedQuestionLevel:
+            presentClosedQuestionController(level)
+        case is OpenQuestionLevel:
+            presentOpenQuestionController(level)
+        case is RotorLevel:
+            presentRotorQuestionController(level)
+        case is SearchLevel:
+            presentSearchQuestionController(level)
+        case is MazeLevel:
+            presentMazeQuestionController(level)
+        default:
+            break
+        }
+    }
+    
+    func routeToResults() {
+        print("routeToResults")
+    }
+    
+}
 
 class AppCoordinator: NSObject, Coordinator {
     
     // MARK: - Initialization
     private var window: UIWindow?
-    private let navigationController: UINavigationController = UINavigationController()
+    internal let navigationController = NavigationController()
     
     var lastNavigationControllerViewController: UIViewController? {
         return self.navigationController.viewControllers.last
@@ -35,9 +79,14 @@ class AppCoordinator: NSObject, Coordinator {
     }
     
     private let userDefaults: UserDefaults
+    private let gameFlow: GameFlowProtocol
     
-    init(userDefaults: UserDefaults = UserDefaults.standard) {
+    init(
+        userDefaults: UserDefaults = UserDefaults.standard,
+        gameFlow: GameFlowProtocol
+    ) {
         self.userDefaults = userDefaults
+        self.gameFlow = gameFlow
     }
     
     func start(window: UIWindow) {
@@ -51,24 +100,19 @@ class AppCoordinator: NSObject, Coordinator {
         self.window = window
         navigationController.delegate = self
         
+//        gameFlow.start()
         checkIfUserFirstStart()
     }
     
     private func checkIfUserFirstStart() {
         let currentLevelIndex = self.userDefaults.value(forKey: UserDefaultsKeys.currentLevelIndex.rawValue) as? Int ?? 0
         let currentChapter = getCurrentChapter(for: currentLevelIndex)
-        
+
         if currentChapter == 0 {
             presentIntroController()
         } else {
             presentChapterController(currentChapter)
         }
-    }
-    
-    private func getCurrentChapter(for currentLevelIndex: Int) -> Int {
-        guard currentLevelIndex != 0 else { return 0 }
-        let levelsPerChapter = 5
-        return ((currentLevelIndex - 1) / levelsPerChapter) + 1
     }
     
     // MARK: - Intro
@@ -77,7 +121,10 @@ class AppCoordinator: NSObject, Coordinator {
     func presentIntroController() {
         isPresentIntroControllerCalled = true
         let viewController = IntroViewController.fromXib()
-        self.navigationController.pushViewController(viewController, animated: true)
+        viewController.coordinator = self
+        
+        navigationController.isNavigationBarHidden = true
+        navigationController.viewControllers = [viewController]
     }
     
     // MARK: - Activate VoiceOver Alert
@@ -85,9 +132,10 @@ class AppCoordinator: NSObject, Coordinator {
     
     func showActivateVoiceOverAlert() {
         self.isVoiceOverAlertActive = true
-        let activateVoiceAlertViewController = VoiceOverAlertViewController.fromXib()
+        let viewController = VoiceOverAlertViewController.fromXib()
+        viewController.coordinator = self
         self.lastNavigationControllerViewController?.present(
-            activateVoiceAlertViewController,
+            viewController,
             animated: false,
             completion: nil
         )
@@ -103,18 +151,67 @@ class AppCoordinator: NSObject, Coordinator {
     // MARK: - Chapter
     internal var isPresentChapterControllerCalled = false
     
-    func presentChapterController(_ chapter: Int) {
+    func presentChapterController(_ chapter: Chapter) {
         isPresentChapterControllerCalled = true
         let viewController = ChapterViewController(chapter: chapter)
-        self.navigationController.pushViewController(viewController, animated: true)
+        viewController.coordinator = self
+        
+        navigationController.isNavigationBarHidden = true
+        navigationController.viewControllers = [viewController]
     }
     
     // MARK: - Game
-    func presentGameController() {
-        let viewController = UIViewController()
-        viewController.view.frame = UIScreen.main.bounds
-        viewController.view.backgroundColor = .green
-        self.navigationController.pushViewController(viewController, animated: true)
+    func presentClosedQuestionController(_ level: Level) {
+        guard let level = level as? ClosedQuestionLevel else { return }
+        
+        let viewController = ClosedQuestionViewController(level: level)
+        viewController.coordinator = self
+        
+        resetNavigationStack(viewController)
+    }
+    
+    func presentOpenQuestionController(_ level: Level) {
+        guard let level = level as? OpenQuestionLevel else { return }
+        
+        let viewController = OpenQuestionViewController(level: level)
+        viewController.coordinator = self
+        
+        resetNavigationStack(viewController)
+    }
+    
+    func presentRotorQuestionController(_ level: Level) {
+        guard let level = level as? RotorLevel else { return }
+        
+        let viewController = RotorViewController(level: level)
+        viewController.coordinator = self
+        
+        resetNavigationStack(viewController)
+    }
+    
+    func presentSearchQuestionController(_ level: Level) {
+        guard let level = level as? SearchLevel else { return }
+        
+        let viewController = SearchViewController(level: level)
+        viewController.coordinator = self
+        
+        resetNavigationStack(viewController)
+    }
+    
+    func presentMazeQuestionController(_ level: Level) {
+        guard let level = level as? MazeLevel else { return }
+        
+        let viewController = MazeViewController(level: level)
+        viewController.coordinator = self
+        
+        resetNavigationStack(viewController)
+    }
+    
+    // MARK: - Private Methods
+    private func resetNavigationStack(_ viewController: UIViewController) {
+        navigationController.isNavigationBarHidden = false
+        let levelIndex = gameFlow.getCurrentLevelIndex()
+        viewController.navigationItem.title = "Level \(levelIndex + 1)"
+        navigationController.viewControllers = [viewController]
     }
     
     // MARK: - Actions

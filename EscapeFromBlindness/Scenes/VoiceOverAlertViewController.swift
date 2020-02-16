@@ -18,6 +18,7 @@ class VoiceOverAlertViewController: UIViewController, Coordinated {
     // MARK: - View Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.continueButton.setTitle("AAA", for: .normal)
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(voiceOverStatusChanged),
