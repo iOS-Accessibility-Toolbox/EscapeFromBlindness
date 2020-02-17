@@ -42,7 +42,7 @@
 		D88B1A8123B436FB008BB85D /* Luciole-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D88B1A7B23B436FA008BB85D /* Luciole-Regular.ttf */; };
 		D88B1A8223B436FB008BB85D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D88B1A7C23B436FB008BB85D /* Montserrat-SemiBold.ttf */; };
 		D88B1A9323B43D9A008BB85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D88B1A9523B43D9A008BB85D /* Localizable.strings */; };
-		D88B1A9823B43E1D008BB85D /* RotorLevelViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9723B43E1D008BB85D /* RotorLevelViewControllerTests.swift */; };
+		D88B1A9823B43E1D008BB85D /* RotorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */; };
 		D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */; };
 		D88B1A9C23B43E58008BB85D /* MazeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */; };
 		D8C2C0EB23C0CD7700F8BE78 /* IntroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */; };
@@ -123,7 +123,7 @@
 		D88B1A7C23B436FB008BB85D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		D88B1A9423B43D9A008BB85D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D88B1A9623B43D9D008BB85D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D88B1A9723B43E1D008BB85D /* RotorLevelViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorLevelViewControllerTests.swift; sourceTree = "<group>"; };
+		D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorViewControllerTests.swift; sourceTree = "<group>"; };
 		D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLevelViewControllerTests.swift; sourceTree = "<group>"; };
 		D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewControllerTests.swift; sourceTree = "<group>"; };
 		D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewControllerTests.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				D88B1A7223B4337A008BB85D /* ClosedQuestionLevelViewControllerTests.swift */,
-				D88B1A9723B43E1D008BB85D /* RotorLevelViewControllerTests.swift */,
+				D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */,
 				D88B1A7423B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift */,
 				D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */,
 				D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */,
@@ -664,7 +664,7 @@
 				D8C2C10C23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift in Sources */,
 				D8C2C11023C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift in Sources */,
 				D88B1A7523B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift in Sources */,
-				D88B1A9823B43E1D008BB85D /* RotorLevelViewControllerTests.swift in Sources */,
+				D88B1A9823B43E1D008BB85D /* RotorViewControllerTests.swift in Sources */,
 				D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */,
 				D84760AB23C14B5A00DF4825 /* LocalLevelFactoryTests.swift in Sources */,
 				D88B1A7323B4337A008BB85D /* ClosedQuestionLevelViewControllerTests.swift in Sources */,

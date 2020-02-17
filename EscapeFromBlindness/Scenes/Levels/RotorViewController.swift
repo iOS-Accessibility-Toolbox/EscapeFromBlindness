@@ -7,6 +7,10 @@ import UIKit
 
 class RotorViewController: UIViewController, Coordinated {
     var coordinator: AppCoordinatorProtocol?
+    
+    // MARK: - Outlets
+    var clueViews: [UIView] = []
+    var lockedDoorView = UIView()
 
     // MARK: - Initialization
     private var level: RotorLevel!
@@ -19,13 +23,51 @@ class RotorViewController: UIViewController, Coordinated {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .yellow
         
-        self.accessibilityCustomRotors = makeAccessibilityCustomRotors()
+        setupClueViews()
+        setupLockedDoorView()
     }
     
-    private func makeAccessibilityCustomRotors() -> [UIAccessibilityCustomRotor] {
-        return []
+    private func setupClueViews() {
+        
+        for i in 0..<level.clues.count {
+            let clue = level.clues[i]
+            
+            let frame = CGRect(x: 100 * i, y: 200 * i, width: 100, height: 100)
+            let clueView = UIView(frame: frame)
+            clueView.isAccessibilityElement = true
+            clueView.accessibilityLabel = clue
+            self.clueViews.append(clueView)
+            self.view.addSubview(clueView)
+        }
+    }
+    
+    private func setupLockedDoorView() {
+        let customRotors = makeAccessibilityCustomRotors(for: level.answers)
+        
+        let frame = CGRect(x: UIScreen.main.bounds.width/2 - 100/2, y: UIScreen.main.bounds.height - 100 - 60, width: 100, height: 100)
+        self.lockedDoorView.frame = frame
+        self.lockedDoorView.isAccessibilityElement = true
+        self.lockedDoorView.accessibilityLabel = "A door stands in front of you... It seems to be locked... I need to find the code..."
+        self.lockedDoorView.accessibilityCustomRotors = customRotors
+        self.view.addSubview(self.lockedDoorView)
+    }
+    
+    private func makeAccessibilityCustomRotors(for answers: [String]) -> [UIAccessibilityCustomRotor] {
+        var customRotors: [UIAccessibilityCustomRotor] = []
+        
+        for i in 0..<answers.count {
+            let answer = answers[i]
+            
+            let customRotor = UIAccessibilityCustomRotor.init(name: answer) { (predicate) -> UIAccessibilityCustomRotorItemResult? in
+                self.coordinator?.validate(answer)
+                return nil
+            }
+            
+            customRotors.append(customRotor)
+        }
+        
+        return customRotors
     }
     
 }

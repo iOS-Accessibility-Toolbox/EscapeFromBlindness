@@ -147,7 +147,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func test_RotorQuestionVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
-        let level = RotorLevel(answers: [], validAnswers: [])
+        let level = RotorLevel(clues: [], answers: [], validAnswers: [])
         
         sut.presentRotorQuestionController(level)
         

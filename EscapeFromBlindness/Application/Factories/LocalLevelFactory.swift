@@ -46,22 +46,27 @@ class LocalLevelFactory: LevelFactory {
                 levels: [
                     // 5 Rotor Levels
                     RotorLevel(
+                        clues: ["It is written 3 on the floor...", "Here I can see a 9 or maybe 5?", "Its written I on the wall", "I just walked on some circular tile..."],
                         answers: ["3051", "6063", "3378"],
                         validAnswers: ["3051"]
                     ),
                     RotorLevel(
+                        clues: ["There is nothing interesting in this room..."],
                         answers: ["1", "2", "3"],
                         validAnswers: ["1"]
                     ),
                     RotorLevel(
+                        clues: ["There is nothing interesting in this room..."],
                         answers: ["4", "5", "6"],
                         validAnswers: ["4"]
                     ),
                     RotorLevel(
+                        clues: ["There is nothing interesting in this room..."],
                         answers: ["7", "8", "9"],
                         validAnswers: ["7"]
                     ),
                     RotorLevel(
+                        clues: ["There is nothing interesting in this room..."],
                         answers: ["10", "11", "12"],
                         validAnswers: ["10"]
                     )
