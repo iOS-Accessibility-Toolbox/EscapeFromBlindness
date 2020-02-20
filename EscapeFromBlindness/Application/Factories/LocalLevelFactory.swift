@@ -78,24 +78,24 @@ class LocalLevelFactory: LevelFactory {
                 levels: [
                     // 5 Open Questions
                     OpenQuestionLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
+                        question: "What is white's Henry IV horse's color?",
+                        validAnswers: ["white"]
                     ),
                     OpenQuestionLevel(
-                        answers: ["4", "5", "6"],
-                        validAnswers: ["4"]
+                        question: "What is black's Henry IV horse's color?",
+                        validAnswers: ["black"]
                     ),
                     OpenQuestionLevel(
-                        answers: ["7", "8", "9"],
-                        validAnswers: ["7"]
+                        question: "What is brown's Henry IV horse's color?",
+                        validAnswers: ["brown"]
                     ),
                     OpenQuestionLevel(
-                        answers: ["10", "11", "12"],
-                        validAnswers: ["10"]
+                        question: "What is white's Henry IV horse's color?",
+                        validAnswers: ["white"]
                     ),
                     OpenQuestionLevel(
-                        answers: ["10", "11", "12"],
-                        validAnswers: ["10"]
+                        question: "What is black's Henry IV horse's color?",
+                        validAnswers: ["black"]
                     )
                 ]
             ),
@@ -105,25 +105,59 @@ class LocalLevelFactory: LevelFactory {
                 levels: [
                     // 5 Search Levels
                     SearchLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
+                        levelDescription: "There is a level system in front of of you...",
+                        levelActions: [
+                            (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
+                            (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
+                            (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
+                        ],
+                        validActions: ["turn it left", "let it in the center", "turn it right"]
+                    )!,
                     SearchLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
+                        levelDescription: "There is a level system in front of of you...",
+                        levelActions: [
+                            (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
+                            (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
+                            (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
+                        ],
+                        validActions: ["turn it left", "let it in the center", "turn it right"]
+                    )!,
                     SearchLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
+                        levelDescription: "There is a level system in front of of you...",
+                        levelActions: [
+                            (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
+                            (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
+                            (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
+                        ],
+                        validActions: ["turn it left", "let it in the center", "turn it right"]
+                    )!,
                     SearchLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
+                        levelDescription: "There is a level system in front of of you...",
+                        levelActions: [
+                            (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
+                            (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
+                            (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
+                        ],
+                        validActions: ["turn it left", "let it in the center", "turn it right"]
+                    )!,
                     SearchLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    )
+                        levelDescription: "There is a level system in front of of you...",
+                        levelActions: [
+                            (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
+                            (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
+                            (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
+                        ],
+                        validActions: ["turn it left", "let it in the center", "turn it right"]
+                    )!,
+                    SearchLevel(
+                        levelDescription: "There is a level system in front of of you...",
+                        levelActions: [
+                            (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
+                            (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
+                            (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
+                        ],
+                        validActions: ["turn it left", "let it in the center", "turn it right"]
+                    )!,
                 ]
             ),
             

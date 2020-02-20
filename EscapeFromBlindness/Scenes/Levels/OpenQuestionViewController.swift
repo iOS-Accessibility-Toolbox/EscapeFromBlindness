@@ -8,6 +8,19 @@ import UIKit
 class OpenQuestionViewController: UIViewController, Coordinated {
     var coordinator: AppCoordinatorProtocol?
     
+    var mainLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+    var textField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .none
+        textField.textColor = .white
+        return textField
+    }()
+    
     // MARK: - Initialization
     private var level: OpenQuestionLevel!
     
@@ -19,7 +32,46 @@ class OpenQuestionViewController: UIViewController, Coordinated {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .orange
+        setupViews()
+        self.mainLabel.text = level.question
+        self.textField.delegate = self
+    }
+    
+    private func setupViews() {
+        self.view.addSubview(self.mainLabel)
+        self.view.addSubview(self.textField)
+        
+        self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.mainLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.mainLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
+        
+        self.textField.translatesAutoresizingMaskIntoConstraints = false
+        self.textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.textField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
+        self.textField.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50).isActive = true
     }
 
+}
+
+extension OpenQuestionViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            let sanitizedAnswer = sanitizeAnswer(text)
+            coordinator?.validate(sanitizedAnswer)
+        }
+    }
+    
+    private func sanitizeAnswer(_ answer: String) -> String {
+        return answer.folding(options: .diacriticInsensitive, locale: .current).lowercased()
+    }
+    
 }

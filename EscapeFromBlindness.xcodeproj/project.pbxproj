@@ -68,6 +68,7 @@
 		D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */; };
 		D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1809623BFE4A2003291D4 /* String+Extensions.swift */; };
 		D8F1809923BFE4D3003291D4 /* NSArray+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */; };
+		D8F27A7A23FDF2D000C09E1B /* RandomFramesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F27A7923FDF2D000C09E1B /* RandomFramesGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		D8F1809623BFE4A2003291D4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+Extensions.swift"; sourceTree = "<group>"; };
 		D8F1809A23BFE85E003291D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8F27A7923FDF2D000C09E1B /* RandomFramesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFramesGenerator.swift; sourceTree = "<group>"; };
 		EDA440EB54F6260A6C2B8221 /* Pods_EscapeFromBlindnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscapeFromBlindnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -308,6 +310,7 @@
 				D8C2C11823C10CF800F8BE78 /* IntroInteractor.swift */,
 				D847609623C146E800DF4825 /* GameFlow.swift */,
 				D8458ED923F9FAFE006FA087 /* NavigationController.swift */,
+				D8F27A7923FDF2D000C09E1B /* RandomFramesGenerator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				D8458EDA23F9FAFF006FA087 /* NavigationController.swift in Sources */,
 				D8C2C10A23C0E00500F8BE78 /* AccessibilityNotificationCenter.swift in Sources */,
 				D88B19DF23B4254A008BB85D /* AppDelegate.swift in Sources */,
+				D8F27A7A23FDF2D000C09E1B /* RandomFramesGenerator.swift in Sources */,
 				D84760A023C1499E00DF4825 /* RotorLevel.swift in Sources */,
 				D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */,
 				D8C2C11923C10CF800F8BE78 /* IntroInteractor.swift in Sources */,

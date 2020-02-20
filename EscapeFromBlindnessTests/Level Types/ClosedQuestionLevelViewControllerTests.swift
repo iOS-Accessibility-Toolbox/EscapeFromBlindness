@@ -44,7 +44,7 @@ class ClosedQuestionLevelViewControllerTests: XCTestCase {
     func test_viewDidLoad_withOneQuestion_shouldDisplayQuestion() {
         let level = ClosedQuestionLevel(
             question: "Q1",
-            answers: ["A1,A2"],
+            answers: ["A1", "A2"],
             validAnswers: ["A1"]
         )
         sut = ClosedQuestionViewController(level: level)

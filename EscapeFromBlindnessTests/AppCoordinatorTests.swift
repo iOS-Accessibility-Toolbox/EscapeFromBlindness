@@ -139,7 +139,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func test_OpenQuestionLevelVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
-        let level = OpenQuestionLevel(answers: [], validAnswers: [])
+        let level = OpenQuestionLevel(question: "", validAnswers: [])
         
         sut.presentOpenQuestionController(level)
         
@@ -155,7 +155,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func test_SearchQuestionVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
-        let level = SearchLevel(answers: [], validAnswers: [])
+        let level = SearchLevel(levelDescription: "", levelActions: [], validActions: [])!
         
         sut.presentSearchQuestionController(level)
         

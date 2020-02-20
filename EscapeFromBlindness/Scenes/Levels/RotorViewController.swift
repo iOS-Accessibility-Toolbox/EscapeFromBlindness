@@ -29,11 +29,12 @@ class RotorViewController: UIViewController, Coordinated {
     }
     
     private func setupClueViews() {
-        
-        for i in 0..<level.clues.count {
+        let frameCount = level.clues.count
+        let frames = RandomFramesGenerator.generateFrames(count: frameCount)
+        for i in 0..<frameCount {
             let clue = level.clues[i]
             
-            let frame = CGRect(x: 100 * i, y: 200 * i, width: 100, height: 100)
+            let frame = frames[i]
             let clueView = UIView(frame: frame)
             clueView.isAccessibilityElement = true
             clueView.accessibilityLabel = clue
@@ -48,7 +49,7 @@ class RotorViewController: UIViewController, Coordinated {
         let frame = CGRect(x: UIScreen.main.bounds.width/2 - 100/2, y: UIScreen.main.bounds.height - 100 - 60, width: 100, height: 100)
         self.lockedDoorView.frame = frame
         self.lockedDoorView.isAccessibilityElement = true
-        self.lockedDoorView.accessibilityLabel = "A door stands in front of you... It seems to be locked... I need to find the code..."
+        self.lockedDoorView.accessibilityLabel = "A door stands in front of me... It seems to be locked... I need to find the code..."
         self.lockedDoorView.accessibilityCustomRotors = customRotors
         self.view.addSubview(self.lockedDoorView)
     }
