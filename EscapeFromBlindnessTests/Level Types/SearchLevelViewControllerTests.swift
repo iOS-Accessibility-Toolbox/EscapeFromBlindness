@@ -44,14 +44,6 @@ class SearchLevelViewControllerTests: XCTestCase {
     }
     
     // MARK: Tests
-//    levelDescription: "There is a level system in front of of you...",
-//    levelActions: [
-//        (actions: ["There is a lever on your left"], results: ["turn it left", "let it in the center", "turn it right"]),
-//        (actions: ["There is a lever in the center of the place"], results: ["turn it left", "let it in the center", "turn it right"]),
-//        (actions: ["There is a lever on your right"], results: ["turn it left", "let it in the center", "turn it right"])
-//    ],
-//    validActions: ["turn it left", "let it in the center", "turn it right"]
-    
     func test_whenViewLoads_shouldDisplayLevelDescription() {
         let levelDescription = "There is a level system in front of of you..."
         let level = SearchLevel(
