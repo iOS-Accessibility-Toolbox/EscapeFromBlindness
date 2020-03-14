@@ -45,7 +45,7 @@ class SearchLevelViewControllerTests: XCTestCase {
     
     // MARK: Tests
     func test_whenViewLoads_shouldDisplayLevelDescription() {
-        let levelDescription = "There is a level system in front of of you..."
+        let levelDescription = "There is a level system in front of you..."
         let level = SearchLevel(
             levelDescription: levelDescription,
             levelActions: [
@@ -63,7 +63,7 @@ class SearchLevelViewControllerTests: XCTestCase {
     }
     
     func test_whenViewLoads_shouldDisplayActionsDescriptions() {
-        let levelDescription = "There is a level system in front of of you..."
+        let levelDescription = "There is a level system in front of you..."
         let level = SearchLevel(
             levelDescription: levelDescription,
             levelActions: [
@@ -74,16 +74,16 @@ class SearchLevelViewControllerTests: XCTestCase {
             validActions: ["turn it left", "let it in the center", "turn it right"]
         )!
         sut = SearchViewController(level: level)
-        
+
         loadView()
-        
+
         XCTAssertEqual(sut.actionViews[0].accessibilityLabel, "D1")
         XCTAssertEqual(sut.actionViews[1].accessibilityLabel, "D2")
         XCTAssertEqual(sut.actionViews[2].accessibilityLabel, "D3")
     }
-    
+
     func test_whenViewLoads_shouldDisplayActions() {
-        let levelDescription = "There is a level system in front of of you..."
+        let levelDescription = "There is a level system in front of you..."
         let level = SearchLevel(
             levelDescription: levelDescription,
             levelActions: [
@@ -109,9 +109,29 @@ class SearchLevelViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.actionViews[2].accessibilityCustomActions![1].name, "C2")
         XCTAssertEqual(sut.actionViews[2].accessibilityCustomActions![2].name, "C3")
     }
-    
-    func test_whenViewLoads_shouldValidateActionsResults() {
-        let levelDescription = "There is a level system in front of of you..."
+
+    func test_whenActionIsPerformed_shouldValidateActionsResults() {
+        let levelDescription = "There is a level system in front of you..."
+        let level = SearchLevel(
+            levelDescription: levelDescription,
+            levelActions: [
+                (description: "D1", actions: ["A1", "A2", "A3"], results: ["AR1", "AR2", "AR3"]),
+                (description: "D2", actions: ["B1", "B2", "B3"], results: ["BR1", "BR2", "BR3"]),
+                (description: "D3", actions: ["C1", "C2", "C3"], results: ["CR1", "CR2", "CR3"])
+            ],
+            validActions: ["A1", "B2", "C3"]
+        )!
+        sut = SearchViewController(level: level)
+        loadView()
+
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "1_1_B2", name: "B2", target: nil, selector: #selector(stubSelector)))
+
+        XCTAssertEqual(accessibilityNotificationCenterSpy.notification, .announcement)
+        XCTAssertEqual(accessibilityNotificationCenterSpy.argument as! String, "BR2")
+    }
+
+    func test_shouldNotValidate_AfterFourNonDistinctActions() {
+        let levelDescription = "There is a level system in front of you..."
         let level = SearchLevel(
             levelDescription: levelDescription,
             levelActions: [
@@ -123,12 +143,56 @@ class SearchLevelViewControllerTests: XCTestCase {
         )!
         sut = SearchViewController(level: level)
         loadView()
-        
-        let customAction = UIAccessibilityCustomAction(name: "B2", target: nil, selector: #selector(stubSelector))
-        _ = sut.performAction(action: customAction)
-        
-        XCTAssertEqual(accessibilityNotificationCenterSpy.notification, .announcement)
-        XCTAssertEqual(accessibilityNotificationCenterSpy.argument as! String, "BR2")
+
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "1_1_B2", name: "B2", target: nil, selector: #selector(stubSelector)))
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "1_1_B2", name: "B2", target: nil, selector: #selector(stubSelector)))
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "2_1_C2", name: "C2", target: nil, selector: #selector(stubSelector)))
+
+        XCTAssertNil(coordinator.validateAnswers)
+    }
+
+    func test_shouldValidate_AfterFourDistinctActionsInCorrectOrder() {
+        let levelDescription = "There is a level system in front of you..."
+        let level = SearchLevel(
+            levelDescription: levelDescription,
+            levelActions: [
+                (description: "D1", actions: ["A1", "A2", "A3"], results: ["AR1", "AR2", "AR3"]),
+                (description: "D2", actions: ["B1", "B2", "B3"], results: ["BR1", "BR2", "BR3"]),
+                (description: "D3", actions: ["C1", "C2", "C3"], results: ["CR1", "CR2", "CR3"])
+            ],
+            validActions: ["A1", "B2", "C3"]
+        )!
+        sut = SearchViewController(level: level)
+        sut.coordinator = coordinator
+        loadView()
+
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "0_1_A2", name: "A2", target: nil, selector: #selector(stubSelector)))
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "1_1_B2", name: "B2", target: nil, selector: #selector(stubSelector)))
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "2_1_C2", name: "C2", target: nil, selector: #selector(stubSelector)))
+
+        XCTAssertEqual(coordinator.validateAnswers, ["A2", "B2", "C2"])
+    }
+
+    func test_shouldValidateOrderedActions_AfterFourDistinctActionsInIncorrectOrder() {
+        let levelDescription = "There is a level system in front of you..."
+        let level = SearchLevel(
+            levelDescription: levelDescription,
+            levelActions: [
+                (description: "D1", actions: ["A1", "A2", "A3"], results: ["AR1", "AR2", "AR3"]),
+                (description: "D2", actions: ["B1", "B2", "B3"], results: ["BR1", "BR2", "BR3"]),
+                (description: "D3", actions: ["C1", "C2", "C3"], results: ["CR1", "CR2", "CR3"])
+            ],
+            validActions: ["A1", "B2", "C3"]
+        )!
+        sut = SearchViewController(level: level)
+        sut.coordinator = coordinator
+        loadView()
+
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "2_1_C2", name: "C2", target: nil, selector: #selector(stubSelector)))
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "0_1_A2", name: "A2", target: nil, selector: #selector(stubSelector)))
+        _ = sut.performAction(action: SearchAccessibilityCustomAction(uuid: "1_1_B2", name: "B2", target: nil, selector: #selector(stubSelector)))
+
+        XCTAssertEqual(coordinator.validateAnswers, ["A2", "B2", "C2"])
     }
     
     @objc private func stubSelector() {}

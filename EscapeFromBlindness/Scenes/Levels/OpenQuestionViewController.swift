@@ -18,6 +18,7 @@ class OpenQuestionViewController: UIViewController, Coordinated {
         let textField = UITextField()
         textField.borderStyle = .none
         textField.textColor = .white
+        textField.returnKeyType = .done
         return textField
     }()
     
@@ -43,12 +44,14 @@ class OpenQuestionViewController: UIViewController, Coordinated {
         
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.mainLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.mainLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.mainLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
         
         self.textField.translatesAutoresizingMaskIntoConstraints = false
         self.textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.textField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
-        self.textField.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50).isActive = true
+        self.textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+        self.textField.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 60).isActive = true
+        self.textField.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -350).isActive = true
     }
 
 }
@@ -60,13 +63,14 @@ extension OpenQuestionViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textField.resignFirstResponder()
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let text = textField.text {
             let sanitizedAnswer = sanitizeAnswer(text)
-            coordinator?.validate(sanitizedAnswer)
+            coordinator?.validate([sanitizedAnswer])
         }
     }
     

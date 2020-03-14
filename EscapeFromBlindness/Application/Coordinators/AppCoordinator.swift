@@ -11,15 +11,17 @@ protocol AppCoordinatorProtocol: class {
     func showActivateVoiceOverAlert()
     func dismissActivateVoiceOverAlert()
     
-    func presentIntroController()
+    func presentIntroController(_ scenario: IntroViewController.Scenario)
     func validateChapter()
-    func validate(_ answer: Level.Answer)
+    func validate(_ answers: [Level.Answer])
     
     func presentClosedQuestionController(_ level: Level)
     func presentOpenQuestionController(_ level: Level)
     func presentRotorQuestionController(_ level: Level)
     func presentSearchQuestionController(_ level: Level)
     func presentMazeQuestionController(_ level: Level)
+    
+    func replay()
 }
 
 extension AppCoordinator: AppCoordinatorProtocol {
@@ -27,8 +29,8 @@ extension AppCoordinator: AppCoordinatorProtocol {
         gameFlow.validateChapter()
     }
     
-    func validate(_ answer: String) {
-        gameFlow.validate(answer)
+    func validate(_ answers: [String]) {
+        gameFlow.validate(answers)
     }
 }
 extension AppCoordinator: UINavigationControllerDelegate {}
@@ -65,6 +67,7 @@ extension AppCoordinator: Router {
     
     func routeToResults() {
         print("routeToResults")
+        self.presentIntroController(.gameEnd)
     }
     
 }
@@ -114,7 +117,7 @@ class AppCoordinator: NSObject, Coordinator {
         let currentChapter = gameFlow.getCurrentChapterIndex()
 
         if currentChapter == 0 {
-            presentIntroController()
+            presentIntroController(.intro)
         } else {
             gameFlow.start()
         }
@@ -123,9 +126,10 @@ class AppCoordinator: NSObject, Coordinator {
     // MARK: - Intro
     internal var isPresentIntroControllerCalled = false
     
-    func presentIntroController() {
+    func presentIntroController(_ scenario: IntroViewController.Scenario) {
         isPresentIntroControllerCalled = true
         let viewController = IntroViewController.fromXib()
+        viewController.scenario = scenario
         viewController.coordinator = self
         
         navigationController.isNavigationBarHidden = true
@@ -209,6 +213,16 @@ class AppCoordinator: NSObject, Coordinator {
         viewController.coordinator = self
         
         resetNavigationStack(viewController)
+    }
+    
+    // MARK: - Replay
+    func replay() {
+        guard let window = window else { return }
+        
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.currentChapterIndex.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+        self.gameFlow.restart()
+        self.start(window: window)
     }
     
     // MARK: - Private Methods

@@ -61,7 +61,7 @@ class RotorViewController: UIViewController, Coordinated {
             let answer = answers[i]
             
             let customRotor = UIAccessibilityCustomRotor.init(name: answer) { (predicate) -> UIAccessibilityCustomRotorItemResult? in
-                self.coordinator?.validate(answer)
+                self.coordinator?.validate([answer])
                 return nil
             }
             

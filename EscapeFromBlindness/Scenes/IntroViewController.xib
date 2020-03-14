@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroViewController" customModule="EscapeFromBlindness" customModuleProvider="target">
             <connections>
                 <outlet property="instructionsButton" destination="v8J-dT-iab" id="RZl-fD-aNJ"/>
+                <outlet property="replayButton" destination="e7c-g9-YCz" id="nGf-Gd-yvI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,6 +25,9 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="v8J-dT-iab">
                             <rect key="frame" x="40.5" y="0.0" width="198" height="200"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES"/>
+                            </accessibility>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="tL7-lW-Qjt"/>
                             </constraints>
@@ -41,6 +45,15 @@ Escape From Blindness !</string>
                                 <constraint firstAttribute="width" constant="200" id="Mub-Pg-p8m"/>
                             </constraints>
                         </imageView>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7c-g9-YCz">
+                            <rect key="frame" x="66.5" y="430" width="146" height="0.0"/>
+                            <state key="normal" title="Touch to play again...">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onReplayButtonTouched:" destination="-1" eventType="touchUpInside" id="A8s-iw-BIp"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </stackView>
             </subviews>

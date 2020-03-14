@@ -1,7 +1,4 @@
 //
-//  IntroViewController.swift
-//  EscapeFromBlindness
-//
 //  Created by Michael Martinez on 04/01/2020.
 //  Copyright © 2020 michael-martinez. All rights reserved.
 //
@@ -12,7 +9,14 @@ extension IntroViewController: XibLoadable {}
 
 class IntroViewController: UIViewController, Coordinated {
     var coordinator: AppCoordinatorProtocol?
-    var interactor: IntroInteractorProtocol? = IntroInteractor()
+    
+    enum Scenario {
+        case intro
+        case gameEnd
+    }
+    var scenario: Scenario!
+    
+    var interactor: InstructionsInteractorProtocol? = InstructionsInteractor()
     private var instructions: [String] = []
     private var currentInstructionIndex = 0
     private var currentInstruction: String? {
@@ -26,11 +30,14 @@ class IntroViewController: UIViewController, Coordinated {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let instructions = interactor?.fetchInstructions() else {
+        guard let instructions = scenario == .intro ? interactor?.fetchIntroInstructions() : interactor?.fetchGameEndInstructions() else {
             return
         }
         
         self.instructions = instructions
+        if let firstInstruction = instructions.first {
+            self.replayButton.setTitle(firstInstruction, for: .normal)
+        }
         
         EscapeFromBlindnessAccessibility.shared.post(
             notification: .layoutChanged,
@@ -38,6 +45,11 @@ class IntroViewController: UIViewController, Coordinated {
         )
         
         startInstructionsUpdateTimer()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        EscapeFromBlindnessAccessibility.shared.post(notification: .layoutChanged, argument: self.instructionsButton)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,12 +75,31 @@ class IntroViewController: UIViewController, Coordinated {
         if let nextInstruction = nextInstruction {
             setInstructionsText(nextInstruction)
         } else {
-            coordinator?.validateChapter()//.presentChapterController(1)
+            timer?.invalidate()
+            if self.scenario == .intro {
+                coordinator?.validateChapter()
+            } else {
+                self.replayButton.isHidden = false
+            }
         }
     }
     
+    @IBOutlet weak var replayButton: UIButton!
+    @IBAction func onReplayButtonTouched(_ sender: Any) {
+        coordinator?.replay()
+    }
+    
     private func setInstructionsText(_ text: String) {
-        self.instructionsButton.setTitle(text, for: .normal)
+        let duration = 0.5
+        UIView.animate(withDuration: duration, animations: {
+            self.instructionsButton.alpha = 0
+        }, completion: { _ in
+            self.instructionsButton.setTitle(text, for: .normal)
+            UIView.animate(withDuration: duration) {
+                self.instructionsButton.alpha = 1
+            }
+        })
+        
     }
 
 }

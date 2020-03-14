@@ -67,7 +67,7 @@ class OpenQuestionLevelViewControllerTests: XCTestCase {
         sut.textField.text = "A2é"
         sut.textField.endEditing(false)
         
-        XCTAssertEqual(coordinator?.validateAnswer, "a2e")
+        XCTAssertEqual(coordinator?.validateAnswers, ["a2e"])
     }
     
 }

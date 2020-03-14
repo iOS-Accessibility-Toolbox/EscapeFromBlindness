@@ -9,7 +9,7 @@ struct RandomFramesGenerator {
     static func generateFrames(count: Int) -> [CGRect] {
         var frames: [CGRect] = []
         for i in 0..<count {
-            let frame = CGRect(x: 100 * i, y: 200 * i, width: 100, height: 100)
+            let frame = CGRect(x: 80 * i, y: 140 + 120 * i, width: 80, height: 80)
             frames.append(frame)
         }
         return frames

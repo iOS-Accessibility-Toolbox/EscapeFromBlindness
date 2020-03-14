@@ -11,14 +11,19 @@ import UIKit
 
 class AppCoordinatorSpy: AppCoordinatorProtocol {
     var startCalled = false
+    var replayCalled = false
     var showActivateVoiceOverAlertCalled = false
     var dismissActivateVoiceOverAlertCalled = false
     
-    var presentIntroControllerCalled = false
+    var presentIntroControllerScenario: IntroViewController.Scenario?
     var presentChapterControllerCalled = false
     
     func start(window: UIWindow) {
         startCalled = true
+    }
+    
+    func replay() {
+        replayCalled = true
     }
     
     func showActivateVoiceOverAlert() {
@@ -29,8 +34,8 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
         dismissActivateVoiceOverAlertCalled = true
     }
     
-    func presentIntroController() {
-        presentIntroControllerCalled = true
+    func presentIntroController(_ scenario: IntroViewController.Scenario) {
+        presentIntroControllerScenario = scenario
     }
     
     func presentChapterController(_ chapter: Chapter) {
@@ -66,13 +71,13 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
     
     // Validation
     var validateChapterCalled = false
-    var validateAnswer: Level.Answer?
+    var validateAnswers: [Level.Answer]?
     
     func validateChapter() {
         validateChapterCalled = true
     }
     
-    func validate(_ answer: Level.Answer) {
-        validateAnswer = answer
+    func validate(_ answers: [Level.Answer]) {
+        validateAnswers = answers
     }
 }

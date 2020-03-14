@@ -5,6 +5,7 @@
 
 import Foundation
 
+// swiftlint:disable line_length
 class LocalLevelFactory: LevelFactory {
     static func build() -> [Chapter] {
         return [
@@ -40,7 +41,7 @@ class LocalLevelFactory: LevelFactory {
                     )
                 ]
             ),
-            
+
             Chapter(
                 index: 2,
                 levels: [
@@ -72,7 +73,7 @@ class LocalLevelFactory: LevelFactory {
                     )
                 ]
             ),
-            
+
             Chapter(
                 index: 3,
                 levels: [
@@ -105,7 +106,7 @@ class LocalLevelFactory: LevelFactory {
                 levels: [
                     // 5 Search Levels
                     SearchLevel(
-                        levelDescription: "There is a level system in front of of you...",
+                        levelDescription: "There is a level system in front of you...",
                         levelActions: [
                             (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
                             (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
@@ -114,7 +115,7 @@ class LocalLevelFactory: LevelFactory {
                         validActions: ["turn it left", "let it in the center", "turn it right"]
                     )!,
                     SearchLevel(
-                        levelDescription: "There is a level system in front of of you...",
+                        levelDescription: "There is a level system in front of you...",
                         levelActions: [
                             (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
                             (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
@@ -123,7 +124,7 @@ class LocalLevelFactory: LevelFactory {
                         validActions: ["turn it left", "let it in the center", "turn it right"]
                     )!,
                     SearchLevel(
-                        levelDescription: "There is a level system in front of of you...",
+                        levelDescription: "There is a level system in front of you...",
                         levelActions: [
                             (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
                             (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
@@ -132,7 +133,7 @@ class LocalLevelFactory: LevelFactory {
                         validActions: ["turn it left", "let it in the center", "turn it right"]
                     )!,
                     SearchLevel(
-                        levelDescription: "There is a level system in front of of you...",
+                        levelDescription: "There is a level system in front of you...",
                         levelActions: [
                             (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
                             (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
@@ -141,50 +142,14 @@ class LocalLevelFactory: LevelFactory {
                         validActions: ["turn it left", "let it in the center", "turn it right"]
                     )!,
                     SearchLevel(
-                        levelDescription: "There is a level system in front of of you...",
+                        levelDescription: "There is a level system in front of you...",
                         levelActions: [
                             (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
                             (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
                             (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
                         ],
                         validActions: ["turn it left", "let it in the center", "turn it right"]
-                    )!,
-                    SearchLevel(
-                        levelDescription: "There is a level system in front of of you...",
-                        levelActions: [
-                            (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
-                            (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
-                            (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
-                        ],
-                        validActions: ["turn it left", "let it in the center", "turn it right"]
-                    )!,
-                ]
-            ),
-            
-            Chapter(
-                index: 5,
-                levels: [
-                    // 5 Maze Levels
-                    MazeLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
-                    MazeLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
-                    MazeLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
-                    MazeLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    ),
-                    MazeLevel(
-                        answers: ["1", "2", "3"],
-                        validAnswers: ["1"]
-                    )
+                    )!
                 ]
             )
             

@@ -48,7 +48,7 @@ class ChapterViewControllerTests: XCTestCase {
     func test_viewDidLoad_shouldDisplayChapter() {
         loadView()
         
-        XCTAssertTrue(sut.chapterLabel.text!.contains("\(chapter)"))
+        XCTAssertTrue(sut.chapterLabel.text!.contains("\(chapter.index)"))
     }
     
     func test_onContinueButtonTouched_shouldPresentGameViewController() {

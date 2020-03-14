@@ -8,7 +8,8 @@ protocol GameFlowProtocol {
     func getCurrentChapterIndex() -> Int
     func getCurrentLevelIndex() -> Int
     func start()
-    func validate(_ answer: Level.Answer)
+    func restart()
+    func validate(_ answers: [Level.Answer])
     func validateChapter()
 }
 
@@ -18,7 +19,7 @@ class GameFlow: GameFlowProtocol {
     private var currentLevelIndex: Int
     
     private var currentChapter: Chapter? {
-        return self.chapters[safe: self.currentChapterIndex]
+        return self.chapters[safe: max(0, self.currentChapterIndex - 1)]
     }
     private var currentLevel: Level? {
         return self.currentChapter?.levels[safe: self.currentLevelIndex]
@@ -41,11 +42,18 @@ class GameFlow: GameFlowProtocol {
     }
     
     func start() {
-        router?.routeToChapter(self.chapters[self.currentChapterIndex], isNewChapter: false)
+        if let currentChapter = self.currentChapter {
+            router?.routeToChapter(currentChapter, isNewChapter: false)
+        }
     }
     
-    func validate(_ answer: Level.Answer) {
-        if validateAnswer(answer) {
+    func restart() {
+        self.currentChapterIndex = 0
+        self.currentLevelIndex = 0
+    }
+    
+    func validate(_ answers: [Level.Answer]) {
+        if validateAnswers(answers) {
             self.currentLevelIndex += 1
             
             if hasReachedNewChapter() {
@@ -66,7 +74,11 @@ class GameFlow: GameFlowProtocol {
     }
     
     private func hasReachedNewChapter() -> Bool {
-        return self.currentLevelIndex >= self.chapters[self.currentChapterIndex].levels.count
+        if let currentChapter = self.currentChapter {
+            return self.currentLevelIndex >= currentChapter.levels.count
+        } else {
+            return false
+        }
     }
     
     func validateChapter() {
@@ -76,8 +88,12 @@ class GameFlow: GameFlowProtocol {
         }
     }
     
-    private func validateAnswer(_ answer: Level.Answer) -> Bool {
-        return self.chapters[safe: self.currentChapterIndex]?.levels[safe: self.currentLevelIndex]?.validAnswers.contains(answer) ?? false
+    private func validateAnswers(_ answers: [Level.Answer]) -> Bool {
+        if let currentLevel = self.currentLevel {
+            return currentLevel.validAnswers == answers
+        } else {
+            return false
+        }
     }
     
 }

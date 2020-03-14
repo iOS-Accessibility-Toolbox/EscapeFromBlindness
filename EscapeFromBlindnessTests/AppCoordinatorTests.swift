@@ -24,7 +24,7 @@ class AppCoordinatorTests: XCTestCase {
         userDefaultsMock = UserDefaultsMock()
         accessibilityNotificationCenterSpy = AccessibilityNotificationCenterSpy()
         
-        sut = AppCoordinator(userDefaults: userDefaultsMock, gameFlow: gameFlowMock)//GameFlow(chapters: [], currentChapterIndex: 1, currentLevelIndex: 0))
+        sut = AppCoordinator(userDefaults: userDefaultsMock, gameFlow: gameFlowMock)
         EscapeFromBlindnessAccessibility.shared = accessibilityNotificationCenterSpy
     }
     
@@ -32,6 +32,7 @@ class AppCoordinatorTests: XCTestCase {
     class GameFlowMock: GameFlowProtocol {
         var expectedChapter: Int = 0
         var expectedLevel: Int = 0
+        var startCalled = false
         
         func getCurrentChapterIndex() -> Int {
             return self.expectedChapter
@@ -39,34 +40,29 @@ class AppCoordinatorTests: XCTestCase {
         func getCurrentLevelIndex() -> Int {
             return self.expectedLevel
         }
-        func start() {}
-        func validate(_ answer: Level.Answer) {}
+        func start() {
+            startCalled = true
+        }
+        func restart() {}
+        func validate(_ answers: [Level.Answer]) {}
         func validateChapter() {}
     }
     
     // MARK: Loading
     func test_IntroScreenNotCompleted_Start_shouldPresentIntroScreen() {
-        userDefaultsMock.set(0, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+        gameFlowMock.expectedChapter = 0
         
         sut.start(window: UIWindow())
         
         XCTAssertTrue(sut.isPresentIntroControllerCalled)
     }
-    
-    func test_IntroScreenCompleted_Start_NoLevelsCompleted_shouldPresentChapterScreenWithCurrentProgress() {
-        userDefaultsMock.set(1, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+
+    func test_IntroScreenCompleted_Start_shouldAskGameFlowToStartTheGame() {
+        gameFlowMock.expectedChapter = 1
 
         sut.start(window: UIWindow())
 
-        XCTAssertTrue(sut.isPresentChapterControllerCalled)
-    }
-
-    func test_IntroScreenCompleted_Start_OneLevelCompleted_shouldPresentChapterScreenWithCurrentProgress() {
-        userDefaultsMock.set(2, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
-
-        sut.start(window: UIWindow())
-
-        XCTAssertTrue(sut.isPresentChapterControllerCalled)
+        XCTAssertTrue(gameFlowMock.startCalled)
     }
     
     // MARK: Saving
@@ -94,7 +90,7 @@ class AppCoordinatorTests: XCTestCase {
     
     // MARK: Voice Over Activation Tests
     func test_IntroVCIsPresented_VoiceOverDisabled_shouldNotPresentVoiceOverAlert() {
-        sut.presentIntroController()
+        sut.presentIntroController(.intro)
         
         accessibilityNotificationCenterSpy.isVoiceOverRunning = false
         sut.voiceOverStatusChanged()
@@ -112,7 +108,7 @@ class AppCoordinatorTests: XCTestCase {
     }
 
     func test_IntroVCIsPresented_VoiceOverEnabled_shouldNotPresentVoiceOverAlert() {
-       sut.presentIntroController()
+        sut.presentIntroController(.intro)
         
         accessibilityNotificationCenterSpy.isVoiceOverRunning = true
         sut.voiceOverStatusChanged()

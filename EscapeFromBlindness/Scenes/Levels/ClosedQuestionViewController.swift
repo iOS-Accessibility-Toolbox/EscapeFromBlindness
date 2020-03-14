@@ -79,7 +79,7 @@ extension ClosedQuestionViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let answer = self.level.answers[indexPath.row]
-        coordinator?.validate(answer)
+        coordinator?.validate([answer])
     }
     
 }

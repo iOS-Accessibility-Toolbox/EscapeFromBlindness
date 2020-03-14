@@ -9,23 +9,25 @@ import XCTest
 
 class LocalLevelFactoryTests: XCTestCase {
     
-    private let expectedNumberOfLevels = 5
+    private let expectedNumberOfLevels = 4
     private let expectedNumberOfSublevels = 5
     
     func test_build_shouldReturnCorrectNumberOfLevels() {
-        let levels = LocalLevelFactory.build()
+        let chapters = LocalLevelFactory.build()
         
-        XCTAssertEqual(levels.count, expectedNumberOfLevels * expectedNumberOfSublevels)
+        XCTAssertEqual(chapters.count, expectedNumberOfLevels)
+        for i in 0..<expectedNumberOfLevels {
+            XCTAssertEqual(chapters[i].levels.count, expectedNumberOfSublevels)
+        }
     }
     
     func test_build_shouldReturnEqualNumberOfEachLevelTypes() {
-        let levels = LocalLevelFactory.build()
+        let chapters = LocalLevelFactory.build()
         
-        XCTAssertEqual(levels.filter { $0 is ClosedQuestionLevel }.count, expectedNumberOfSublevels)
-        XCTAssertEqual(levels.filter { $0 is RotorLevel }.count, expectedNumberOfSublevels)
-        XCTAssertEqual(levels.filter { $0 is OpenQuestionLevel }.count, expectedNumberOfSublevels)
-        XCTAssertEqual(levels.filter { $0 is SearchLevel }.count, expectedNumberOfSublevels)
-        XCTAssertEqual(levels.filter { $0 is MazeLevel }.count, expectedNumberOfSublevels)
+        XCTAssertEqual(chapters[0].levels.filter { $0 is ClosedQuestionLevel }.count, expectedNumberOfSublevels)
+        XCTAssertEqual(chapters[1].levels.filter { $0 is RotorLevel }.count, expectedNumberOfSublevels)
+        XCTAssertEqual(chapters[2].levels.filter { $0 is OpenQuestionLevel }.count, expectedNumberOfSublevels)
+        XCTAssertEqual(chapters[3].levels.filter { $0 is SearchLevel }.count, expectedNumberOfSublevels)
     }
     
 }
