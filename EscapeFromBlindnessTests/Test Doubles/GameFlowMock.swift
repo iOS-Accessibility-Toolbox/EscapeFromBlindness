@@ -8,11 +8,15 @@ import Foundation
 
 class GameFlowMock: GameFlowProtocol {
     var expectedChapter: Int = 0
+    var expectedChapterTitle: String = ""
     var expectedLevel: Int = 0
     var startCalled = false
     
     func getCurrentChapterIndex() -> Int {
         return self.expectedChapter
+    }
+    func getCurrentChapterTitle() -> String? {
+        return self.expectedChapterTitle
     }
     func getCurrentLevelIndex() -> Int {
         return self.expectedLevel

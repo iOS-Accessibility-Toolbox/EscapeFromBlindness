@@ -6,6 +6,7 @@ protocol Router {
 
 protocol GameFlowProtocol {
     func getCurrentChapterIndex() -> Int
+    func getCurrentChapterTitle() -> String?
     func getCurrentLevelIndex() -> Int
     func start()
     func restart()
@@ -35,6 +36,10 @@ class GameFlow: GameFlowProtocol {
     
     func getCurrentChapterIndex() -> Int {
         return self.currentChapterIndex
+    }
+    
+    func getCurrentChapterTitle() -> String? {
+        return self.currentChapter?.title
     }
     
     func getCurrentLevelIndex() -> Int {

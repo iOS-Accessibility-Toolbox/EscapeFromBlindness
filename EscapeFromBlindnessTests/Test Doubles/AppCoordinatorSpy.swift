@@ -47,7 +47,6 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
     var presentOpenQuestionControllerCalled = false
     var presentRotorQuestionControllerCalled = false
     var presentSearchQuestionControllerCalled = false
-    var presentMazeQuestionControllerCalled = false
     
     func presentClosedQuestionController(_ level: Level) {
         presentClosedQuestionControllerCalled = true
@@ -63,10 +62,6 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
     
     func presentSearchQuestionController(_ level: Level) {
         presentSearchQuestionControllerCalled = true
-    }
-    
-    func presentMazeQuestionController(_ level: Level) {
-        presentMazeQuestionControllerCalled = true
     }
     
     // Validation

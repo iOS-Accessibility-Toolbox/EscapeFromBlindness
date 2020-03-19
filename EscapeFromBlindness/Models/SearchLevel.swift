@@ -35,4 +35,3 @@ class SearchLevel: Level {
         super.init(answers: [], validAnswers: validActions)
     }
 }
-//extension SearchLevel: Equatable {}

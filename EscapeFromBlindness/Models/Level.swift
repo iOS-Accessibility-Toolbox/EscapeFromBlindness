@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Level {
+class Level: CustomStringConvertible {
     typealias Answer = String
     public let answers: [Answer]
     public let validAnswers: [Answer]
@@ -13,5 +13,9 @@ class Level {
     init(answers: [Answer], validAnswers: [Answer]) {
         self.answers = answers
         self.validAnswers = validAnswers
+    }
+    
+    var description: String {
+        return "\(String(describing: self)) Level"
     }
 }

@@ -17,7 +17,7 @@ class ChapterViewControllerTests: XCTestCase {
     var coordinator: AppCoordinatorSpy!
     var accessibilityNotificationCenterSpy: AccessibilityNotificationCenterSpy!
     var window: UIWindow!
-    private let chapter = Chapter(index: 2, levels: [])
+    private let chapter = Chapter(index: 2, title: "test chapter title", description: "test chapter description", levels: [])
     
     // MARK: Test Lifecycle
     override func setUp() {
@@ -49,6 +49,14 @@ class ChapterViewControllerTests: XCTestCase {
         loadView()
         
         XCTAssertTrue(sut.chapterLabel.text!.contains("\(chapter.index)"))
+    }
+    
+    func test_viewDidLoad_shouldSetAccessibilityLabelToTitleAndDescription() {
+        loadView()
+        
+        XCTAssertTrue(sut.chapterLabel.accessibilityLabel!.contains("\(chapter.index)"))
+        XCTAssertTrue(sut.chapterLabel.accessibilityLabel!.contains("\(chapter.title!)"))
+        XCTAssertTrue(sut.chapterLabel.accessibilityLabel!.contains("\(chapter.chapterDescription!)"))
     }
     
     func test_onContinueButtonTouched_shouldPresentGameViewController() {

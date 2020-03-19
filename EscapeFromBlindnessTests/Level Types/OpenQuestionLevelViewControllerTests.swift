@@ -70,4 +70,36 @@ class OpenQuestionLevelViewControllerTests: XCTestCase {
         XCTAssertEqual(coordinator?.validateAnswers, ["a2e"])
     }
     
+    func test_viewDidLoad_withOneQuestion_andAnswerWritten_shouldValidateWhitespaceTrimmedAnswer() {
+        let level = OpenQuestionLevel(
+            question: "Q1",
+            validAnswers: ["a1"]
+        )
+        sut = OpenQuestionViewController(level: level)
+        sut.coordinator = coordinator
+        
+        loadView()
+        sut.textField.becomeFirstResponder()
+        sut.textField.text = "A2e "
+        sut.textField.endEditing(false)
+        
+        XCTAssertEqual(coordinator?.validateAnswers, ["a2e"])
+    }
+    
+    func test_viewDidLoad_withOneQuestion_andAnswerWritten_shouldValidateNewlinesTrimmedAnswer() {
+        let level = OpenQuestionLevel(
+            question: "Q1",
+            validAnswers: ["a1"]
+        )
+        sut = OpenQuestionViewController(level: level)
+        sut.coordinator = coordinator
+        
+        loadView()
+        sut.textField.becomeFirstResponder()
+        sut.textField.text = "A2e\n"
+        sut.textField.endEditing(false)
+        
+        XCTAssertEqual(coordinator?.validateAnswers, ["a2e"])
+    }
+    
 }

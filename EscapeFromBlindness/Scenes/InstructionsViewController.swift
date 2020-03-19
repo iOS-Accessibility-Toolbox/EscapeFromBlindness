@@ -36,7 +36,7 @@ class InstructionsViewController: UIViewController, Coordinated {
         
         self.instructions = instructions
         if let firstInstruction = instructions.first {
-            self.replayButton.setTitle(firstInstruction, for: .normal)
+            self.instructionsButton.setTitle(firstInstruction, for: .normal)
         }
         
         EscapeFromBlindnessAccessibility.shared.post(
@@ -98,6 +98,7 @@ class InstructionsViewController: UIViewController, Coordinated {
             UIView.animate(withDuration: duration) {
                 self.instructionsButton.alpha = 1
             }
+            EscapeFromBlindnessAccessibility.shared.post(notification: .layoutChanged, argument: self.instructionsButton)
         })
         
     }

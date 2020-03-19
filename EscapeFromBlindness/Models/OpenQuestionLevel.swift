@@ -14,4 +14,3 @@ class OpenQuestionLevel: Level {
         super.init(answers: [], validAnswers: validAnswers)
     }
 }
-//extension OpenQuestionLevel: Equatable {}

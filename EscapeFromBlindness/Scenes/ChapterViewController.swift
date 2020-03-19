@@ -40,7 +40,12 @@ class ChapterViewController: UIViewController, Coordinated {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        self.chapterLabel.text = presentChapterText(for: self.chapter)
+        
+        let chapterTitle = presentChapterText(for: self.chapter)
+        let chapterDescription = presentChapterDescription(for: self.chapter)
+        self.chapterLabel.text = chapterTitle
+        self.chapterLabel.accessibilityLabel = chapterTitle + "\n" + (chapterDescription ?? "")
+        
         showVoiceOvertAlertIfNeeded()
     }
     
@@ -79,6 +84,16 @@ class ChapterViewController: UIViewController, Coordinated {
             chapterText += "\n" + title
         }
         return chapterText
+    }
+    
+    private func presentChapterDescription(for chapter: Chapter?) -> String? {
+        guard let chapter = chapter else { return nil }
+        
+        var chapterDescription: String? = nil
+        if let description = chapter.chapterDescription {
+            chapterDescription = description
+        }
+        return chapterDescription
     }
     
     private func showVoiceOvertAlertIfNeeded() {

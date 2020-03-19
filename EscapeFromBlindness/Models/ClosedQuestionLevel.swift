@@ -14,4 +14,3 @@ class ClosedQuestionLevel: Level {
         super.init(answers: answers, validAnswers: validAnswers)
     }
 }
-//extension ClosedQuestionLevel: Equatable {}

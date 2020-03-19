@@ -10,6 +10,7 @@ class ClosedQuestionViewController: UIViewController, Coordinated {
     
     var mainLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -43,6 +44,7 @@ class ClosedQuestionViewController: UIViewController, Coordinated {
         
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.mainLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.mainLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30).isActive = true
         self.mainLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
         
         self.tableView.translatesAutoresizingMaskIntoConstraints = false

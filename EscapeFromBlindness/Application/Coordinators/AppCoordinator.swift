@@ -19,7 +19,6 @@ protocol AppCoordinatorProtocol: class {
     func presentOpenQuestionController(_ level: Level)
     func presentRotorQuestionController(_ level: Level)
     func presentSearchQuestionController(_ level: Level)
-    func presentMazeQuestionController(_ level: Level)
     
     func replay()
 }
@@ -67,8 +66,6 @@ extension AppCoordinator: Router {
             presentRotorQuestionController(level)
         case is SearchLevel:
             presentSearchQuestionController(level)
-        case is MazeLevel:
-            presentMazeQuestionController(level)
         default:
             break
         }
@@ -218,15 +215,6 @@ class AppCoordinator: NSObject, Coordinator {
         resetNavigationStack(viewController)
     }
     
-    func presentMazeQuestionController(_ level: Level) {
-        guard let level = level as? MazeLevel else { return }
-        
-        let viewController = MazeViewController(level: level)
-        viewController.coordinator = self
-        
-        resetNavigationStack(viewController)
-    }
-    
     // MARK: - Replay
     func replay() {
         guard let window = window else { return }
@@ -240,8 +228,11 @@ class AppCoordinator: NSObject, Coordinator {
     // MARK: - Private Methods
     private func resetNavigationStack(_ viewController: UIViewController) {
         navigationController.isNavigationBarHidden = false
+        
+        let chapterTitle = gameFlow.getCurrentChapterTitle()
         let levelIndex = gameFlow.getCurrentLevelIndex()
-        viewController.navigationItem.title = "Level \(levelIndex + 1)"
+        viewController.navigationItem.title = "\(chapterTitle != nil ? "\(chapterTitle!) - " : "")Level \(levelIndex + 1)"
+        
         navigationController.viewControllers = [viewController]
     }
     

@@ -18,12 +18,12 @@
 		D824CECB242393C700DD52CB /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CECA242393C700DD52CB /* SoundPlayer.swift */; };
 		D824CECD2423958600DD52CB /* AppCoordinator+SoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CECC2423958500DD52CB /* AppCoordinator+SoundsTests.swift */; };
 		D824CECF242395F900DD52CB /* GameFlowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CECE242395F900DD52CB /* GameFlowMock.swift */; };
+		D824CED32423D6C400DD52CB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CED22423D6C400DD52CB /* Helpers.swift */; };
 		D83B70E623C4916D00516628 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70E523C4916D00516628 /* Chapter.swift */; };
 		D83B70E923C4933B00516628 /* ClosedQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70E823C4933B00516628 /* ClosedQuestionViewController.swift */; };
 		D83B70EB23C4935200516628 /* OpenQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */; };
 		D83B70ED23C4936900516628 /* RotorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70EC23C4936900516628 /* RotorViewController.swift */; };
 		D83B70EF23C4938600516628 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70EE23C4938600516628 /* SearchViewController.swift */; };
-		D83B70F123C4938E00516628 /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70F023C4938E00516628 /* MazeViewController.swift */; };
 		D8458EDA23F9FAFF006FA087 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8458ED923F9FAFE006FA087 /* NavigationController.swift */; };
 		D847609723C146E800DF4825 /* GameFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609623C146E800DF4825 /* GameFlow.swift */; };
 		D847609A23C1490400DF4825 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609923C1490400DF4825 /* Level.swift */; };
@@ -31,7 +31,6 @@
 		D847609E23C1494700DF4825 /* OpenQuestionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609D23C1494700DF4825 /* OpenQuestionLevel.swift */; };
 		D84760A023C1499E00DF4825 /* RotorLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847609F23C1499E00DF4825 /* RotorLevel.swift */; };
 		D84760A223C149F300DF4825 /* SearchLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A123C149F300DF4825 /* SearchLevel.swift */; };
-		D84760A423C14A0900DF4825 /* MazeLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A323C14A0900DF4825 /* MazeLevel.swift */; };
 		D84760A723C14AB200DF4825 /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A623C14AB200DF4825 /* LevelFactory.swift */; };
 		D84760A923C14AC500DF4825 /* LocalLevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760A823C14AC500DF4825 /* LocalLevelFactory.swift */; };
 		D84760AB23C14B5A00DF4825 /* LocalLevelFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84760AA23C14B5A00DF4825 /* LocalLevelFactoryTests.swift */; };
@@ -53,8 +52,6 @@
 		D88B1A9323B43D9A008BB85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D88B1A9523B43D9A008BB85D /* Localizable.strings */; };
 		D88B1A9823B43E1D008BB85D /* RotorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */; };
 		D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */; };
-		D88B1A9C23B43E58008BB85D /* MazeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */; };
-		D8C2C0EB23C0CD7700F8BE78 /* IntroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */; };
 		D8C2C0ED23C0CD8500F8BE78 /* ChapterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */; };
 		D8C2C0F023C0CDF400F8BE78 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EE23C0CDF400F8BE78 /* InstructionsViewController.swift */; };
 		D8C2C0F123C0CDF400F8BE78 /* InstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C0EF23C0CDF400F8BE78 /* InstructionsViewController.xib */; };
@@ -101,12 +98,12 @@
 		D824CECA242393C700DD52CB /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		D824CECC2423958500DD52CB /* AppCoordinator+SoundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+SoundsTests.swift"; sourceTree = "<group>"; };
 		D824CECE242395F900DD52CB /* GameFlowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlowMock.swift; sourceTree = "<group>"; };
+		D824CED22423D6C400DD52CB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D83B70E523C4916D00516628 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		D83B70E823C4933B00516628 /* ClosedQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedQuestionViewController.swift; sourceTree = "<group>"; };
 		D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuestionViewController.swift; sourceTree = "<group>"; };
 		D83B70EC23C4936900516628 /* RotorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorViewController.swift; sourceTree = "<group>"; };
 		D83B70EE23C4938600516628 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		D83B70F023C4938E00516628 /* MazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewController.swift; sourceTree = "<group>"; };
 		D8458ED923F9FAFE006FA087 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D847609623C146E800DF4825 /* GameFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlow.swift; sourceTree = "<group>"; };
 		D847609923C1490400DF4825 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 		D847609D23C1494700DF4825 /* OpenQuestionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuestionLevel.swift; sourceTree = "<group>"; };
 		D847609F23C1499E00DF4825 /* RotorLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorLevel.swift; sourceTree = "<group>"; };
 		D84760A123C149F300DF4825 /* SearchLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLevel.swift; sourceTree = "<group>"; };
-		D84760A323C14A0900DF4825 /* MazeLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeLevel.swift; sourceTree = "<group>"; };
 		D84760A623C14AB200DF4825 /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
 		D84760A823C14AC500DF4825 /* LocalLevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLevelFactory.swift; sourceTree = "<group>"; };
 		D84760AA23C14B5A00DF4825 /* LocalLevelFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLevelFactoryTests.swift; sourceTree = "<group>"; };
@@ -140,8 +136,6 @@
 		D88B1A9623B43D9D008BB85D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorViewControllerTests.swift; sourceTree = "<group>"; };
 		D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLevelViewControllerTests.swift; sourceTree = "<group>"; };
-		D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewControllerTests.swift; sourceTree = "<group>"; };
-		D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewControllerTests.swift; sourceTree = "<group>"; };
 		D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewControllerTests.swift; sourceTree = "<group>"; };
 		D8C2C0EE23C0CDF400F8BE78 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		D8C2C0EF23C0CDF400F8BE78 /* InstructionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsViewController.xib; sourceTree = "<group>"; };
@@ -212,7 +206,6 @@
 				D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */,
 				D83B70EC23C4936900516628 /* RotorViewController.swift */,
 				D83B70EE23C4938600516628 /* SearchViewController.swift */,
-				D83B70F023C4938E00516628 /* MazeViewController.swift */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -226,7 +219,6 @@
 				D847609F23C1499E00DF4825 /* RotorLevel.swift */,
 				D847609D23C1494700DF4825 /* OpenQuestionLevel.swift */,
 				D84760A123C149F300DF4825 /* SearchLevel.swift */,
-				D84760A323C14A0900DF4825 /* MazeLevel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,8 +352,6 @@
 				D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */,
 				D88B1A7423B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift */,
 				D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */,
-				D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */,
-				D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */,
 				D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */,
 			);
 			path = "Level Types";
@@ -414,6 +404,7 @@
 				D8F1809623BFE4A2003291D4 /* String+Extensions.swift */,
 				D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */,
 				D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */,
+				D824CED22423D6C400DD52CB /* Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -622,12 +613,12 @@
 			files = (
 				D88B1A4923B42DBD008BB85D /* UserDefaultKeys.swift in Sources */,
 				D83B70E923C4933B00516628 /* ClosedQuestionViewController.swift in Sources */,
-				D83B70F123C4938E00516628 /* MazeViewController.swift in Sources */,
 				D88B1A4523B4291D008BB85D /* AppCoordinator.swift in Sources */,
 				D847609723C146E800DF4825 /* GameFlow.swift in Sources */,
 				D8458EDA23F9FAFF006FA087 /* NavigationController.swift in Sources */,
 				D8C2C10A23C0E00500F8BE78 /* AccessibilityNotificationCenter.swift in Sources */,
 				D824CEC92423924400DD52CB /* SoundFileKeys.swift in Sources */,
+				D824CED32423D6C400DD52CB /* Helpers.swift in Sources */,
 				D80B2A71241C556100616655 /* InstructionsInteractor.swift in Sources */,
 				D88B19DF23B4254A008BB85D /* AppDelegate.swift in Sources */,
 				D8F27A7A23FDF2D000C09E1B /* RandomFramesGenerator.swift in Sources */,
@@ -646,7 +637,6 @@
 				D847609C23C1491B00DF4825 /* ClosedQuestionLevel.swift in Sources */,
 				D8C2C11223C0EB8A00F8BE78 /* ChapterViewController.swift in Sources */,
 				D8C2C10E23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift in Sources */,
-				D84760A423C14A0900DF4825 /* MazeLevel.swift in Sources */,
 				D84760A223C149F300DF4825 /* SearchLevel.swift in Sources */,
 				D8C2C11423C0EDBA00F8BE78 /* UIFont+Extensions.swift in Sources */,
 				D8C2C0F823C0CE9800F8BE78 /* Coordinated.swift in Sources */,
@@ -662,12 +652,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C2C0ED23C0CD8500F8BE78 /* ChapterViewControllerTests.swift in Sources */,
-				D8C2C0EB23C0CD7700F8BE78 /* IntroViewControllerTests.swift in Sources */,
 				D8C2C10023C0D2FD00F8BE78 /* UserDefaultsMock.swift in Sources */,
 				D824CECD2423958600DD52CB /* AppCoordinator+SoundsTests.swift in Sources */,
 				D88B1A6D23B4332A008BB85D /* GameFlowTests.swift in Sources */,
 				D8C2C11623C104C300F8BE78 /* AppCoordinatorTests.swift in Sources */,
-				D88B1A9C23B43E58008BB85D /* MazeViewControllerTests.swift in Sources */,
 				D8C2C10C23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift in Sources */,
 				D8C2C11023C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift in Sources */,
 				D824CECF242395F900DD52CB /* GameFlowMock.swift in Sources */,

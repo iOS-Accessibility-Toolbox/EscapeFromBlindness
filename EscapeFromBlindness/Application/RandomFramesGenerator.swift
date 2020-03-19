@@ -6,10 +6,10 @@
 import UIKit
 
 struct RandomFramesGenerator {
-    static func generateFrames(count: Int) -> [CGRect] {
+    static func generateFrames(startY: Int = 165, count: Int) -> [CGRect] {
         var frames: [CGRect] = []
         for i in 0..<count {
-            let frame = CGRect(x: 80 * i, y: 140 + 120 * i, width: 80, height: 80)
+            let frame = CGRect(x: 80 * i, y: startY + 120 * i, width: 80, height: 80)
             frames.append(frame)
         }
         return frames

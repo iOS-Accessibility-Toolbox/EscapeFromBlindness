@@ -106,48 +106,56 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     // MARK: Title Display Test
-    func test_ClosedQuestionLevelVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
+    func test_ClosedQuestionLevelVCIsPresented_navigationBarShouldDisplayCurrentChapterAndLevel() {
+        sut.start(window: UIWindow())
+        
+        let title = "test title"
+        gameFlowMock.expectedChapterTitle = title
         let level = ClosedQuestionLevel(question: "", answers: [], validAnswers: [])
         
         sut.presentClosedQuestionController(level)
         
-        assertNavBarLevel(1)
+        assertNavBar(chapterName: title, level: 1)
     }
     
-    func test_OpenQuestionLevelVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
+    func test_OpenQuestionLevelVCIsPresented_navigationBarShouldDisplayCurrentChapterAndLevel() {
+        sut.start(window: UIWindow())
+        
+        let title = "test title"
+        gameFlowMock.expectedChapterTitle = title
         let level = OpenQuestionLevel(question: "", validAnswers: [])
         
         sut.presentOpenQuestionController(level)
         
-        assertNavBarLevel(1)
+        assertNavBar(chapterName: title, level: 1)
     }
-    
-    func test_RotorQuestionVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
+
+    func test_RotorQuestionVCIsPresented_navigationBarShouldDisplayCurrentChapterAndLevel() {
+        sut.start(window: UIWindow())
+        
+        let title = "test title"
+        gameFlowMock.expectedChapterTitle = title
         let level = RotorLevel(clues: [], answers: [], validAnswers: [])
         
         sut.presentRotorQuestionController(level)
         
-        assertNavBarLevel(1)
+        assertNavBar(chapterName: title, level: 1)
     }
-    
-    func test_SearchQuestionVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
+
+    func test_SearchQuestionVCIsPresented_navigationBarShouldDisplayCurrentChapterAndLevel() {
+        sut.start(window: UIWindow())
+        
+        let title = "test title"
+        gameFlowMock.expectedChapterTitle = title
         let level = SearchLevel(levelDescription: "", levelActions: [], validActions: [])!
         
         sut.presentSearchQuestionController(level)
         
-        assertNavBarLevel(1)
+        assertNavBar(chapterName: title, level: 1)
     }
-    
-    func test_MazeQuestionVCIsPresented_navigationBarShouldDisplayCurrentLevel() {
-        let level = MazeLevel(answers: [], validAnswers: [])
-        
-        sut.presentMazeQuestionController(level)
-        
-        assertNavBarLevel(1)
-    }
-    
-    private func assertNavBarLevel(_ level: Int) {
-        XCTAssertEqual(sut.navigationController.viewControllers.first!.navigationItem.title, "Level \(level)")
+
+    private func assertNavBar(chapterName: String, level: Int) {
+        XCTAssertEqual(sut.navigationController.viewControllers.first!.navigationItem.title, "\(chapterName) - Level \(level)")
     }
     
 }
