@@ -28,26 +28,6 @@ class AppCoordinatorTests: XCTestCase {
         EscapeFromBlindnessAccessibility.shared = accessibilityNotificationCenterSpy
     }
     
-    // MARK: Test Doubles
-    class GameFlowMock: GameFlowProtocol {
-        var expectedChapter: Int = 0
-        var expectedLevel: Int = 0
-        var startCalled = false
-        
-        func getCurrentChapterIndex() -> Int {
-            return self.expectedChapter
-        }
-        func getCurrentLevelIndex() -> Int {
-            return self.expectedLevel
-        }
-        func start() {
-            startCalled = true
-        }
-        func restart() {}
-        func validate(_ answers: [Level.Answer]) {}
-        func validateChapter() {}
-    }
-    
     // MARK: Loading
     func test_IntroScreenNotCompleted_Start_shouldPresentIntroScreen() {
         gameFlowMock.expectedChapter = 0

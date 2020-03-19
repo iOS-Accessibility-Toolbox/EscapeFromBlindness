@@ -10,6 +10,14 @@
 		8424CC6D683711A2DDC1F283 /* Pods_EscapeFromBlindnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA440EB54F6260A6C2B8221 /* Pods_EscapeFromBlindnessTests.framework */; };
 		98F9DDF292CB35ABD9C4E6A9 /* Pods_EscapeFromBlindness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DB6B2A5FD677D379F2D6B6 /* Pods_EscapeFromBlindness.framework */; };
 		D80B2A71241C556100616655 /* InstructionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B2A70241C556100616655 /* InstructionsInteractor.swift */; };
+		D824CEC42423923000DD52CB /* quake+5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D824CEC02423923000DD52CB /* quake+5.mp3 */; };
+		D824CEC52423923000DD52CB /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D824CEC12423923000DD52CB /* thunder.mp3 */; };
+		D824CEC62423923000DD52CB /* jungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D824CEC22423923000DD52CB /* jungle.mp3 */; };
+		D824CEC72423923000DD52CB /* wind-sand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D824CEC32423923000DD52CB /* wind-sand.mp3 */; };
+		D824CEC92423924400DD52CB /* SoundFileKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CEC82423924400DD52CB /* SoundFileKeys.swift */; };
+		D824CECB242393C700DD52CB /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CECA242393C700DD52CB /* SoundPlayer.swift */; };
+		D824CECD2423958600DD52CB /* AppCoordinator+SoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CECC2423958500DD52CB /* AppCoordinator+SoundsTests.swift */; };
+		D824CECF242395F900DD52CB /* GameFlowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824CECE242395F900DD52CB /* GameFlowMock.swift */; };
 		D83B70E623C4916D00516628 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70E523C4916D00516628 /* Chapter.swift */; };
 		D83B70E923C4933B00516628 /* ClosedQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70E823C4933B00516628 /* ClosedQuestionViewController.swift */; };
 		D83B70EB23C4935200516628 /* OpenQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */; };
@@ -48,8 +56,8 @@
 		D88B1A9C23B43E58008BB85D /* MazeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */; };
 		D8C2C0EB23C0CD7700F8BE78 /* IntroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */; };
 		D8C2C0ED23C0CD8500F8BE78 /* ChapterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */; };
-		D8C2C0F023C0CDF400F8BE78 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EE23C0CDF400F8BE78 /* IntroViewController.swift */; };
-		D8C2C0F123C0CDF400F8BE78 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C0EF23C0CDF400F8BE78 /* IntroViewController.xib */; };
+		D8C2C0F023C0CDF400F8BE78 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EE23C0CDF400F8BE78 /* InstructionsViewController.swift */; };
+		D8C2C0F123C0CDF400F8BE78 /* InstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C0EF23C0CDF400F8BE78 /* InstructionsViewController.xib */; };
 		D8C2C0F323C0CE3F00F8BE78 /* XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0F223C0CE3F00F8BE78 /* XibLoadable.swift */; };
 		D8C2C0F623C0CE6C00F8BE78 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0F523C0CE6C00F8BE78 /* StoryboardLoadable.swift */; };
 		D8C2C0F823C0CE9800F8BE78 /* Coordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0F723C0CE9800F8BE78 /* Coordinated.swift */; };
@@ -63,9 +71,6 @@
 		D8C2C11223C0EB8A00F8BE78 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */; };
 		D8C2C11423C0EDBA00F8BE78 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */; };
 		D8C2C11623C104C300F8BE78 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */; };
-		D8DA6AFD23B5112F0054EF0E /* TtsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6AFC23B5112F0054EF0E /* TtsWorker.swift */; };
-		D8DA6AFF23B511740054EF0E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */; };
-		D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */; };
 		D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1809623BFE4A2003291D4 /* String+Extensions.swift */; };
 		D8F1809923BFE4D3003291D4 /* NSArray+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */; };
 		D8F27A7A23FDF2D000C09E1B /* RandomFramesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F27A7923FDF2D000C09E1B /* RandomFramesGenerator.swift */; };
@@ -88,6 +93,14 @@
 		A94EA5CAC843321CF23D4471 /* Pods-EscapeFromBlindness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscapeFromBlindness.release.xcconfig"; path = "Target Support Files/Pods-EscapeFromBlindness/Pods-EscapeFromBlindness.release.xcconfig"; sourceTree = "<group>"; };
 		CC6B9E3AF32499B14C7AF4DC /* Pods-EscapeFromBlindnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscapeFromBlindnessTests.debug.xcconfig"; path = "Target Support Files/Pods-EscapeFromBlindnessTests/Pods-EscapeFromBlindnessTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D80B2A70241C556100616655 /* InstructionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsInteractor.swift; sourceTree = "<group>"; };
+		D824CEC02423923000DD52CB /* quake+5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "quake+5.mp3"; path = "../../../../../../Downloads/quake+5.mp3"; sourceTree = "<group>"; };
+		D824CEC12423923000DD52CB /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = thunder.mp3; path = ../../../../../../Downloads/thunder.mp3; sourceTree = "<group>"; };
+		D824CEC22423923000DD52CB /* jungle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jungle.mp3; path = ../../../../../../Downloads/jungle.mp3; sourceTree = "<group>"; };
+		D824CEC32423923000DD52CB /* wind-sand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "wind-sand.mp3"; path = "../../../../../../Downloads/wind-sand.mp3"; sourceTree = "<group>"; };
+		D824CEC82423924400DD52CB /* SoundFileKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFileKeys.swift; sourceTree = "<group>"; };
+		D824CECA242393C700DD52CB /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		D824CECC2423958500DD52CB /* AppCoordinator+SoundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+SoundsTests.swift"; sourceTree = "<group>"; };
+		D824CECE242395F900DD52CB /* GameFlowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlowMock.swift; sourceTree = "<group>"; };
 		D83B70E523C4916D00516628 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		D83B70E823C4933B00516628 /* ClosedQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedQuestionViewController.swift; sourceTree = "<group>"; };
 		D83B70EA23C4935200516628 /* OpenQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuestionViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +143,8 @@
 		D88B1A9B23B43E58008BB85D /* MazeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewControllerTests.swift; sourceTree = "<group>"; };
 		D8C2C0EA23C0CD7700F8BE78 /* IntroViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewControllerTests.swift; sourceTree = "<group>"; };
 		D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewControllerTests.swift; sourceTree = "<group>"; };
-		D8C2C0EE23C0CDF400F8BE78 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		D8C2C0EF23C0CDF400F8BE78 /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
+		D8C2C0EE23C0CDF400F8BE78 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		D8C2C0EF23C0CDF400F8BE78 /* InstructionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsViewController.xib; sourceTree = "<group>"; };
 		D8C2C0F223C0CE3F00F8BE78 /* XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibLoadable.swift; sourceTree = "<group>"; };
 		D8C2C0F523C0CE6C00F8BE78 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		D8C2C0F723C0CE9800F8BE78 /* Coordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinated.swift; sourceTree = "<group>"; };
@@ -145,9 +158,6 @@
 		D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		D8C2C11323C0EDBA00F8BE78 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
-		D8DA6AFC23B5112F0054EF0E /* TtsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TtsWorker.swift; sourceTree = "<group>"; };
-		D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSoundModels.swift; sourceTree = "<group>"; };
 		D8F1809623BFE4A2003291D4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D8F1809823BFE4D3003291D4 /* NSArray+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+Extensions.swift"; sourceTree = "<group>"; };
 		D8F1809A23BFE85E003291D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -273,6 +283,7 @@
 				D88B1A6C23B4332A008BB85D /* GameFlowTests.swift */,
 				D88B1A9D23B43E64008BB85D /* Level Types */,
 				D8C2C11523C104C300F8BE78 /* AppCoordinatorTests.swift */,
+				D824CECC2423958500DD52CB /* AppCoordinator+SoundsTests.swift */,
 				D84760AA23C14B5A00DF4825 /* LocalLevelFactoryTests.swift */,
 			);
 			path = EscapeFromBlindnessTests;
@@ -294,6 +305,10 @@
 		D88B1A0123B426C8008BB85D /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				D824CEC22423923000DD52CB /* jungle.mp3 */,
+				D824CEC02423923000DD52CB /* quake+5.mp3 */,
+				D824CEC12423923000DD52CB /* thunder.mp3 */,
+				D824CEC32423923000DD52CB /* wind-sand.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -303,7 +318,6 @@
 			children = (
 				D84760A523C14AA100DF4825 /* Factories */,
 				D88B19DE23B4254A008BB85D /* AppDelegate.swift */,
-				D88B1A4723B42BF8008BB85D /* Services */,
 				D88B1A4223B4291D008BB85D /* Coordinators */,
 				D88B1A4823B42DBD008BB85D /* UserDefaultKeys.swift */,
 				D8C2C10923C0E00500F8BE78 /* AccessibilityNotificationCenter.swift */,
@@ -311,6 +325,8 @@
 				D8458ED923F9FAFE006FA087 /* NavigationController.swift */,
 				D8F27A7923FDF2D000C09E1B /* RandomFramesGenerator.swift */,
 				D80B2A70241C556100616655 /* InstructionsInteractor.swift */,
+				D824CEC82423924400DD52CB /* SoundFileKeys.swift */,
+				D824CECA242393C700DD52CB /* SoundPlayer.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -322,14 +338,6 @@
 				D88B1A4423B4291D008BB85D /* Coordinator.swift */,
 			);
 			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		D88B1A4723B42BF8008BB85D /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D8DA6AFB23B5110E0054EF0E /* Sound */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		D88B1A7623B436BE008BB85D /* Fonts */ = {
@@ -375,6 +383,7 @@
 				D8C2C0FF23C0D2FD00F8BE78 /* UserDefaultsMock.swift */,
 				D8C2C10723C0DEBD00F8BE78 /* AppCoordinatorSpy.swift */,
 				D8C2C10B23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift */,
+				D824CECE242395F900DD52CB /* GameFlowMock.swift */,
 			);
 			path = "Test Doubles";
 			sourceTree = "<group>";
@@ -383,23 +392,13 @@
 			isa = PBXGroup;
 			children = (
 				D83B70E723C4930C00516628 /* Levels */,
-				D8C2C0EE23C0CDF400F8BE78 /* IntroViewController.swift */,
-				D8C2C0EF23C0CDF400F8BE78 /* IntroViewController.xib */,
+				D8C2C0EE23C0CDF400F8BE78 /* InstructionsViewController.swift */,
+				D8C2C0EF23C0CDF400F8BE78 /* InstructionsViewController.xib */,
 				D8C2C10D23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift */,
 				D8C2C10423C0D52C00F8BE78 /* VoiceOverAlertViewController.xib */,
 				D8C2C11123C0EB8A00F8BE78 /* ChapterViewController.swift */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		D8DA6AFB23B5110E0054EF0E /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				D8DA6AFE23B511740054EF0E /* SoundPlayer.swift */,
-				D8DA6AFC23B5112F0054EF0E /* TtsWorker.swift */,
-				D8DA6B0023B511BB0054EF0E /* NavigationSoundModels.swift */,
-			);
-			path = Sound;
 			sourceTree = "<group>";
 		};
 		D8F1809423BFE364003291D4 /* Generated */ = {
@@ -507,14 +506,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D88B1A7E23B436FB008BB85D /* Montserrat-Black.ttf in Resources */,
-				D8C2C0F123C0CDF400F8BE78 /* IntroViewController.xib in Resources */,
+				D824CEC62423923000DD52CB /* jungle.mp3 in Resources */,
+				D8C2C0F123C0CDF400F8BE78 /* InstructionsViewController.xib in Resources */,
 				D88B1A8223B436FB008BB85D /* Montserrat-SemiBold.ttf in Resources */,
 				D88B19EB23B42552008BB85D /* LaunchScreen.storyboard in Resources */,
 				D88B1A7D23B436FB008BB85D /* Montserrat-ExtraBold.ttf in Resources */,
 				D88B1A9323B43D9A008BB85D /* Localizable.strings in Resources */,
+				D824CEC52423923000DD52CB /* thunder.mp3 in Resources */,
 				D88B1A8123B436FB008BB85D /* Luciole-Regular.ttf in Resources */,
 				D8C2C10623C0D52C00F8BE78 /* VoiceOverAlertViewController.xib in Resources */,
+				D824CEC42423923000DD52CB /* quake+5.mp3 in Resources */,
 				D88B19E823B42552008BB85D /* Assets.xcassets in Resources */,
+				D824CEC72423923000DD52CB /* wind-sand.mp3 in Resources */,
 				D88B1A7F23B436FB008BB85D /* Montserrat-Medium.ttf in Resources */,
 				D88B1A8023B436FB008BB85D /* Montserrat-Bold.ttf in Resources */,
 			);
@@ -624,15 +627,15 @@
 				D847609723C146E800DF4825 /* GameFlow.swift in Sources */,
 				D8458EDA23F9FAFF006FA087 /* NavigationController.swift in Sources */,
 				D8C2C10A23C0E00500F8BE78 /* AccessibilityNotificationCenter.swift in Sources */,
+				D824CEC92423924400DD52CB /* SoundFileKeys.swift in Sources */,
 				D80B2A71241C556100616655 /* InstructionsInteractor.swift in Sources */,
 				D88B19DF23B4254A008BB85D /* AppDelegate.swift in Sources */,
 				D8F27A7A23FDF2D000C09E1B /* RandomFramesGenerator.swift in Sources */,
 				D84760A023C1499E00DF4825 /* RotorLevel.swift in Sources */,
-				D8DA6B0123B511BB0054EF0E /* NavigationSoundModels.swift in Sources */,
 				D8C2C0F623C0CE6C00F8BE78 /* StoryboardLoadable.swift in Sources */,
 				D83B70EF23C4938600516628 /* SearchViewController.swift in Sources */,
 				D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */,
-				D8C2C0F023C0CDF400F8BE78 /* IntroViewController.swift in Sources */,
+				D8C2C0F023C0CDF400F8BE78 /* InstructionsViewController.swift in Sources */,
 				D83B70EB23C4935200516628 /* OpenQuestionViewController.swift in Sources */,
 				D84760A923C14AC500DF4825 /* LocalLevelFactory.swift in Sources */,
 				D83B70ED23C4936900516628 /* RotorViewController.swift in Sources */,
@@ -640,7 +643,6 @@
 				D88B1A4623B4291D008BB85D /* Coordinator.swift in Sources */,
 				D8F1809923BFE4D3003291D4 /* NSArray+Extensions.swift in Sources */,
 				D8C2C0F323C0CE3F00F8BE78 /* XibLoadable.swift in Sources */,
-				D8DA6AFF23B511740054EF0E /* SoundPlayer.swift in Sources */,
 				D847609C23C1491B00DF4825 /* ClosedQuestionLevel.swift in Sources */,
 				D8C2C11223C0EB8A00F8BE78 /* ChapterViewController.swift in Sources */,
 				D8C2C10E23C0E2F700F8BE78 /* VoiceOverAlertViewController.swift in Sources */,
@@ -649,7 +651,7 @@
 				D8C2C11423C0EDBA00F8BE78 /* UIFont+Extensions.swift in Sources */,
 				D8C2C0F823C0CE9800F8BE78 /* Coordinated.swift in Sources */,
 				D847609A23C1490400DF4825 /* Level.swift in Sources */,
-				D8DA6AFD23B5112F0054EF0E /* TtsWorker.swift in Sources */,
+				D824CECB242393C700DD52CB /* SoundPlayer.swift in Sources */,
 				D847609E23C1494700DF4825 /* OpenQuestionLevel.swift in Sources */,
 				D83B70E623C4916D00516628 /* Chapter.swift in Sources */,
 			);
@@ -662,11 +664,13 @@
 				D8C2C0ED23C0CD8500F8BE78 /* ChapterViewControllerTests.swift in Sources */,
 				D8C2C0EB23C0CD7700F8BE78 /* IntroViewControllerTests.swift in Sources */,
 				D8C2C10023C0D2FD00F8BE78 /* UserDefaultsMock.swift in Sources */,
+				D824CECD2423958600DD52CB /* AppCoordinator+SoundsTests.swift in Sources */,
 				D88B1A6D23B4332A008BB85D /* GameFlowTests.swift in Sources */,
 				D8C2C11623C104C300F8BE78 /* AppCoordinatorTests.swift in Sources */,
 				D88B1A9C23B43E58008BB85D /* MazeViewControllerTests.swift in Sources */,
 				D8C2C10C23C0E07700F8BE78 /* AccessibilityNotificationCenterSpy.swift in Sources */,
 				D8C2C11023C0E33100F8BE78 /* VoiceOverAlertViewControllerTests.swift in Sources */,
+				D824CECF242395F900DD52CB /* GameFlowMock.swift in Sources */,
 				D88B1A7523B433A4008BB85D /* OpenQuestionLevelViewControllerTests.swift in Sources */,
 				D88B1A9823B43E1D008BB85D /* RotorViewControllerTests.swift in Sources */,
 				D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */,

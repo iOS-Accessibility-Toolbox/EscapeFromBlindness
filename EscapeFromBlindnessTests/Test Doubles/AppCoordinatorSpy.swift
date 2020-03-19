@@ -15,7 +15,7 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
     var showActivateVoiceOverAlertCalled = false
     var dismissActivateVoiceOverAlertCalled = false
     
-    var presentIntroControllerScenario: IntroViewController.Scenario?
+    var presentIntroControllerScenario: InstructionsViewController.Scenario?
     var presentChapterControllerCalled = false
     
     func start(window: UIWindow) {
@@ -34,7 +34,7 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
         dismissActivateVoiceOverAlertCalled = true
     }
     
-    func presentIntroController(_ scenario: IntroViewController.Scenario) {
+    func presentIntroController(_ scenario: InstructionsViewController.Scenario) {
         presentIntroControllerScenario = scenario
     }
     

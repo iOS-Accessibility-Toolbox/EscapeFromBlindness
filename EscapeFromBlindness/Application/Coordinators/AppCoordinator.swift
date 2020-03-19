@@ -11,7 +11,7 @@ protocol AppCoordinatorProtocol: class {
     func showActivateVoiceOverAlert()
     func dismissActivateVoiceOverAlert()
     
-    func presentIntroController(_ scenario: IntroViewController.Scenario)
+    func presentIntroController(_ scenario: InstructionsViewController.Scenario)
     func validateChapter()
     func validate(_ answers: [Level.Answer])
     
@@ -42,7 +42,16 @@ extension AppCoordinator: Router {
             userDefaults.set(chapter.index, forKey: UserDefaultsKeys.currentChapterIndex.rawValue)
             userDefaults.set(0, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
         }
+        
         presentChapterController(chapter)
+        playAmbiantSound(for: chapter)
+    }
+    
+    private func playAmbiantSound(for chapter: Chapter) {
+        soundPlayer.stop()
+        // ensure there is always an ambiant sound playing
+        let type = CustomSoundTypes.allCases[chapter.index % CustomSoundTypes.allCases.count]
+        soundPlayer.start(type: type)
     }
     
     func routeToLevel(_ level: Level) {
@@ -90,13 +99,16 @@ class AppCoordinator: NSObject, Coordinator {
     
     private let userDefaults: UserDefaults
     private let gameFlow: GameFlowProtocol
+    private let soundPlayer: SoundPlayerProtocol
     
     init(
         userDefaults: UserDefaults = UserDefaults.standard,
-        gameFlow: GameFlowProtocol
+        gameFlow: GameFlowProtocol,
+        soundPlayer: SoundPlayerProtocol = SoundPlayer()
     ) {
         self.userDefaults = userDefaults
         self.gameFlow = gameFlow
+        self.soundPlayer = soundPlayer
     }
     
     func start(window: UIWindow) {
@@ -126,9 +138,9 @@ class AppCoordinator: NSObject, Coordinator {
     // MARK: - Intro
     internal var isPresentIntroControllerCalled = false
     
-    func presentIntroController(_ scenario: IntroViewController.Scenario) {
+    func presentIntroController(_ scenario: InstructionsViewController.Scenario) {
         isPresentIntroControllerCalled = true
-        let viewController = IntroViewController.fromXib()
+        let viewController = InstructionsViewController.fromXib()
         viewController.scenario = scenario
         viewController.coordinator = self
         
@@ -235,7 +247,7 @@ class AppCoordinator: NSObject, Coordinator {
     
     // MARK: - Actions
     @objc internal func voiceOverStatusChanged() {
-        let isNonIntroViewController = !(self.lastNavigationControllerViewController is IntroViewController)
+        let isNonIntroViewController = !(self.lastNavigationControllerViewController is InstructionsViewController)
         let isVoiceOverRunning = EscapeFromBlindnessAccessibility.shared.isVoiceOverRunning
         
         if isNonIntroViewController && !isVoiceOverRunning {

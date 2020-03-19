@@ -13,7 +13,7 @@ import XCTest
 class IntroViewControllerTests: XCTestCase {
     
     // MARK: Test Variables
-    var sut: IntroViewController!
+    var sut: InstructionsViewController!
     var window: UIWindow!
     
     // MARK: Test Lifecycle
@@ -31,7 +31,7 @@ class IntroViewControllerTests: XCTestCase {
     private func setupSUT() {
         window = UIWindow()
         let bundle = Bundle.main
-        sut = IntroViewController.fromXib(bundle: bundle)
+        sut = InstructionsViewController.fromXib(bundle: bundle)
     }
     
     private func loadView() {
