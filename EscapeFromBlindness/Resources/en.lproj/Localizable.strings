@@ -60,6 +60,23 @@
 
 //======================================================
 /* Chapter 3 */
+"chapter3_description" = "You successfully went through all the traps of the Lost City, now you reach a gigantic valley; there is a waterfall on the left and something that looks like a temple afar. You meet an old man that tell congratulates you for going so far into the ice cave. He also warns you that, due to some ancient myth, he has to check if you are really the chosen hero, and will have to kill you if you answer wrong to any of its questions!";
+
+// Level 1
+"chapter3_q1" = "Hum... What password did you enter in the last room?";
+"chapter3_a1" = "bow";
+
+// Level 2
+"chapter3_q2" = "Hum... The entrance door of the ice cave... did you open it by pulling the lever on the right of the door?";
+"chapter3_a2" = "no";
+
+// Level 3
+"chapter3_q3" = "Well done... Let's see... In which country are we located?";
+"chapter3_a3" = "nepal";
+
+// Level 4
+"chapter3_q4" = "And the last question... Did you fall into some trap during your journey?";
+"chapter3_a4" = "yes";
 
 //======================================================
 /* Chapter 4 */

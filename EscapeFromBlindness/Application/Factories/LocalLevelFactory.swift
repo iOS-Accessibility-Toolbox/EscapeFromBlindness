@@ -54,29 +54,25 @@ class LocalLevelFactory: LevelFactory {
         Chapter(
             index: 3,
             title: "Hidden Valley",
-            description: """
-            You successfully went through all the traps of the Lost City, now you reach a gigantic valley; there is a waterfall on the left and something that looks like a temple afar.
-            You meet an old man that tell congratulates you for going so far into the ice cave.
-            He also warns you that, due to some ancient myth, he has to check if you are really the chosen hero, and will have to kill you if you answer wrong to any of its questions!
-            """,
+            description: L10n.chapter3Description,
             keywords: ["climbing", "waterfall", "temple", "door mechanism"],
             levels: [
                 // Open Questions
                 OpenQuestionLevel(
-                    question: "Hum... What password did you enter in the last room?",
-                    validAnswers: ["bow"]
+                    question: L10n.chapter3Q1,
+                    validAnswers: [L10n.chapter3A1]
                 ),
                 OpenQuestionLevel(
-                    question: "Hum... The entrance door of the ice cave... did you open it by pulling the lever on the right of the door?",
-                    validAnswers: ["no"]
+                    question: L10n.chapter3Q2,
+                    validAnswers: [L10n.chapter3A2]
                 ),
                 OpenQuestionLevel(
-                    question: "Well done... Let's see... In which country are we located?",
-                    validAnswers: ["nepal"]
+                    question: L10n.chapter3Q3,
+                    validAnswers: [L10n.chapter3A3]
                 ),
                 OpenQuestionLevel(
-                    question: "And the last question... Did you fall into some trap during your journey?",
-                    validAnswers: ["yes"]
+                    question: L10n.chapter3Q4,
+                    validAnswers: [L10n.chapter3A4]
                 )
             ]
         ),

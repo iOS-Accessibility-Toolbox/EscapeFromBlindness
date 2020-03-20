@@ -35,6 +35,24 @@ enum L10n {
   static let chapter2Cq2aa4 = L10n.tr("Localizable", "chapter2_cq2aa4")
   /// After exploring further into the mountain, You reach an old abandonned city which was probably visited by an old Nepalese civilization. There are several doors locked with a lock safe mechanism in front of you. You need to find the code of each of them based on the clues you find in the room. When VoiceOver is turned on, you can use the rotor to access the menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go from one option to the other. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to validate.
   static let chapter2Description = L10n.tr("Localizable", "chapter2_description")
+  /// bow
+  static let chapter3A1 = L10n.tr("Localizable", "chapter3_a1")
+  /// no
+  static let chapter3A2 = L10n.tr("Localizable", "chapter3_a2")
+  /// nepal
+  static let chapter3A3 = L10n.tr("Localizable", "chapter3_a3")
+  /// yes
+  static let chapter3A4 = L10n.tr("Localizable", "chapter3_a4")
+  /// You successfully went through all the traps of the Lost City, now you reach a gigantic valley; there is a waterfall on the left and something that looks like a temple afar. You meet an old man that tell congratulates you for going so far into the ice cave. He also warns you that, due to some ancient myth, he has to check if you are really the chosen hero, and will have to kill you if you answer wrong to any of its questions!
+  static let chapter3Description = L10n.tr("Localizable", "chapter3_description")
+  /// Hum... What password did you enter in the last room?
+  static let chapter3Q1 = L10n.tr("Localizable", "chapter3_q1")
+  /// Hum... The entrance door of the ice cave... did you open it by pulling the lever on the right of the door?
+  static let chapter3Q2 = L10n.tr("Localizable", "chapter3_q2")
+  /// Well done... Let's see... In which country are we located?
+  static let chapter3Q3 = L10n.tr("Localizable", "chapter3_q3")
+  /// And the last question... Did you fall into some trap during your journey?
+  static let chapter3Q4 = L10n.tr("Localizable", "chapter3_q4")
   /// You are in front of a huge door, what do you do?
   static let cq1 = L10n.tr("Localizable", "cq1")
   /// Inspect the surface
