@@ -9,6 +9,32 @@ import Foundation
 enum L10n {
   /// Nepal: year 1976, You approach an ancient ice cave In Nepal. You just reached the summit of the mountain. There is a huge door before of you. When VoiceOver is turned on, you can go from one text to the other by touching it directly or sliding left or right with your finger. Double tap to validate or select something.
   static let chapter1Description = L10n.tr("Localizable", "chapter1_description")
+  /// There are bear footprints on the floor
+  static let chapter2Cq1a1 = L10n.tr("Localizable", "chapter2_cq1a1")
+  /// Wolves are standing close to you
+  static let chapter2Cq1a2 = L10n.tr("Localizable", "chapter2_cq1a2")
+  /// There are ice spikes on the ceiling above you
+  static let chapter2Cq1a3 = L10n.tr("Localizable", "chapter2_cq1a3")
+  /// An eagle is on the top of an house of the hidden city
+  static let chapter2Cq1a4 = L10n.tr("Localizable", "chapter2_cq1a4")
+  /// 4, 2... Maybe this relates to the number of legs of the animal...
+  static let chapter2Cq1h1 = L10n.tr("Localizable", "chapter2_cq1h1")
+  /// After progressing into the next room, there is a water stream on your left
+  static let chapter2Cq2a1 = L10n.tr("Localizable", "chapter2_cq2a1")
+  /// Birds are singing around you, you find it relaxing
+  static let chapter2Cq2a2 = L10n.tr("Localizable", "chapter2_cq2a2")
+  /// An old owl is standing on the door
+  static let chapter2Cq2a3 = L10n.tr("Localizable", "chapter2_cq2a3")
+  /// BOW
+  static let chapter2Cq2aa1 = L10n.tr("Localizable", "chapter2_cq2aa1")
+  /// BAT
+  static let chapter2Cq2aa2 = L10n.tr("Localizable", "chapter2_cq2aa2")
+  /// CAT
+  static let chapter2Cq2aa3 = L10n.tr("Localizable", "chapter2_cq2aa3")
+  /// ARROW
+  static let chapter2Cq2aa4 = L10n.tr("Localizable", "chapter2_cq2aa4")
+  /// After exploring further into the mountain, You reach an old abandonned city which was probably visited by an old Nepalese civilization. There are several doors locked with a lock safe mechanism in front of you. You need to find the code of each of them based on the clues you find in the room. When VoiceOver is turned on, you can use the rotor to access the menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go from one option to the other. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to validate.
+  static let chapter2Description = L10n.tr("Localizable", "chapter2_description")
   /// You are in front of a huge door, what do you do?
   static let cq1 = L10n.tr("Localizable", "cq1")
   /// Inspect the surface
