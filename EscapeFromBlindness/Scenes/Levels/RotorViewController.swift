@@ -49,7 +49,7 @@ class RotorViewController: UIViewController, Coordinated {
         let frame = CGRect(x: UIScreen.main.bounds.width/2 - 100/2, y: UIScreen.main.bounds.height - 100 - 60, width: 100, height: 100)
         self.lockedDoorView.frame = frame
         self.lockedDoorView.isAccessibilityElement = true
-        self.lockedDoorView.accessibilityLabel = "A door stands in front of me... It seems to be locked... I need to find the code..."
+        self.lockedDoorView.accessibilityLabel = L10n.doorScript
         self.lockedDoorView.accessibilityCustomRotors = customRotors
         self.view.addSubview(self.lockedDoorView)
     }

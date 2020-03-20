@@ -29,6 +29,7 @@ class InstructionsViewController: UIViewController, Coordinated {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.replayButton.setTitle(L10n.replay, for: .normal)
         
         guard let instructions = scenario == .intro ? interactor?.fetchIntroInstructions() : interactor?.fetchGameEndInstructions() else {
             return

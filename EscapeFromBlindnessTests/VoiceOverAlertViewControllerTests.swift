@@ -66,6 +66,8 @@ class VoiceOverAlertViewControllerTests: XCTestCase {
 
         XCTAssertTrue(sut.voiceOverActivationInstructionsView.isHidden)
         XCTAssertFalse(sut.userCanContinueInstructionsView.isHidden)
+        XCTAssertEqual(accessibilityNotificationCenterSpy.notification, .layoutChanged)
+        XCTAssertEqual(accessibilityNotificationCenterSpy.argument as? UILabel, sut.voiceOverOnSuccessMessageLabel)
     }
 
     func test_continueButtonTouched_shouldDismissScreen() {

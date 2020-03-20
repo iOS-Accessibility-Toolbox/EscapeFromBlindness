@@ -7,6 +7,35 @@
 */
 
 //======================================================
+/* Intro Instructions */
+"1" = "Bienvenue dans Escape From Blindness !";
+"2" = "Tu es un explorateur d'un tombeau abandonné !";
+"3" = "Ta lampe torche vient de s'éteindre !";
+"4" = "Ce jeu est basé intégralement sur l'utilisation de VoiceOver !";
+"5" = "VoiceOver est une technologie de lecteur d'écran par synthèse vocale permettant à un utilisateur malvoyant d'utiliser son smartphone.";
+"6" = "Dans cette aventure, tu vas devoir utiliser VoiceOver pour progresser !";
+"7" = "Tu devras faire face à plusieurs dizaines de niveaux uniques grâce à l'utilisation des fonctionnalités de VoiceOver !";
+"8" = "Bonne chance explorateur !";
+
+//======================================================
+/* Conclusion Instructions */
+"A" = "Félicitations !";
+"B" = "Tu a réussi à surmonter toutes les épreuves du jeu avec succès !";
+"C" = "Nous espérons que tu as apprécié ce jeu autant que nous avons aimé le développer !";
+"D" = "Nous espérons également que ce jeu aura pu te donner une idée te sensibiliser à la manière dont une personne non-voyante utilise son smartphone.";
+"E" = "Si tu as apprécié ce jeu et que tu souhaites proposer tes propres niveaux, donne-nous tes idées dans la section contact de notre site: ";
+"F" = "Cela peut être un scénario totalement différent mais qui reste basé sur les modes de jeu auxquels tu as pu jouer :)";
+
+//======================================================
+/* Voice Over Instructions */
+"vo1" = "Tu explore un ancien tombeau, l'espace est plongé dans la pénombre et tu ne n'as que très peu de visibilité !\n\nMerci d'activer VoiceOver pour continuer à jouer !\n\nCommence par activer le raccourci d'accessibilité de ton smartphone pour activer/désactiver VoiceOver plus facilement.\n\nEnsuite reviens dans l'application et active VoiceOver.\nEn fonction de ton smartphone, cela sera en appuyant 3 fois soit sur le bouton latéral ou soit sur le bouton home.";
+"vo2" = "Reprenons l'exploration !\n\nBonne chance !";
+
+
+//======================================================
+
+"door_script" = "Une porte se situe en face de moi. Elle semble vérouillée par un cadenas circulaire. Je dois trouver le code.";
+
 /* Chapter 1 */
 "chapter1_description" = "Népal: année 1976, Vous approchez d'une ancienne caverne de glace au Népal. Vous venez d'atteindre le sommet de la montagne. Une énorme porte vous fait face. Lorsque VoiceOver est activé, tu peux aller d'un élément à l'autre en le touchant sur l'écran directement ou en faisant glisser ton doigt vers la gauche ou vers la droite. Touches deux fois l'écran pour valider.";
 
@@ -44,36 +73,36 @@
 "chapter2_cq1a2" = "Des loups se tiennent près de toi, ils semblent endormis";
 "chapter2_cq1a3" = "Des pics de glace jonchent le plafond au dessus-de toi";
 "chapter2_cq1a4" = "Un aigle est au sommet d'une des cabanes de la cité abandonnée";
-"chapter2_cq1h1" = "4, 2... Peut-être que cela fait référence au nombre de pattes de chaque animal...";
+"chapter2_cq1h1" = "4, 2. Peut-être que cela fait référence au nombre de pattes de chaque animal.";
 
 // Level 2
 "chapter2_cq2a1" = "Tu entres dans la pièce suivante, une étendue d'eau se situe sur ta gauche";
 "chapter2_cq2a2" = "Des oiseaux chantent autour de toi, enfin un peu de calme";
 "chapter2_cq2a3" = "Un vieux hibou est perché sur la porte";
 
-"chapter2_cq2aa1" = "HEO";
-"chapter2_cq2aa2" = "HOP";
-"chapter2_cq2aa3" = "ETM";
-"chapter2_cq2aa4" = "POI";
+"chapter2_cq2aa1" = "H E O";
+"chapter2_cq2aa2" = "H O P";
+"chapter2_cq2aa3" = "E T M";
+"chapter2_cq2aa4" = "P O I";
 
 //======================================================
 /* Chapter 3 */
 "chapter3_description" = "Tu es parvenu avec succès à déjouer les pièges de la cité perdue, tu atteint une gigantesque vallée; il y'a une fontaine sur ta gauche et ce qui ressemble à un temple au loin. Tu rencontres un vieux sage qui vous félicite d'être arrivé jusque là mais vous prévient que, d'après un précepte sacré, il doit vérifier que vous êtes bien l'élu et qu'il sera dans l'obligation de vous tuer si ne répondez pas correctement aux questions qu'il vous posera !";
 
 // Level 1
-"chapter3_q1" = "Hum... Quel mot de passe à tu entré à la porte précédente ?";
+"chapter3_q1" = "Hum. Quel mot de passe à tu entré à la porte précédente ?";
 "chapter3_a1" = "heo";
 
 // Level 2
-"chapter3_q2" = "Hum... La porte d'entrée de la caverne de glace... L'as-tu ouverte en activant le levier sur la droite de la porte ?";
+"chapter3_q2" = "Hum. La porte d'entrée de la caverne de glace. L'as-tu ouverte en activant le levier sur la droite de la porte ?";
 "chapter3_a2" = "non";
 
 // Level 3
-"chapter3_q3" = "Bien joué... Voyons voir... Dans quel pays sommes-nous ?";
+"chapter3_q3" = "Bien joué. Voyons voir. Dans quel pays sommes-nous ?";
 "chapter3_a3" = "nepal";
 
 // Level 4
-"chapter3_q4" = "Dernière question... Es-tu tombé dans un piège au cours de ton périple ?";
+"chapter3_q4" = "Dernière question. Es-tu tombé dans un piège au cours de ton périple ?";
 "chapter3_a4" = "oui";
 
 //======================================================
@@ -81,34 +110,34 @@
 "chapter4_description" = "Tu es parvenu avec succès à traverser la vallée perdue, maintenant tu atteins un ancien tombeau ayant appartenu à la civilisation Népalaise; de magnifiques fresques et bijoux se situent autour de toi et de magnifiques dalles indiquent le chemin. Lorsque VoiceOver est activé, tu peux utiliser le rotor pour accéder au menu d'Actions. Décris un cercle avec deux doigts sur l’écran comme si tu faisais tourner un cadran. Continue de faire tourner tes doigts jusqu'à sélectionner l'option Actions. Fais glisser ton doigt de haut en bas pour entendre les actions proposées et touche deux fois l'écran pour valider.";
 
 // Level 1
-"chapter4_l1desc" = "Tu approches la première minuscule pièce dans laquelle se situent plusieurs sculptures représentant des animaux...";
+"chapter4_l1desc" = "Tu approches la première minuscule pièce dans laquelle se situent plusieurs sculptures représentant des animaux.";
 
-"chapter4_cq1desc" = "Un chat est représenté, cela ressemble à un bouton sur le mur, peut-être que tu peux l'activer...";
+"chapter4_cq1desc" = "Un chat est représenté, cela ressemble à un bouton sur le mur, peut-être que tu peux l'activer.";
 
 "chapter4_cq1a1" = "L'activer";
 "chapter4_cq1a2" = "Ne pas activer";
 
-"chapter4_cq1r1" = "Tu tombes dans un piège...";
+"chapter4_cq1r1" = "Tu tombes dans un piège.";
 "chapter4_cq1r2" = "Tu entends le clic d'un mécanisme s'activer.";
 
-"chapter4_cq2desc" = "Un aigle est représenté, cela ressemble à un bouton sur le mur, peut-être que tu peux l'activer...";
+"chapter4_cq2desc" = "Un aigle est représenté, cela ressemble à un bouton sur le mur, peut-être que tu peux l'activer.";
 
-"chapter4_cq3desc" = "Un serpent est représenté, cela ressemble à un bouton sur le mur, peut-être que tu peux l'activer...";
+"chapter4_cq3desc" = "Un serpent est représenté, cela ressemble à un bouton sur le mur, peut-être que tu peux l'activer.";
 
 // Level 2
-"chapter4_l2desc" = "Tu approches une seconde pièce avec 3 blocs incrustés dans le mur... Tu peux probablement les tirer vers toi... Une magnifique peinture représentant la montagne arbore le plafond...";
+"chapter4_l2desc" = "Tu approches une seconde pièce avec 3 blocs incrustés dans le mur. Tu peux probablement les tirer vers toi. Une magnifique peinture représentant la montagne arbore le plafond.";
 
-"chapter4_cq2desc1" = "Le bloc sur ta gauche...";
+"chapter4_cq2desc1" = "Le bloc sur ta gauche.";
 
 "chapter4_cq2a1" = "Ne pas déplacer";
 "chapter4_cq2a2" = "Déplacer une fois en arrière";
 "chapter4_cq2a3" = "Déplacer deux fois en arrière";
 "chapter4_cq2a4" = "Déplacer trois fois en arrière";
 
-"chapter4_cq2r1" = "Tu tombes dans un piège...";
-"chapter4_cq2r2" = "Rien ne se passe...";
+"chapter4_cq2r1" = "Tu tombes dans un piège.";
+"chapter4_cq2r2" = "Rien ne se passe.";
 
-"chapter4_cq2desc2" = "Le bloc du milieu ...";
+"chapter4_cq2desc2" = "Le bloc du milieu .";
 
-"chapter4_cq2desc3" = "Le bloc sur ta droite...";
+"chapter4_cq2desc3" = "Le bloc sur ta droite.";
 

@@ -15,7 +15,16 @@ class VoiceOverAlertViewController: UIViewController, Coordinated {
     @IBOutlet weak var userCanContinueInstructionsView: UIStackView!
     @IBOutlet weak var continueButton: UIButton!
 
+    @IBOutlet weak var voiceOverActivationInstructionsLabel: UILabel!
+    @IBOutlet weak var voiceOverOnSuccessMessageLabel: UILabel!
+    
     // MARK: - View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.voiceOverActivationInstructionsLabel.text = L10n.vo1
+        self.voiceOverOnSuccessMessageLabel.text = L10n.vo2
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(
@@ -40,6 +49,7 @@ class VoiceOverAlertViewController: UIViewController, Coordinated {
         let isVoiceOverRunning = EscapeFromBlindnessAccessibility.shared.isVoiceOverRunning
         
         if isVoiceOverRunning {
+            EscapeFromBlindnessAccessibility.shared.post(notification: .layoutChanged, argument: self.voiceOverOnSuccessMessageLabel)
             self.voiceOverActivationInstructionsView.isHidden = true
             self.userCanContinueInstructionsView.isHidden = false
         } else {
