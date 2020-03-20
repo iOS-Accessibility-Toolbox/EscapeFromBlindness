@@ -12,7 +12,6 @@ class LocalLevelFactory: LevelFactory {
         return LocalLevelFactory.chapters
     }
     
-    #if !DEBUG
     static let chapters = [
         Chapter(
             index: 1,
@@ -21,6 +20,8 @@ class LocalLevelFactory: LevelFactory {
             Nepal: year 1976, You approach an ancient ice cave In Nepal.
             You just reached the summit of the mountain.
             There is a huge door before of you.
+
+            When VoiceOver is turned on, you can go from one text to the other by touching it directly or sliding left or right with your finger. Double tap to validate or select something.
             """,
             keywords: ["door", "trap", "bridge", "bats", "lever"],
             levels: [
@@ -44,7 +45,7 @@ class LocalLevelFactory: LevelFactory {
             There are several doors locked with a lock safe mechanism in front of you.
             You need to find the code of each of them based on the clues you find in the room.
 
-            When VoiceOver is turned on, you can use the rotor to access the menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go from one option to the other. Continue to turn your fingers to hear about other settings, until you hear the setting. If you prefer using two hands, you can drag one finger up and the other down. Drag your finger up or down to validate.
+            When VoiceOver is turned on, you can use the rotor to access the menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go from one option to the other. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to validate.
             """,
             keywords: ["bear", "wolves", "spikes", "water"],
             levels: [
@@ -98,6 +99,8 @@ class LocalLevelFactory: LevelFactory {
             title: "The Hidden Tomb",
             description: """
             You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor.
+
+            When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to select and double tap to validate.
             """,
             keywords: ["puzzle", "blocks", "walls", "jewels", "tiles"],
             levels: [
@@ -115,7 +118,7 @@ class LocalLevelFactory: LevelFactory {
                 )!,
                 
                 SearchLevel(
-                   levelDescription: "You approach the second room room with 3 blocks incrusted in the wall... You can probably pull them... A beautiful painting of the mountain is represented on the ceiling...",
+                   levelDescription: "You approach the second room with 3 blocks incrusted in the wall... You can probably pull them... A beautiful painting of the mountain is represented on the ceiling...",
                    levelActions: [
                        (description: "The bloc on the left...", actions: ["leave it there", "pull it one time", "pull it two times", "pull it three times"], results: ["You fall into a trap...", "Nothing happens...", "You fall into a trap...", "You fall into a trap...", "You fall into a trap..."]),
                        
@@ -129,152 +132,4 @@ class LocalLevelFactory: LevelFactory {
         )
         
     ]
-    #else
-    static let chapters = [
-        
-        Chapter(
-            index: 1,
-            title: "A new world",
-            levels: [
-                ClosedQuestionLevel(
-                    question: "What is white's Henry IV horse's color?",
-                    answers: ["white", "black", "brown"],
-                    validAnswers: ["white"]
-                ),
-                ClosedQuestionLevel(
-                    question: "What is black's Henry IV horse's color?",
-                    answers: ["white", "black", "brown"],
-                    validAnswers: ["black"]
-                ),
-                ClosedQuestionLevel(
-                    question: "What is brown's Henry IV horse's color?",
-                    answers: ["white", "black", "brown"],
-                    validAnswers: ["brown"]
-                ),
-                ClosedQuestionLevel(
-                    question: "What is white's Henry IV horse's color?",
-                    answers: ["white", "black", "brown"],
-                    validAnswers: ["white"]
-                ),
-                ClosedQuestionLevel(
-                    question: "What is black's Henry IV horse's color?",
-                    answers: ["white", "black", "brown"],
-                    validAnswers: ["black"]
-                )
-            ]
-        ),
-
-        Chapter(
-            index: 2,
-            levels: [
-                // Rotor Levels
-                RotorLevel(
-                    clues: ["It is written 3 on the floor...", "Here I can see a 9 or maybe 5?", "Its written I on the wall", "I just walked on some circular tile..."],
-                    answers: ["3051", "6063", "3378"],
-                    validAnswers: ["3051"]
-                ),
-                RotorLevel(
-                    clues: ["There is nothing interesting in this room..."],
-                    answers: ["1", "2", "3"],
-                    validAnswers: ["1"]
-                ),
-                RotorLevel(
-                    clues: ["There is nothing interesting in this room..."],
-                    answers: ["4", "5", "6"],
-                    validAnswers: ["4"]
-                ),
-                RotorLevel(
-                    clues: ["There is nothing interesting in this room..."],
-                    answers: ["7", "8", "9"],
-                    validAnswers: ["7"]
-                ),
-                RotorLevel(
-                    clues: ["There is nothing interesting in this room..."],
-                    answers: ["10", "11", "12"],
-                    validAnswers: ["10"]
-                )
-            ]
-        ),
-
-        Chapter(
-            index: 3,
-            levels: [
-                // Open Questions
-                OpenQuestionLevel(
-                    question: "What is white's Henry IV horse's color?",
-                    validAnswers: ["white"]
-                ),
-                OpenQuestionLevel(
-                    question: "What is black's Henry IV horse's color?",
-                    validAnswers: ["black"]
-                ),
-                OpenQuestionLevel(
-                    question: "What is brown's Henry IV horse's color?",
-                    validAnswers: ["brown"]
-                ),
-                OpenQuestionLevel(
-                    question: "What is white's Henry IV horse's color?",
-                    validAnswers: ["white"]
-                ),
-                OpenQuestionLevel(
-                    question: "What is black's Henry IV horse's color?",
-                    validAnswers: ["black"]
-                )
-            ]
-        ),
-        
-        Chapter(
-            index: 4,
-            levels: [
-                // Search Levels
-                SearchLevel(
-                    levelDescription: "There is a level system in front of you...",
-                    levelActions: [
-                        (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
-                        (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
-                        (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
-                    ],
-                    validActions: ["turn it left", "let it in the center", "turn it right"]
-                )!,
-                SearchLevel(
-                    levelDescription: "There is a level system in front of you...",
-                    levelActions: [
-                        (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
-                        (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
-                        (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
-                    ],
-                    validActions: ["turn it left", "let it in the center", "turn it right"]
-                )!,
-                SearchLevel(
-                    levelDescription: "There is a level system in front of you...",
-                    levelActions: [
-                        (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
-                        (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
-                        (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
-                    ],
-                    validActions: ["turn it left", "let it in the center", "turn it right"]
-                )!,
-                SearchLevel(
-                    levelDescription: "There is a level system in front of you...",
-                    levelActions: [
-                        (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
-                        (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
-                        (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
-                    ],
-                    validActions: ["turn it left", "let it in the center", "turn it right"]
-                )!,
-                SearchLevel(
-                    levelDescription: "There is a level system in front of you...",
-                    levelActions: [
-                        (description: "There is a lever on your left", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You hear some gear turning noise.", "You fall into a trap...", "You fall into a trap..."]),
-                        (description: "There is a lever in the center of the place", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."]),
-                        (description: "There is a lever on your right", actions: ["turn it left", "let it in the center", "turn it right"], results: ["You fall into a trap...", "You hear some gear turning noise.", "You fall into a trap..."])
-                    ],
-                    validActions: ["turn it left", "let it in the center", "turn it right"]
-                )!
-            ]
-        )
-        
-    ]
-    #endif
 }

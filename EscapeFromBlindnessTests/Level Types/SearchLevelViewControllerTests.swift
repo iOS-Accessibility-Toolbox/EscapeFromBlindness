@@ -37,6 +37,7 @@ class SearchLevelViewControllerTests: XCTestCase {
     private func loadView() {
         window.addSubview(sut.view)
         RunLoop.current.run(until: Date())
+        sut.viewDidLayoutSubviews()
     }
     
     private func unloadView() {

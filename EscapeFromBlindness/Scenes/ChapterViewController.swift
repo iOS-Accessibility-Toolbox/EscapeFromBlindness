@@ -25,6 +25,7 @@ class ChapterViewController: UIViewController, Coordinated {
     var continueButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("Go !", for: .normal)
+        button.titleLabel?.font = .custom(style: .montserratExtraBold, size: 40)
         return button
     }()
     
@@ -68,9 +69,9 @@ class ChapterViewController: UIViewController, Coordinated {
         
         self.continueButton.translatesAutoresizingMaskIntoConstraints = false
         self.continueButton.topAnchor.constraint(equalTo: self.chapterLabel.bottomAnchor, constant: 50).isActive = true
-        let continueButtonWidth: CGFloat = 50.0
+        let continueButtonWidth: CGFloat = 100.0
         self.continueButton.widthAnchor.constraint(equalToConstant: continueButtonWidth).isActive = true
-        self.continueButton.widthAnchor.constraint(equalToConstant: continueButtonWidth).isActive = true
+        self.continueButton.heightAnchor.constraint(equalToConstant: continueButtonWidth).isActive = true
         self.continueButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         self.continueButton.addTarget(self, action: #selector(onContinueButtonTouched), for: .touchUpInside)

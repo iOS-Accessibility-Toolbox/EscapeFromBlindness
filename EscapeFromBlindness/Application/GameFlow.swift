@@ -88,6 +88,13 @@ class GameFlow: GameFlowProtocol {
     
     func validateChapter() {
         print("GameFlow::validateChapter \(currentChapterIndex) \(currentLevelIndex)")
+        guard currentChapterIndex > 0 else {
+            self.currentChapterIndex += 1
+            guard let currentChapter = currentChapter else { return }
+            router?.routeToChapter(currentChapter, isNewChapter: true)
+            return
+        }
+        
         if let level = self.currentLevel {
             router?.routeToLevel(level)
         }

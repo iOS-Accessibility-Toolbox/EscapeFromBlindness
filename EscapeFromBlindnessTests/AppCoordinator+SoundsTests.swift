@@ -45,11 +45,11 @@ class AppCoordinatorSoundsTests: XCTestCase {
     func test_whenNewChapterBegins_shouldStartNewChaptersMusic() {
         sut.start(window: UIWindow())
         
-        let index = 2
-        sut.routeToChapter(Chapter(index: index, levels: []), isNewChapter: true)
+        let chapterIndex = 2
+        sut.routeToChapter(Chapter(index: chapterIndex, levels: []), isNewChapter: true)
         
         XCTAssertTrue(soundPlayerSpy.stopCalled)
-        XCTAssertEqual(soundPlayerSpy.startedSoundType, CustomSoundTypes.allCases[index])
+        XCTAssertEqual(soundPlayerSpy.startedSoundType, CustomSoundTypes.allCases[chapterIndex - 1])
     }
     
 }

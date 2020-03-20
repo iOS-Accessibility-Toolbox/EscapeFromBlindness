@@ -49,7 +49,7 @@ extension AppCoordinator: Router {
     private func playAmbiantSound(for chapter: Chapter) {
         soundPlayer.stop()
         // ensure there is always an ambiant sound playing
-        let type = CustomSoundTypes.allCases[chapter.index % CustomSoundTypes.allCases.count]
+        let type = CustomSoundTypes.allCases[(chapter.index - 1) % CustomSoundTypes.allCases.count]
         soundPlayer.start(type: type)
     }
     
