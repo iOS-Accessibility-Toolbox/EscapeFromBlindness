@@ -6,8 +6,6 @@
   Copyright © 2019 michael-martinez. All rights reserved.
 */
 
-"ok" = "Ok";
-
 //======================================================
 /* Chapter 1 */
 "chapter1_description" = "Nepal: year 1976, You approach an ancient ice cave In Nepal. You just reached the summit of the mountain. There is a huge door before of you. When VoiceOver is turned on, you can go from one text to the other by touching it directly or sliding left or right with your finger. Double tap to validate or select something.";
@@ -80,7 +78,7 @@
 
 //======================================================
 /* Chapter 4 */
-"chapter4_description" = "You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor. When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to select and double tap to validate.";
+"chapter4_description" = "You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor. When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Drag your finger up or down to select and double tap to validate.";
 
 // Level 1
 "chapter4_l1desc" = "You approach the first small room with a lot of jewelry on it, it looks like each of them represents an animal...";

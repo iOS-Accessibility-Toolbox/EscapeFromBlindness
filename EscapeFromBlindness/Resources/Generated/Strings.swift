@@ -85,7 +85,7 @@ enum L10n {
   static let chapter4Cq2r2 = L10n.tr("Localizable", "chapter4_cq2r2")
   /// A snake is pictured, it looks like a button on the wall, maybe you can press it...
   static let chapter4Cq3desc = L10n.tr("Localizable", "chapter4_cq3desc")
-  /// You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor. When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to select and double tap to validate.
+  /// You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor. When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Drag your finger up or down to select and double tap to validate.
   static let chapter4Description = L10n.tr("Localizable", "chapter4_description")
   /// You approach the first small room with a lot of jewelry on it, it looks like each of them represents an animal...
   static let chapter4L1desc = L10n.tr("Localizable", "chapter4_l1desc")
@@ -123,8 +123,6 @@ enum L10n {
   static let cq4a2 = L10n.tr("Localizable", "cq4a2")
   /// Fight the bats with your hat
   static let cq4a3 = L10n.tr("Localizable", "cq4a3")
-  /// Ok
-  static let ok = L10n.tr("Localizable", "ok")
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 
