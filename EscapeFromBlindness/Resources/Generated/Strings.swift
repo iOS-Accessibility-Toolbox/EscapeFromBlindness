@@ -53,6 +53,44 @@ enum L10n {
   static let chapter3Q3 = L10n.tr("Localizable", "chapter3_q3")
   /// And the last question... Did you fall into some trap during your journey?
   static let chapter3Q4 = L10n.tr("Localizable", "chapter3_q4")
+  /// activate it
+  static let chapter4Cq1a1 = L10n.tr("Localizable", "chapter4_cq1a1")
+  /// leave it there
+  static let chapter4Cq1a2 = L10n.tr("Localizable", "chapter4_cq1a2")
+  /// A cat is pictured, it looks like a button on the wall, maybe you can press it...
+  static let chapter4Cq1desc = L10n.tr("Localizable", "chapter4_cq1desc")
+  /// You fall into a trap...
+  static let chapter4Cq1r1 = L10n.tr("Localizable", "chapter4_cq1r1")
+  /// You hear some gear turning noise.
+  static let chapter4Cq1r2 = L10n.tr("Localizable", "chapter4_cq1r2")
+  /// leave it there
+  static let chapter4Cq2a1 = L10n.tr("Localizable", "chapter4_cq2a1")
+  /// pull it one time
+  static let chapter4Cq2a2 = L10n.tr("Localizable", "chapter4_cq2a2")
+  /// pull it two times
+  static let chapter4Cq2a3 = L10n.tr("Localizable", "chapter4_cq2a3")
+  /// pull it three times
+  static let chapter4Cq2a4 = L10n.tr("Localizable", "chapter4_cq2a4")
+  /// An eagle is pictured, it looks like a button on the wall, maybe you can press it...
+  static let chapter4Cq2desc = L10n.tr("Localizable", "chapter4_cq2desc")
+  /// The bloc on the left...
+  static let chapter4Cq2desc1 = L10n.tr("Localizable", "chapter4_cq2desc1")
+  /// The bloc in the middle...
+  static let chapter4Cq2desc2 = L10n.tr("Localizable", "chapter4_cq2desc2")
+  /// The bloc on the right...
+  static let chapter4Cq2desc3 = L10n.tr("Localizable", "chapter4_cq2desc3")
+  /// You fall into a trap...
+  static let chapter4Cq2r1 = L10n.tr("Localizable", "chapter4_cq2r1")
+  /// Nothing happens...
+  static let chapter4Cq2r2 = L10n.tr("Localizable", "chapter4_cq2r2")
+  /// A snake is pictured, it looks like a button on the wall, maybe you can press it...
+  static let chapter4Cq3desc = L10n.tr("Localizable", "chapter4_cq3desc")
+  /// You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor. When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to select and double tap to validate.
+  static let chapter4Description = L10n.tr("Localizable", "chapter4_description")
+  /// You approach the first small room with a lot of jewelry on it, it looks like each of them represents an animal...
+  static let chapter4L1desc = L10n.tr("Localizable", "chapter4_l1desc")
+  /// You approach the second room with 3 blocks incrusted in the wall... You can probably pull them... A beautiful painting of the mountain is represented on the ceiling...
+  static let chapter4L2desc = L10n.tr("Localizable", "chapter4_l2desc")
   /// You are in front of a huge door, what do you do?
   static let cq1 = L10n.tr("Localizable", "cq1")
   /// Inspect the surface

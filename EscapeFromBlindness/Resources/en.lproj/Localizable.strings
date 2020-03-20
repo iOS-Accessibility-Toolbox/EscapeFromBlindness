@@ -80,3 +80,36 @@
 
 //======================================================
 /* Chapter 4 */
+"chapter4_description" = "You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor. When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to select and double tap to validate.";
+
+// Level 1
+"chapter4_l1desc" = "You approach the first small room with a lot of jewelry on it, it looks like each of them represents an animal...";
+
+"chapter4_cq1desc" = "A cat is pictured, it looks like a button on the wall, maybe you can press it...";
+
+"chapter4_cq1a1" = "activate it";
+"chapter4_cq1a2" = "leave it there";
+
+"chapter4_cq1r1" = "You fall into a trap...";
+"chapter4_cq1r2" = "You hear some gear turning noise.";
+
+"chapter4_cq2desc" = "An eagle is pictured, it looks like a button on the wall, maybe you can press it...";
+
+"chapter4_cq3desc" = "A snake is pictured, it looks like a button on the wall, maybe you can press it...";
+
+// Level 2
+"chapter4_l2desc" = "You approach the second room with 3 blocks incrusted in the wall... You can probably pull them... A beautiful painting of the mountain is represented on the ceiling...";
+
+"chapter4_cq2desc1" = "The bloc on the left...";
+
+"chapter4_cq2a1" = "leave it there";
+"chapter4_cq2a2" = "pull it one time";
+"chapter4_cq2a3" = "pull it two times";
+"chapter4_cq2a4" = "pull it three times";
+
+"chapter4_cq2r1" = "You fall into a trap...";
+"chapter4_cq2r2" = "Nothing happens...";
+
+"chapter4_cq2desc2" = "The bloc in the middle...";
+
+"chapter4_cq2desc3" = "The bloc on the right...";

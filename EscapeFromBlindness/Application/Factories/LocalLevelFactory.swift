@@ -80,36 +80,32 @@ class LocalLevelFactory: LevelFactory {
         Chapter(
             index: 4,
             title: "The Hidden Tomb",
-            description: """
-            You successfully went through the Hidden Valley, now you reach a stunning ancient tomb; there is a lot of jewelry on the walls and some some coloured tiles on the floor.
-
-            When VoiceOver is turned on, you can use the rotor to access the Actions menu. Draw a circle with two fingers on screen as if you were turning a dial. You can then go to the Actions option. Continue to turn your fingers to hear about answer options, until you hear the option. Drag your finger up or down to select and double tap to validate.
-            """,
+            description: L10n.chapter4Description,
             keywords: ["puzzle", "blocks", "walls", "jewels", "tiles"],
             levels: [
                 // Search Levels
                 SearchLevel(
-                    levelDescription: "You approach the first small room with a lot of jewelry on it, it looks like each of them represents an animal...",
+                    levelDescription: L10n.chapter4L1desc,
                     levelActions: [
-                        (description: "A cat is pictured, it looks like a button on the wall, maybe you can press it...", actions: ["activate it", "leave it there"], results: ["You fall into a trap...", "You hear some gear turning noise."]),
+                        (description: L10n.chapter4Cq1desc, actions: [L10n.chapter4Cq1a1, L10n.chapter4Cq1a2], results: [L10n.chapter4Cq1r1, L10n.chapter4Cq1r2]),
                         
-                        (description: "An eagle is pictured, it looks like a button on the wall, maybe you can press it...", actions: ["activate it", "leave it there"], results: ["You hear some gear turning noise.", "You fall into a trap..."]),
+                        (description: L10n.chapter4Cq2desc, actions: [L10n.chapter4Cq1a1, L10n.chapter4Cq1a2], results: [L10n.chapter4Cq1r2, L10n.chapter4Cq1r1]),
                         
-                        (description: "A snake is pictured, it looks like a button on the wall, maybe you can press it...", ["activate it", "leave it there"], results: ["You fall into a trap...", "You hear some gear turning noise."])
+                        (description: L10n.chapter4Cq3desc, [L10n.chapter4Cq1a1, L10n.chapter4Cq1a2], results: [L10n.chapter4Cq1r1, L10n.chapter4Cq1r2])
                     ],
-                    validActions: ["leave it there", "activate it", "leave it there"]
+                    validActions: [L10n.chapter4Cq1a2, L10n.chapter4Cq1a1, L10n.chapter4Cq1a2]
                 )!,
                 
                 SearchLevel(
-                   levelDescription: "You approach the second room with 3 blocks incrusted in the wall... You can probably pull them... A beautiful painting of the mountain is represented on the ceiling...",
+                   levelDescription: L10n.chapter4L2desc,
                    levelActions: [
-                       (description: "The bloc on the left...", actions: ["leave it there", "pull it one time", "pull it two times", "pull it three times"], results: ["You fall into a trap...", "Nothing happens...", "You fall into a trap...", "You fall into a trap...", "You fall into a trap..."]),
+                    (description: L10n.chapter4Cq2desc1, actions: [L10n.chapter4Cq2a1, L10n.chapter4Cq2a2, L10n.chapter4Cq2a3, L10n.chapter4Cq2a4], results: [L10n.chapter4Cq2r1, L10n.chapter4Cq2r2, L10n.chapter4Cq2r1, L10n.chapter4Cq2r1, L10n.chapter4Cq2r1]),
                        
-                       (description: "The bloc in the middle...", actions: ["leave it there", "pull it one time", "pull it two times", "pull it three times"], results: ["You fall into a trap...", "You fall into a trap...", "Nothing happens...", "You fall into a trap...", "You fall into a trap..."]),
+                       (description: L10n.chapter4Cq2desc2, actions: [L10n.chapter4Cq2a1, L10n.chapter4Cq2a2, L10n.chapter4Cq2a3, L10n.chapter4Cq2a4], results: [L10n.chapter4Cq2r1, L10n.chapter4Cq2r1, L10n.chapter4Cq2r2, L10n.chapter4Cq2r1]),
                        
-                       (description: "The bloc on the right...", actions: ["leave it there", "pull it one time", "pull it two times", "pull it three times"], results: ["You fall into a trap...", "Nothing happens...", "You fall into a trap...", "You fall into a trap...", "You fall into a trap..."])
+                       (description: L10n.chapter4Cq2desc3, actions: [L10n.chapter4Cq2a1, L10n.chapter4Cq2a2, L10n.chapter4Cq2a3, L10n.chapter4Cq2a4], results: [L10n.chapter4Cq2r1, L10n.chapter4Cq2r2, L10n.chapter4Cq2r1, L10n.chapter4Cq2r1])
                    ],
-                   validActions: ["pull it one time", "pull it two times", "pull it one time"]
+                   validActions: [L10n.chapter4Cq2a2, L10n.chapter4Cq2a3, L10n.chapter4Cq2a2]
                )!
             ]
         )
