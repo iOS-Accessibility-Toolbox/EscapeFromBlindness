@@ -26,6 +26,8 @@
 "E" = "Si tu as apprécié ce jeu et que tu souhaites proposer tes propres niveaux, donne-nous tes idées dans la section contact de notre site: ";
 "F" = "Cela peut être un scénario totalement différent mais qui reste basé sur les modes de jeu auxquels tu as pu jouer :)";
 
+"replay" = "Rejouer !";
+
 //======================================================
 /* Voice Over Instructions */
 "vo1" = "Tu explore un ancien tombeau, l'espace est plongé dans la pénombre et tu ne n'as que très peu de visibilité !\n\nMerci d'activer VoiceOver pour continuer à jouer !\n\nCommence par activer le raccourci d'accessibilité de ton smartphone pour activer/désactiver VoiceOver plus facilement.\n\nEnsuite reviens dans l'application et active VoiceOver.\nEn fonction de ton smartphone, cela sera en appuyant 3 fois soit sur le bouton latéral ou soit sur le bouton home.";
@@ -90,7 +92,7 @@
 "chapter3_description" = "Tu es parvenu avec succès à déjouer les pièges de la cité perdue, tu atteint une gigantesque vallée; il y'a une fontaine sur ta gauche et ce qui ressemble à un temple au loin. Tu rencontres un vieux sage qui vous félicite d'être arrivé jusque là mais vous prévient que, d'après un précepte sacré, il doit vérifier que vous êtes bien l'élu et qu'il sera dans l'obligation de vous tuer si ne répondez pas correctement aux questions qu'il vous posera !";
 
 // Level 1
-"chapter3_q1" = "Hum. Quel mot de passe à tu entré à la porte précédente ?";
+"chapter3_q1" = "Hum. Quel mot de passe as-tu entré à la porte précédente ?";
 "chapter3_a1" = "heo";
 
 // Level 2

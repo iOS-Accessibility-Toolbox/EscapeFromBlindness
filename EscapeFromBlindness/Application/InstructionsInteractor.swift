@@ -12,7 +12,7 @@ protocol InstructionsInteractorProtocol {
 
 class InstructionsInteractor: InstructionsInteractorProtocol {
     
-    private let supportUrl = "https://one-week-apps.com"
+    private let supportUrl = "one-week-apps.com"
     
     func fetchIntroInstructions() -> [String] {
         return [
