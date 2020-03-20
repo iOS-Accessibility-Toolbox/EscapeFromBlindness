@@ -16,23 +16,17 @@ class LocalLevelFactory: LevelFactory {
         Chapter(
             index: 1,
             title: "Ice Cave",
-            description: """
-            Nepal: year 1976, You approach an ancient ice cave In Nepal.
-            You just reached the summit of the mountain.
-            There is a huge door before of you.
-
-            When VoiceOver is turned on, you can go from one text to the other by touching it directly or sliding left or right with your finger. Double tap to validate or select something.
-            """,
+            description: L10n.chapter1Description,
             keywords: ["door", "trap", "bridge", "bats", "lever"],
             levels: [
                 // Closed Questions
-                ClosedQuestionLevel(question: "You are in front of a huge door, what do you do?", answers: ["Inspect the surface", "Try to find some opening mechanism on both sides of the door", "Climb the mountain"].shuffled(), validAnswers: ["Inspect the surface"]),
+                ClosedQuestionLevel(question: L10n.cq1, answers: [L10n.cq1a1, L10n.cq1a2, L10n.cq1a3].shuffled(), validAnswers: [L10n.cq1a1]),
                 
-                ClosedQuestionLevel(question: "Your walk in an awkward silence; the ground collapses underneath your feet; you just fell into a trap with spikes around you, what do you do?", answers: ["Try to climb back", "Wait", "Inspect the spikes"].shuffled(), validAnswers: ["Inspect the spikes"]),
+                ClosedQuestionLevel(question: L10n.cq2, answers: [L10n.cq2a1, L10n.cq2a2, L10n.cq2a3].shuffled(), validAnswers: [L10n.cq2a3]),
                 
-                ClosedQuestionLevel(question: "You made your way out of the trap; there is a bridge in front of you, a large hole is beneath, what do you do?", answers: ["Walk carefully across the bridge", "Try to find another way along the cliff", "Look at the ceiling"].shuffled(), validAnswers: ["Walk carefully across the bridge"]),
+                ClosedQuestionLevel(question: L10n.cq3, answers: [L10n.cq3a1, L10n.cq3a2, L10n.cq3a3].shuffled(), validAnswers: [L10n.cq3a1]),
                 
-                ClosedQuestionLevel(question: "You managed to reach the other side of the bridge, you look behind and congratulate yourself for your progress; you hear some weird sound, bats are chasing you! What do you do?", answers: ["Run as far as you can deeper in the cave", "Try to activate the lever on your right", "Fight the bats with your hat"].shuffled(), validAnswers: ["Try to activate the lever on your right"])
+                ClosedQuestionLevel(question: L10n.cq4, answers: [L10n.cq4a1, L10n.cq4a2, L10n.cq4a3].shuffled(), validAnswers: [L10n.cq4a2])
             ]
         ),
 

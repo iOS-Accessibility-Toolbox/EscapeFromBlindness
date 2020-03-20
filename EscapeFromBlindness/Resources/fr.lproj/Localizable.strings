@@ -7,3 +7,8 @@
 */
 
 "ok" = "Ok";
+"chapter1_description" = "Népal: année 1976, Vous approchez d'une ancienne caverne de glace au Népal. Vous venez d'atteindre le sommet de la montagne. Une énorme porte vous fait face. Lorsque VoiceOver est activé, tu peux aller d'un élément à l'autre en le touchant sur l'écran directement ou en faisant glisser ton doigt vers la gauche ou vers la droite. Touches deux fois l'écran pour valider.";
+
+
+//Lorsque VoiceOver est activé, tu peux utiliser le rotor pour accéder au menu. Décris un cercle avec deux doigts sur l’écran comme si tu faisais tourner un cadran. Tu peux ainsi passer d’une option du menu à l’autre. Continue de faire tourner tes doigts pour entendre d’autres réglages, jusqu’à entendre le réglage voulu. Fais glisser ton doigt vers le haut ou le bas sur l’écran pour valider.
+

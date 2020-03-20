@@ -52,6 +52,7 @@
 		D88B1A9323B43D9A008BB85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D88B1A9523B43D9A008BB85D /* Localizable.strings */; };
 		D88B1A9823B43E1D008BB85D /* RotorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */; };
 		D88B1A9A23B43E32008BB85D /* SearchLevelViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */; };
+		D896208A2425110C00CD81B9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89620892425110C00CD81B9 /* Strings.swift */; };
 		D8C2C0ED23C0CD8500F8BE78 /* ChapterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */; };
 		D8C2C0F023C0CDF400F8BE78 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C0EE23C0CDF400F8BE78 /* InstructionsViewController.swift */; };
 		D8C2C0F123C0CDF400F8BE78 /* InstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C0EF23C0CDF400F8BE78 /* InstructionsViewController.xib */; };
@@ -136,6 +137,7 @@
 		D88B1A9623B43D9D008BB85D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D88B1A9723B43E1D008BB85D /* RotorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorViewControllerTests.swift; sourceTree = "<group>"; };
 		D88B1A9923B43E32008BB85D /* SearchLevelViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLevelViewControllerTests.swift; sourceTree = "<group>"; };
+		D89620892425110C00CD81B9 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		D8C2C0EC23C0CD8500F8BE78 /* ChapterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewControllerTests.swift; sourceTree = "<group>"; };
 		D8C2C0EE23C0CDF400F8BE78 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		D8C2C0EF23C0CDF400F8BE78 /* InstructionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsViewController.xib; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 		D8F1809423BFE364003291D4 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				D89620892425110C00CD81B9 /* Strings.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -584,7 +587,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen strings -t structured-swift3 -o EscapeFromBlindness/Resources/Generated/Strings.swift EscapeFromBlindness/Resources/fr.lproj/Localizable.strings\n";
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen strings -t structured-swift3 -o EscapeFromBlindness/Resources/Generated/Strings.swift EscapeFromBlindness/Resources/en.lproj/Localizable.strings\n";
 		};
 		D88B1A8423B43786008BB85D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -623,6 +626,7 @@
 				D88B19DF23B4254A008BB85D /* AppDelegate.swift in Sources */,
 				D8F27A7A23FDF2D000C09E1B /* RandomFramesGenerator.swift in Sources */,
 				D84760A023C1499E00DF4825 /* RotorLevel.swift in Sources */,
+				D896208A2425110C00CD81B9 /* Strings.swift in Sources */,
 				D8C2C0F623C0CE6C00F8BE78 /* StoryboardLoadable.swift in Sources */,
 				D83B70EF23C4938600516628 /* SearchViewController.swift in Sources */,
 				D8F1809723BFE4A2003291D4 /* String+Extensions.swift in Sources */,

@@ -7,3 +7,37 @@
 */
 
 "ok" = "Ok";
+
+/* Chapter 1 */
+"chapter1_description" = "Nepal: year 1976, You approach an ancient ice cave In Nepal. You just reached the summit of the mountain. There is a huge door before of you. When VoiceOver is turned on, you can go from one text to the other by touching it directly or sliding left or right with your finger. Double tap to validate or select something.";
+
+// Level 1
+"cq1" = "You are in front of a huge door, what do you do?";
+"cq1a1" = "Inspect the surface";
+"cq1a2" = "Try to find some opening mechanism on both sides of the door";
+"cq1a3" = "Climb the mountain";
+
+// Level 2
+"cq2" = "Your walk in an awkward silence; the ground collapses underneath your feet; you just fell into a trap with spikes around you, what do you do?";
+"cq2a1" = "Try to climb back";
+"cq2a2" = "Wait";
+"cq2a3" = "Inspect the spikes";
+
+
+// Level 3
+"cq3" = "You made your way out of the trap; there is a bridge in front of you, a large hole is beneath, what do you do?";
+"cq3a1" = "Walk carefully across the bridge";
+"cq3a2" = "Try to find another way along the cliff";
+"cq3a3" = "Look at the ceiling";
+
+// Level 4
+"cq4" = "You managed to reach the other side of the bridge, you look behind and congratulate yourself for your progress; you hear some weird sound, bats are chasing you! What do you do?";
+"cq4a1" = "Run as far as you can deeper in the cave";
+"cq4a2" = "Try to activate the lever on your right";
+"cq4a3" = "Fight the bats with your hat";
+
+/* Chapter 2 */
+
+/* Chapter 3 */
+
+/* Chapter 4 */
