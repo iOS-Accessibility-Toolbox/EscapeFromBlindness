@@ -8,76 +8,23 @@ import CoreLocation
 
 protocol AppCoordinatorProtocol: class {
     func start(window: UIWindow)
+    
     func showActivateVoiceOverAlert()
     func dismissActivateVoiceOverAlert()
     
     func presentIntroController(_ scenario: InstructionsViewController.Scenario)
-    func validateChapter()
-    func validate(_ answers: [Level.Answer])
-    
     func presentClosedQuestionController(_ level: Level)
     func presentOpenQuestionController(_ level: Level)
     func presentRotorQuestionController(_ level: Level)
     func presentSearchQuestionController(_ level: Level)
     
+    func validateChapter()
+    func validate(_ answers: [Level.Answer])
+    
     func replay()
 }
 
-extension AppCoordinator: AppCoordinatorProtocol {
-    func validateChapter() {
-        gameFlow.validateChapter()
-    }
-    
-    func validate(_ answers: [String]) {
-        gameFlow.validate(answers)
-    }
-}
-
-extension AppCoordinator: Router {
-    
-    func routeToChapter(_ chapter: Chapter, isNewChapter: Bool) {
-        if isNewChapter {
-            userDefaults.set(chapter.index, forKey: UserDefaultsKeys.currentChapterIndex.rawValue)
-            userDefaults.set(0, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
-        }
-        
-        presentChapterController(chapter)
-        playAmbiantSound(for: chapter)
-    }
-    
-    private func playAmbiantSound(for chapter: Chapter) {
-        soundPlayer.stop()
-        // ensure there is always an ambiant sound playing
-        let type = CustomSoundTypes.allCases[(chapter.index - 1) % CustomSoundTypes.allCases.count]
-        soundPlayer.start(type: type)
-    }
-    
-    func routeToLevel(_ level: Level) {
-        let currentLevel = gameFlow.getCurrentLevelIndex()
-        userDefaults.set(currentLevel, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
-        
-        switch level {
-        case is ClosedQuestionLevel:
-            presentClosedQuestionController(level)
-        case is OpenQuestionLevel:
-            presentOpenQuestionController(level)
-        case is RotorLevel:
-            presentRotorQuestionController(level)
-        case is SearchLevel:
-            presentSearchQuestionController(level)
-        default:
-            break
-        }
-    }
-    
-    func routeToResults() {
-        print("routeToResults")
-        self.presentIntroController(.gameEnd)
-    }
-    
-}
-
-class AppCoordinator: NSObject, Coordinator {
+class AppCoordinator: NSObject, Coordinator, AppCoordinatorProtocol {
     
     // MARK: - Initialization
     private var window: UIWindow?
@@ -242,5 +189,56 @@ class AppCoordinator: NSObject, Coordinator {
         if isNonIntroViewController && !isVoiceOverRunning {
             self.showActivateVoiceOverAlert()
         }
+    }
+}
+
+extension AppCoordinator {
+    func validateChapter() {
+        gameFlow.validateChapter()
+    }
+    
+    func validate(_ answers: [String]) {
+        gameFlow.validate(answers)
+    }
+}
+
+extension AppCoordinator: Router {
+    func routeToChapter(_ chapter: Chapter, isNewChapter: Bool) {
+        if isNewChapter {
+            userDefaults.set(chapter.index, forKey: UserDefaultsKeys.currentChapterIndex.rawValue)
+            userDefaults.set(0, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+        }
+        
+        presentChapterController(chapter)
+        playAmbiantSound(for: chapter)
+    }
+    
+    private func playAmbiantSound(for chapter: Chapter) {
+        soundPlayer.stop()
+        // ensure there is always an ambiant sound playing
+        let type = CustomSoundTypes.allCases[(chapter.index - 1) % CustomSoundTypes.allCases.count]
+        soundPlayer.start(type: type)
+    }
+    
+    func routeToLevel(_ level: Level) {
+        let currentLevel = gameFlow.getCurrentLevelIndex()
+        userDefaults.set(currentLevel, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
+        
+        switch level {
+        case is ClosedQuestionLevel:
+            presentClosedQuestionController(level)
+        case is OpenQuestionLevel:
+            presentOpenQuestionController(level)
+        case is RotorLevel:
+            presentRotorQuestionController(level)
+        case is SearchLevel:
+            presentSearchQuestionController(level)
+        default:
+            break
+        }
+    }
+    
+    func routeToResults() {
+        self.presentIntroController(.gameEnd)
     }
 }

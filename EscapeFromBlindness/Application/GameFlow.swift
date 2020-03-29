@@ -87,7 +87,6 @@ class GameFlow: GameFlowProtocol {
     }
     
     func validateChapter() {
-        print("GameFlow::validateChapter \(currentChapterIndex) \(currentLevelIndex)")
         guard currentChapterIndex > 0 else {
             self.currentChapterIndex += 1
             guard let currentChapter = currentChapter else { return }

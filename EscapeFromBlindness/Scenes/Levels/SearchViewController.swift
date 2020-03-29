@@ -123,7 +123,6 @@ class SearchViewController: UIViewController, Coordinated {
         (levelActionIndex, actionIndex) = getIndexes(for: action)
         
         if let levelActionIndex = levelActionIndex, let actionIndex = actionIndex {
-            print("Action \(levelActionIndex) \(actionIndex)")
             let levelAction = self.level.levelActions[levelActionIndex]
             let result = levelAction.results[actionIndex]
             return result
