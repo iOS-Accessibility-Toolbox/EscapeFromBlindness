@@ -213,13 +213,6 @@ extension AppCoordinator: Router {
         playAmbiantSound(for: chapter)
     }
     
-    private func playAmbiantSound(for chapter: Chapter) {
-        soundPlayer.stop()
-        // ensure there is always an ambiant sound playing
-        let type = CustomSoundTypes.allCases[(chapter.index - 1) % CustomSoundTypes.allCases.count]
-        soundPlayer.start(type: type)
-    }
-    
     func routeToLevel(_ level: Level) {
         let currentLevel = gameFlow.getCurrentLevelIndex()
         userDefaults.set(currentLevel, forKey: UserDefaultsKeys.currentLevelIndex.rawValue)
@@ -240,5 +233,12 @@ extension AppCoordinator: Router {
     
     func routeToResults() {
         self.presentIntroController(.gameEnd)
+    }
+    
+    private func playAmbiantSound(for chapter: Chapter) {
+        soundPlayer.stop()
+        // ensure there is always an ambiant sound playing
+        let type = CustomSoundTypes.allCases[(chapter.index - 1) % CustomSoundTypes.allCases.count]
+        soundPlayer.start(type: type)
     }
 }
