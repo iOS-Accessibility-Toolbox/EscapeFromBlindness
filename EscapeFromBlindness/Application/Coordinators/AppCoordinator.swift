@@ -32,7 +32,6 @@ extension AppCoordinator: AppCoordinatorProtocol {
         gameFlow.validate(answers)
     }
 }
-extension AppCoordinator: UINavigationControllerDelegate {}
 
 extension AppCoordinator: Router {
     
@@ -117,7 +116,6 @@ class AppCoordinator: NSObject, Coordinator {
         )
         
         self.window = window
-        navigationController.delegate = self
         
         checkIfUserFirstStart()
     }
