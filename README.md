@@ -11,5 +11,5 @@ A sample Swift app demonstrating the usage of Swift UIAccessibility library for 
 Escape From Blindness proposes the first Voice Over based Escape Room app experience!  
 Help Jack the explorer to reach the exit of the cavern he is trapped in.
  
-• 20 unique levels which use the full features of Voice Over to reproduce a blind phone user experience.  
+• Dozens of unique levels which use the full features of Voice Over to reproduce a blind phone user experience.  
 • Don't try to fool the game, you cannot progress through the various levels without Voice Over enabled!
