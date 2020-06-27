@@ -37,12 +37,12 @@ class AppCoordinatorTests: XCTestCase {
         XCTAssertTrue(sut.isPresentIntroControllerCalled)
     }
 
-    func test_IntroScreenCompleted_Start_shouldAskGameFlowToStartTheGame() {
+    func test_IntroScreenCompleted_Start_shouldPresentLoadLevelController() {
         gameFlowMock.expectedChapter = 1
 
         sut.start(window: UIWindow())
 
-        XCTAssertTrue(gameFlowMock.startCalled)
+        XCTAssertTrue(sut.isPresentLoadLevelControllerCalled)
     }
     
     // MARK: Saving
@@ -155,7 +155,8 @@ class AppCoordinatorTests: XCTestCase {
     }
 
     private func assertNavBar(chapterName: String, level: Int) {
-        XCTAssertEqual(sut.navigationController.viewControllers.first!.navigationItem.title, "\(chapterName) - Level \(level)")
+        XCTAssertEqual(sut.navigationController.viewControllers.first!.navigationItem.title, "\(chapterName)")
+        XCTAssertEqual(sut.navigationController.viewControllers.first!.navigationItem.accessibilityLabel, "\(chapterName) - \(L10n.level) \(level)")
     }
     
 }

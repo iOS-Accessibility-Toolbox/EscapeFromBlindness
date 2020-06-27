@@ -39,14 +39,15 @@ class LocalLevelFactory: LevelFactory {
                 // Rotor Levels
                 RotorLevel(
                     clues: [L10n.chapter2Cq1a1, L10n.chapter2Cq1a2, L10n.chapter2Cq1a3, L10n.chapter2Cq1a4],
-                    hints: [L10n.chapter2Cq1h1],
                     answers: ["4402", String(randomDigits(4)), String(randomDigits(4))].shuffled(),
-                    validAnswers: ["4402"]
+                    validAnswers: ["4402"],
+                    hints: [L10n.chapter2Cq1h1, "How many legs does a bear have? and a wolf?", "A bear has 4 legs, a wolf has 1"]
                 ),
                 RotorLevel(
                     clues: [L10n.chapter2Cq2a1, L10n.chapter2Cq2a2, L10n.chapter2Cq2a3],
                     answers: [L10n.chapter2Cq2aa1, L10n.chapter2Cq2aa2, L10n.chapter2Cq2aa3, L10n.chapter2Cq2aa4].shuffled(),
-                    validAnswers: [L10n.chapter2Cq2aa1]
+                    validAnswers: [L10n.chapter2Cq2aa1],
+                    hints: ["This should be related to the key elements I can see.", "Take the initial letter of each key element", "What are the first letters of water, bird, owl"]
                 )
             ]
         ),
@@ -60,7 +61,8 @@ class LocalLevelFactory: LevelFactory {
                 // Open Questions
                 OpenQuestionLevel(
                     question: L10n.chapter3Q1,
-                    validAnswers: [L10n.chapter3A1]
+                    validAnswers: [L10n.chapter3A1],
+                    hints: ["You can always come back to the last level if you don't remember the answer."]
                 ),
                 OpenQuestionLevel(
                     question: L10n.chapter3Q2,
@@ -93,7 +95,8 @@ class LocalLevelFactory: LevelFactory {
                         
                         (description: L10n.chapter4Cq3desc, [L10n.chapter4Cq1a1, L10n.chapter4Cq1a2], results: [L10n.chapter4Cq1r1, L10n.chapter4Cq1r2])
                     ],
-                    validActions: [L10n.chapter4Cq1a2, L10n.chapter4Cq1a1, L10n.chapter4Cq1a2]
+                    validActions: [L10n.chapter4Cq1a2, L10n.chapter4Cq1a1, L10n.chapter4Cq1a2],
+                    hints: ["what kind of animals you did saw before?", "You can always come back to the last level if you don't remember the answer.", "activate the lever only for the eagle as it is the only one you saw"]
                 )!,
                 
                 SearchLevel(
@@ -105,7 +108,8 @@ class LocalLevelFactory: LevelFactory {
                        
                        (description: L10n.chapter4Cq2desc3, actions: [L10n.chapter4Cq2a1, L10n.chapter4Cq2a2, L10n.chapter4Cq2a3, L10n.chapter4Cq2a4], results: [L10n.chapter4Cq2r1, L10n.chapter4Cq2r2, L10n.chapter4Cq2r1, L10n.chapter4Cq2r1])
                    ],
-                   validActions: [L10n.chapter4Cq2a2, L10n.chapter4Cq2a3, L10n.chapter4Cq2a2]
+                   validActions: [L10n.chapter4Cq2a2, L10n.chapter4Cq2a3, L10n.chapter4Cq2a2],
+                   hints: ["what shape does a mountain have?", "pull each bloc to represent a mountain", "a mountain represents a triangle so the first bloc should be pulled once, the second twice ..."]
                )!
             ]
         )

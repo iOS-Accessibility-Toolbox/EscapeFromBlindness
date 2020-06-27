@@ -24,7 +24,7 @@
 "C" = "We hope you enjoyed this game as much as we enjoyed developing it!";
 "D" = "We also hope that this game helped you to understand better some of the challenges encoutered by blind people while using smartphones.";
 "E" = "If you enjoyed the game and feel like you would like to build your own levels, feel free to submit your ideas in the contact section of our website: ";
-"F" = "This can be a completely new story based on the game modes you just played :)";
+"F" = "This can be a completely new story based on the game modes you just played!";
 
 "replay" = "Touch to play again !";
 
@@ -34,7 +34,12 @@
 "vo2" = "Let's continue exploring !\n\nEnjoy your play !";
 
 //======================================================
-
+"chapter" = "Chapter";
+"complete" = "complete";
+"locked" = "locked";
+"continue" = "continue";
+"level" = "Niveau";
+"hint" = "hint";
 "door_script" = "A door stands in front of me. It seems to be locked. I need to find the code.";
 
 /* Chapter 1 */

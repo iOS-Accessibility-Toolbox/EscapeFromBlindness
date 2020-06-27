@@ -7,6 +7,12 @@ import Foundation
 @testable import EscapeFromBlindness
 
 class GameFlowMock: GameFlowProtocol {
+    func getChapters() -> [Chapter] {
+        return []
+    }
+    
+    func loadLevel(_ chapterIndex: Int, _ levelIndex: Int) {}
+    
     var expectedChapter: Int = 0
     var expectedChapterTitle: String = ""
     var expectedLevel: Int = 0
@@ -15,10 +21,11 @@ class GameFlowMock: GameFlowProtocol {
     func getCurrentChapterIndex() -> Int {
         return self.expectedChapter
     }
-    func getCurrentChapterTitle() -> String? {
+    
+    func getTitleForChapter(chapterIndex: Int?) -> String? {
         return self.expectedChapterTitle
     }
-    func getCurrentLevelIndex() -> Int {
+    func getCurrentLevelIndex(levelIndex: Int?) -> Int {
         return self.expectedLevel
     }
     func start() {

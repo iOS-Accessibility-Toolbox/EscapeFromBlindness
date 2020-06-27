@@ -5,8 +5,7 @@
 
 import UIKit
 
-class ClosedQuestionViewController: UIViewController, Coordinated {
-    var coordinator: AppCoordinatorProtocol?
+class ClosedQuestionViewController: LevelBaseViewController {
     
     var mainLabel: UILabel = {
         let label = UILabel()
@@ -32,10 +31,15 @@ class ClosedQuestionViewController: UIViewController, Coordinated {
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
+        setupHints()
         super.viewDidLoad()
         setupViews()
         self.mainLabel.text = level.question
         setupTableView()
+    }
+    
+    private func setupHints() {
+        self.hints = level.hints
     }
     
     private func setupViews() {

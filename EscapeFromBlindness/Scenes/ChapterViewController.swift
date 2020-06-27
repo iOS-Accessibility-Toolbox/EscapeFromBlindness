@@ -78,9 +78,9 @@ class ChapterViewController: UIViewController, Coordinated {
     }
     
     private func presentChapterText(for chapter: Chapter?) -> String {
-        guard let chapter = chapter else { return "New Chapter: " }
+        guard let chapter = chapter else { return "\(L10n.chapter): " }
         
-        var chapterText = "Chapter \(chapter.index): "
+        var chapterText = "\(L10n.chapter) \(chapter.index): "
         if let title = chapter.title {
             chapterText += "\n" + title
         }

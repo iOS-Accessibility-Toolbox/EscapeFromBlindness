@@ -18,8 +18,12 @@ protocol AppCoordinatorProtocol: class {
     func presentRotorQuestionController(_ level: Level)
     func presentSearchQuestionController(_ level: Level)
     
+    func presentLoadLevelController()
+    
     func validateChapter()
     func validate(_ answers: [Level.Answer])
+    
+    func loadLevel(_ chapterIndex: Int, levelIndex: Int)
     
     func replay()
 }
@@ -73,8 +77,29 @@ class AppCoordinator: NSObject, Coordinator, AppCoordinatorProtocol {
         if currentChapter == 0 {
             presentIntroController(.intro)
         } else {
-            gameFlow.start()
+            //gameFlow.start()
+            presentLoadLevelController()
         }
+    }
+    
+    internal var isPresentLoadLevelControllerCalled = false
+    func presentLoadLevelController() {
+        isPresentLoadLevelControllerCalled = true
+        let viewController = LoadLevelViewController(
+            chapters: gameFlow.getChapters(),
+            currentChapterIndex: gameFlow.getCurrentChapterIndex(),
+            currentLevelIndex: gameFlow.getCurrentLevelIndex()
+        )
+        viewController.coordinator = self
+        
+        navigationController.isNavigationBarHidden = true
+        navigationController.viewControllers = [viewController]
+    }
+    
+    private var SELECTED: (Int, Int)? = nil
+    func loadLevel(_ chapterIndex: Int, levelIndex: Int) {
+        self.SELECTED = (chapterIndex, levelIndex)
+        gameFlow.loadLevel(chapterIndex, levelIndex)
     }
     
     // MARK: - Intro
@@ -174,9 +199,10 @@ class AppCoordinator: NSObject, Coordinator, AppCoordinatorProtocol {
     private func resetNavigationStack(_ viewController: UIViewController) {
         navigationController.isNavigationBarHidden = false
         
-        let chapterTitle = gameFlow.getCurrentChapterTitle()
-        let levelIndex = gameFlow.getCurrentLevelIndex()
-        viewController.navigationItem.title = "\(chapterTitle != nil ? "\(chapterTitle!) - " : "")Level \(levelIndex + 1)"
+        let chapterTitle = gameFlow.getTitleForChapter(chapterIndex: self.SELECTED?.0)
+        let levelIndex = gameFlow.getCurrentLevelIndex(levelIndex: self.SELECTED?.1)
+        viewController.navigationItem.title = "\(chapterTitle != nil ? "\(chapterTitle!)" : "\(L10n.level) \(levelIndex + 1)")"
+        viewController.navigationItem.accessibilityLabel = "\(chapterTitle != nil ? "\(chapterTitle!) - " : "")\(L10n.level) \(levelIndex + 1)"
         
         navigationController.viewControllers = [viewController]
     }

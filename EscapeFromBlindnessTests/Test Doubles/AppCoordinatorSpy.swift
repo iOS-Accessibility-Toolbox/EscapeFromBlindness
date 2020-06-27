@@ -18,6 +18,13 @@ class AppCoordinatorSpy: AppCoordinatorProtocol {
     var presentIntroControllerScenario: InstructionsViewController.Scenario?
     var presentChapterControllerCalled = false
     
+    var loadedChapterLevel: (Int, Int)?
+    
+    func presentLoadLevelController() {}
+    func loadLevel(_ chapterIndex: Int, levelIndex: Int) {
+        loadedChapterLevel = (chapterIndex, levelIndex)
+    }
+    
     func start(window: UIWindow) {
         startCalled = true
     }

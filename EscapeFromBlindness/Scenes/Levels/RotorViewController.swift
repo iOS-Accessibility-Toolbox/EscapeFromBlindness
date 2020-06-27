@@ -5,8 +5,7 @@
 
 import UIKit
 
-class RotorViewController: UIViewController, Coordinated {
-    var coordinator: AppCoordinatorProtocol?
+class RotorViewController: LevelBaseViewController {
     
     // MARK: - Outlets
     var clueViews: [UIView] = []
@@ -22,10 +21,14 @@ class RotorViewController: UIViewController, Coordinated {
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
+        setupHints()
         super.viewDidLoad()
-        
         setupClueViews()
         setupLockedDoorView()
+    }
+    
+    private func setupHints() {
+        self.hints = level.hints
     }
     
     private func setupClueViews() {
@@ -46,7 +49,13 @@ class RotorViewController: UIViewController, Coordinated {
     private func setupLockedDoorView() {
         let customRotors = makeAccessibilityCustomRotors(for: level.answers)
         
-        let frame = CGRect(x: UIScreen.main.bounds.width/2 - 100/2, y: UIScreen.main.bounds.height - 100 - 60, width: 100, height: 100)
+        let height = 100.heightScaledFromIphoneX()
+        let frame = CGRect(
+            x: UIScreen.main.bounds.width/2 - CGFloat(height)/2,
+            y: UIScreen.main.bounds.height - CGFloat((100 + 60).heightScaledFromIphoneX()),
+            width: 100,
+            height: CGFloat(height)
+        )
         self.lockedDoorView.frame = frame
         self.lockedDoorView.isAccessibilityElement = true
         self.lockedDoorView.accessibilityLabel = L10n.doorScript

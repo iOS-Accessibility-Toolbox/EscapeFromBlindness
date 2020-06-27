@@ -9,8 +9,8 @@ class ClosedQuestionLevel: Level {
     typealias Question = String
     var question: Question
     
-    init(question: Question, answers: [Answer], validAnswers: [Answer]) {
+    init(question: Question, answers: [Answer], validAnswers: [Answer], hints: [String] = []) {
         self.question = question
-        super.init(answers: answers, validAnswers: validAnswers)
+        super.init(answers: answers, validAnswers: validAnswers, hints: hints)
     }
 }

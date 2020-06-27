@@ -17,7 +17,8 @@ class SearchLevel: Level {
     init?(
         levelDescription: String,
         levelActions: [(description: String, actions: [String], results: [String])],
-        validActions: [String]
+        validActions: [String],
+        hints: [String] = []
     ) {
         let actions = levelActions.map { $0.actions }
         let results = levelActions.map { $0.results }
@@ -32,6 +33,6 @@ class SearchLevel: Level {
         self.levelDescription = levelDescription
         self.levelActions = levelActions
         
-        super.init(answers: [], validAnswers: validActions)
+        super.init(answers: [], validAnswers: validActions, hints: hints)
     }
 }

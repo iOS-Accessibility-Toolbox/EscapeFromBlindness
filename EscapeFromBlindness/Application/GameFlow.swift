@@ -6,18 +6,34 @@ protocol Router {
 
 protocol GameFlowProtocol {
     func getCurrentChapterIndex() -> Int
-    func getCurrentChapterTitle() -> String?
-    func getCurrentLevelIndex() -> Int
+    func getChapters() -> [Chapter]
+    func getTitleForChapter(chapterIndex: Int?) -> String?
+    func getCurrentLevelIndex(levelIndex: Int?) -> Int
     func start()
+    func loadLevel(_ chapterIndex: Int, _ levelIndex: Int)
     func restart()
     func validate(_ answers: [Level.Answer])
     func validateChapter()
+}
+
+extension GameFlowProtocol {
+    func getTitleForChapter(chapterIndex: Int? = nil) -> String? {
+        self.getTitleForChapter(chapterIndex: chapterIndex)
+    }
+    
+    func getCurrentLevelIndex(levelIndex: Int? = nil) -> Int {
+        self.getCurrentLevelIndex(levelIndex: levelIndex)
+    }
 }
 
 class GameFlow: GameFlowProtocol {
     private let chapters: [Chapter]
     private var currentChapterIndex: Int
     private var currentLevelIndex: Int
+    
+    func getChapters() -> [Chapter] {
+        return self.chapters
+    }
     
     private var currentChapter: Chapter? {
         return self.chapters[safe: max(0, self.currentChapterIndex - 1)]
@@ -38,17 +54,24 @@ class GameFlow: GameFlowProtocol {
         return self.currentChapterIndex
     }
     
-    func getCurrentChapterTitle() -> String? {
-        return self.currentChapter?.title
+    func getTitleForChapter(chapterIndex: Int? = nil) -> String? {
+        return chapterIndex == nil ? self.currentChapter?.title : self.chapters[safe: chapterIndex!]?.title
     }
     
-    func getCurrentLevelIndex() -> Int {
-        return self.currentLevelIndex
+    func getCurrentLevelIndex(levelIndex: Int? = nil) -> Int {
+        return levelIndex == nil ? self.currentLevelIndex : levelIndex!
     }
     
     func start() {
         if let currentChapter = self.currentChapter {
             router?.routeToChapter(currentChapter, isNewChapter: false)
+        }
+    }
+    
+    func loadLevel(_ chapterIndex: Int, _ levelIndex: Int) {
+        if let chapter = self.chapters[safe: chapterIndex], let level = chapter.levels[safe: levelIndex] {
+            //router?.routeToChapter(chapter, isNewChapter: false)
+            router?.routeToLevel(level)
         }
     }
     
@@ -63,11 +86,14 @@ class GameFlow: GameFlowProtocol {
             
             if hasReachedNewChapter() {
                 self.currentChapterIndex += 1
+                let levelIndexSwap = self.currentLevelIndex
                 self.currentLevelIndex = 0
                 
                 if let chapter = self.currentChapter {
                     router?.routeToChapter(chapter, isNewChapter: true)
                 } else {
+                    self.currentChapterIndex -= 1
+                    self.currentLevelIndex = levelIndexSwap
                     router?.routeToResults()
                 }
             } else {

@@ -9,8 +9,8 @@ class OpenQuestionLevel: Level {
     typealias Question = String
     var question: Question
     
-    init(question: Question, validAnswers: [Answer]) {
+    init(question: Question, validAnswers: [Answer], hints: [String] = []) {
         self.question = question
-        super.init(answers: [], validAnswers: validAnswers)
+        super.init(answers: [], validAnswers: validAnswers, hints: hints)
     }
 }

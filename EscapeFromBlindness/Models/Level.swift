@@ -9,10 +9,12 @@ class Level: CustomStringConvertible {
     typealias Answer = String
     public let answers: [Answer]
     public let validAnswers: [Answer]
+    var hints: [String]
     
-    init(answers: [Answer], validAnswers: [Answer]) {
+    init(answers: [Answer], validAnswers: [Answer], hints: [String] = []) {
         self.answers = answers
         self.validAnswers = validAnswers
+        self.hints = hints
     }
     
     var description: String {

@@ -5,8 +5,7 @@
 
 import UIKit
 
-class OpenQuestionViewController: UIViewController, Coordinated {
-    var coordinator: AppCoordinatorProtocol?
+class OpenQuestionViewController: LevelBaseViewController {
     
     var mainLabel: UILabel = {
         let label = UILabel()
@@ -33,10 +32,15 @@ class OpenQuestionViewController: UIViewController, Coordinated {
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
+        setupHints()
         super.viewDidLoad()
         setupViews()
         self.mainLabel.text = level.question
         self.textField.delegate = self
+    }
+    
+    private func setupHints() {
+        self.hints = level.hints
     }
     
     private func setupViews() {
@@ -46,6 +50,7 @@ class OpenQuestionViewController: UIViewController, Coordinated {
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.mainLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.mainLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30).isActive = true
+        self.mainLabel.numberOfLines = 2
         self.mainLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
         self.mainLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
         
@@ -53,7 +58,7 @@ class OpenQuestionViewController: UIViewController, Coordinated {
         self.textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
         self.textField.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 30).isActive = true
-        self.textField.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -350).isActive = true
+        self.textField.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: CGFloat(-350.heightScaledFromIphoneX())).isActive = true
     }
 
 }

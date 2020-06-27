@@ -23,7 +23,7 @@ class NavigationController: UINavigationController {
     
     private func setupNavigationBar() {
         
-        self.navigationBar.titleTextAttributes = [.font: UIFont.custom(style: .lucioleRegular, size: 27),
+        self.navigationBar.titleTextAttributes = [.font: UIFont.custom(style: .lucioleRegular, size: 22),
                                                   .foregroundColor: UIColor.white]
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 4), for: UIBarMetrics.default)
         

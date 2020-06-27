@@ -14,8 +14,7 @@ class SearchAccessibilityCustomAction: UIAccessibilityCustomAction {
     }
 }
 
-class SearchViewController: UIViewController, Coordinated {
-    var coordinator: AppCoordinatorProtocol?
+class SearchViewController: LevelBaseViewController {
     
     // MARK: - Initialization
     private var level: SearchLevel!
@@ -38,8 +37,13 @@ class SearchViewController: UIViewController, Coordinated {
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
+        setupHints()
         super.viewDidLoad()
         setupLevelDescriptionLabel()
+    }
+    
+    private func setupHints() {
+        self.hints = level.hints
     }
     
     override func viewDidLayoutSubviews() {

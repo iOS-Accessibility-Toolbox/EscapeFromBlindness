@@ -8,11 +8,9 @@ import Foundation
 class RotorLevel: Level {
     typealias Clue = String
     var clues: [Clue]
-    var hints: [String]
     
-    init(clues: [Clue], hints: [String] = [], answers: [Answer], validAnswers: [Answer]) {
+    init(clues: [Clue], answers: [Answer], validAnswers: [Answer], hints: [String] = []) {
         self.clues = clues
-        self.hints = hints
-        super.init(answers: answers, validAnswers: validAnswers)
+        super.init(answers: answers, validAnswers: validAnswers, hints: hints)
     }
 }

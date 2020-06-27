@@ -29,6 +29,8 @@ enum L10n {
   static let b = L10n.tr("Localizable", "B")
   /// We hope you enjoyed this game as much as we enjoyed developing it!
   static let c = L10n.tr("Localizable", "C")
+  /// Chapter
+  static let chapter = L10n.tr("Localizable", "chapter")
   /// Nepal: year 1976, You approach an ancient ice cave In Nepal. You just reached the summit of the mountain. There is a huge door before of you. When VoiceOver is turned on, you can go from one text to the other by touching it directly or sliding left or right with your finger. Double tap to validate or select something.
   static let chapter1Description = L10n.tr("Localizable", "chapter1_description")
   /// There are bear footprints on the floor
@@ -113,6 +115,10 @@ enum L10n {
   static let chapter4L1desc = L10n.tr("Localizable", "chapter4_l1desc")
   /// You approach the second room with 3 blocks incrusted in the wall. You can probably pull them. A beautiful painting of the mountain is represented on the ceiling.
   static let chapter4L2desc = L10n.tr("Localizable", "chapter4_l2desc")
+  /// complete
+  static let complete = L10n.tr("Localizable", "complete")
+  /// continue
+  static let `continue` = L10n.tr("Localizable", "continue")
   /// You are in front of a huge door, what do you do?
   static let cq1 = L10n.tr("Localizable", "cq1")
   /// Inspect the surface
@@ -151,8 +157,14 @@ enum L10n {
   static let doorScript = L10n.tr("Localizable", "door_script")
   /// If you enjoyed the game and feel like you would like to build your own levels, feel free to submit your ideas in the contact section of our website: 
   static let e = L10n.tr("Localizable", "E")
-  /// This can be a completely new story based on the game modes you just played :)
+  /// This can be a completely new story based on the game modes you just played!
   static let f = L10n.tr("Localizable", "F")
+  /// hint
+  static let hint = L10n.tr("Localizable", "hint")
+  /// Niveau
+  static let level = L10n.tr("Localizable", "level")
+  /// locked
+  static let locked = L10n.tr("Localizable", "locked")
   /// Touch to play again !
   static let replay = L10n.tr("Localizable", "replay")
   /// You are exploring an old tomb, as you are in the dark and have no torch left you do not see anything !\n\nPlease turn on VoiceOver to continue the game !\n\nFirst configure the accessibility shortcut in to allow you to turn on/off VoiceOver easily.\n\nThen go back to the app and turn on VoiceOver.\nDepending on your device, it will either be by pressing three times the lateral button or the home button.

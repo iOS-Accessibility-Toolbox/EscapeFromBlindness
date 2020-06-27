@@ -81,6 +81,7 @@ class InstructionsViewController: UIViewController, Coordinated {
                 coordinator?.validateChapter()
             } else {
                 self.replayButton.isHidden = false
+                EscapeFromBlindnessAccessibility.shared.post(notification: .layoutChanged, argument: self.replayButton)
             }
         }
     }

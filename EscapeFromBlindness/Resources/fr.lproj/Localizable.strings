@@ -20,11 +20,11 @@
 //======================================================
 /* Conclusion Instructions */
 "A" = "Félicitations !";
-"B" = "Tu a réussi à surmonter toutes les épreuves du jeu avec succès !";
+"B" = "Tu as réussi à surmonter toutes les épreuves du jeu avec succès !";
 "C" = "Nous espérons que tu as apprécié ce jeu autant que nous avons aimé le développer !";
 "D" = "Nous espérons également que ce jeu aura pu te donner une idée te sensibiliser à la manière dont une personne non-voyante utilise son smartphone.";
 "E" = "Si tu as apprécié ce jeu et que tu souhaites proposer tes propres niveaux, donne-nous tes idées dans la section contact de notre site: ";
-"F" = "Cela peut être un scénario totalement différent mais qui reste basé sur les modes de jeu auxquels tu as pu jouer :)";
+"F" = "Cela peut être un scénario totalement différent mais qui reste basé sur les modes de jeu auxquels tu as pu jouer !";
 
 "replay" = "Rejouer !";
 
@@ -35,7 +35,12 @@
 
 
 //======================================================
-
+"chapter" = "Chapitre";
+"complete" = "terminé";
+"locked" = "vérouillé";
+"continue" = "continuer";
+"level" = "Niveau";
+"hint" = "indice";
 "door_script" = "Une porte se situe en face de moi. Elle semble vérouillée par un cadenas circulaire. Je dois trouver le code.";
 
 /* Chapter 1 */
