@@ -17,5 +17,5 @@ Help Jack the explorer to reach the exit of the cavern he is trapped in.
 
 # 🎬 Gameplay Video
 
-[![Présentation du projet](https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg)](https://www.youtube.com/watch?v=hMfEAhLY-z8)
+[![Présentation du projet](https://img.youtube.com/vi/hMfEAhLY-z8/hqdefault.jpg)](https://www.youtube.com/watch?v=hMfEAhLY-z8)
 
