@@ -13,8 +13,6 @@ Help Jack the explorer to reach the exit of the cavern he is trapped in.
 • Dozens of unique levels which use the full features of Voice Over to reproduce a blind phone user experience.  
 • Don't try to fool the game, you cannot progress through the various levels without Voice Over enabled!
 
-![EscapeFromBlindness-Game](img/game.png?raw=true "The Game")
-
 # 🎬 Gameplay Video
 
 [![Présentation du projet](https://img.youtube.com/vi/hMfEAhLY-z8/hqdefault.jpg)](https://www.youtube.com/watch?v=hMfEAhLY-z8)
